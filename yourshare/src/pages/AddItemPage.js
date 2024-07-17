@@ -5,7 +5,7 @@ export const AddItemPage = (props) => {
   return (
     <div>
       <h1>Borrow item</h1>
-      <p onClick={(e) => props.changePage(pages.WelcomePage)}>Request to borrow</p>
+      <p onClick={(e) => props.changePage(pages.WelcomePage)}>Request toborrow </p>
 
     </div>
   );
