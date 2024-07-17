@@ -1,10 +1,13 @@
 import React from "react";
-// import { pages } from "../App";
+import { pages } from "../App";
 
 export const AddItemPage = (props) => {
   return (
     <div>
-      <h1>Add item</h1>
+      <h1>Borrow item</h1>
+      <p onClick={(e) => props.changePage(pages.WelcomePage)}>Request toborrow </p>
+
     </div>
   );
 };
+
