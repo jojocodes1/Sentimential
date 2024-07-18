@@ -4,16 +4,18 @@ import { WelcomePage } from "./pages/WelcomePage";
 import { AddItemPage } from "./pages/AddItemPage";
 import { CommunityPage } from "./pages/CommunityPage";
 import { BorrowItemPage } from "./pages/BorrowItemPage";
+import { SignupPage } from "./pages/SignupPage";  
 
 export const pages = {
   WelcomePage: "WelcomePage",
   CommunityPage: "CommunityPage",
   AddItemPage: "AddItemPage",
   BorrowItemPage: "BorrowItemPage",
+  SignupPage: "SignupPage",
 };
 
 function App() {
-  const [currentPage, setCurrentPage] = React.useState(pages.AccountPage);
+  const [currentPage, setCurrentPage] = React.useState(pages.SignupPage);
 
   const componentToShow = React.useMemo(() => {
     let whichComponentToShow;
@@ -28,6 +30,9 @@ function App() {
         break;
       case pages.BorrowItemPage:
         whichComponentToShow = <AddItemPage changePage={setCurrentPage} />;
+        break;
+      case pages.SignupPage:
+        whichComponentToShow = <SignupPage changePage={setCurrentPage} />;
         break;
       case pages.WelcomePage:
       default:
