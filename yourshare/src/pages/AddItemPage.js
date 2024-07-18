@@ -11,7 +11,7 @@ export const AddItemPage = (props) => {
 
       <h2>Add Item</h2>
       <p onClick={(e) => props.changePage(pages.WelcomePage)}>Cancel </p>
-      <p onClick={(e) => props.changePage(pages.WelcomePage)}>Add Item </p>
+      <p onClick={(e) => props.changePage(pages.WelcomePage)}>Add  Item </p>
 
     </div>
   );
