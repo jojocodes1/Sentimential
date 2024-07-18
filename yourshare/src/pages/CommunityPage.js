@@ -4,7 +4,13 @@ import React from "react";
 export const CommunityPage = (props) => {
   return (
     <div>
-      <h1>Community</h1>
+      <h1>Manage community</h1>
+
+
+
+
+
     </div>
+
   );
 };
