@@ -7,6 +7,7 @@ export const WelcomePage = (props) => {
       <h1>Welcome</h1>
       <p onClick={(e) => props.changePage(pages.AddItemPage)}>Add item</p>
       <p onClick={(e) => props.changePage(pages.CommunityPage)}>Community</p>
+      <p onClick={(e) => props.changePage(pages.BorrowItemPage)}>Borrow Item</p>
     </div>
   );
 };

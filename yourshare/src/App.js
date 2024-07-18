@@ -3,11 +3,13 @@ import "./App.css";
 import { WelcomePage } from "./pages/WelcomePage";
 import { AddItemPage } from "./pages/AddItemPage";
 import { CommunityPage } from "./pages/CommunityPage";
+import { BorrowItemPage } from "./pages/BorrowItemPage";
 
 export const pages = {
   WelcomePage: "WelcomePage",
   CommunityPage: "CommunityPage",
   AddItemPage: "AddItemPage",
+  BorrowItemPage: "BorrowItemPage",
 };
 
 function App() {
@@ -22,6 +24,9 @@ function App() {
         whichComponentToShow = <CommunityPage changePage={setCurrentPage} />;
         break;
       case pages.AddItemPage:
+        whichComponentToShow = <AddItemPage changePage={setCurrentPage} />;
+        break;
+      case pages.BorrowItemPage:
         whichComponentToShow = <AddItemPage changePage={setCurrentPage} />;
         break;
       case pages.WelcomePage:
