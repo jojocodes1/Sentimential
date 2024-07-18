@@ -1,4 +1,17 @@
 body {
+  background-color: rgb(208, 230, 173);
+  .left-half, .right-half {
+    width: 50%; /* Each half takes up 50% of the container width */
+    padding: 20px; /* Optional: Add padding for spacing */
+}
+
+.left-half {
+    background-color: #f0f0f0; /* Background color for the left half */
+}
+
+.right-half {
+    background-color: #e0e0e0; /* Background color for the right half */
+}
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

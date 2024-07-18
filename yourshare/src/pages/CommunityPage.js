@@ -1,10 +1,11 @@
 import React from "react";
-// import { pages } from "../App";
+import { pages } from "../App";
 
 export const CommunityPage = (props) => {
   return (
     <div>
-      <h1>Community</h1>
+      <h1> Manage Community</h1>
+      <p onClick={(e) => props.changePage(pages.WelcomePage)}>Welcome Page </p>
     </div>
   );
 };
