@@ -29,7 +29,7 @@ function App() {
         whichComponentToShow = <AddItemPage changePage={setCurrentPage} />;
         break;
       case pages.BorrowItemPage:
-        whichComponentToShow = <AddItemPage changePage={setCurrentPage} />;
+        whichComponentToShow = <BorrowItemPage changePage={setCurrentPage} />;
         break;
       case pages.SignupPage:
         whichComponentToShow = <SignupPage changePage={setCurrentPage} />;
