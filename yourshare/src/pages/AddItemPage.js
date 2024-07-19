@@ -17,7 +17,7 @@ export const AddItemPage = (props) => {
     <div>
        <Navbar bg="secondary" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="#home">  </Navbar.Brand>
+          <Navbar.Brand href="#home"> </Navbar.Brand>
           <Nav className="me-auto">
            
           </Nav>
