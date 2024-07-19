@@ -7,6 +7,11 @@ export const AddItemPage = (props) => {
 
   return (
     <div>
+
+      <h1>Borrow item</h1>
+      <p onClick={(e) => props.changePage(pages.WelcomePage)}>Request tomorrow </p>
+      
+
           
 
       <h2>Add Item</h2>
@@ -14,5 +19,7 @@ export const AddItemPage = (props) => {
       <p onClick={(e) => props.changePage(pages.WelcomePage)}>Add Item </p>
 
     </div>
+
+    
   );
 };
