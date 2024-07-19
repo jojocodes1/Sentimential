@@ -1,5 +1,6 @@
 import React from "react";
 import { pages } from "../App";
+import Button from 'react-bootstrap/Button';
 
 
 
@@ -15,8 +16,8 @@ export const AddItemPage = (props) => {
           
 
       <h2>Add Item</h2>
-      <p onClick={(e) => props.changePage(pages.WelcomePage)}>Cancel </p>
-      <p onClick={(e) => props.changePage(pages.WelcomePage)}>Add Item </p>
+      <p><Button href="/welcomePage">Cancel</Button> </p>
+      <p><Button href="/welcomePage" type="submit">Add Item</Button> </p>
 
     </div>
 
