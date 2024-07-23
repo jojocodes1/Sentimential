@@ -7,20 +7,12 @@ export const CommunityPage = (props) => {
     
     
     <div>
-
-    <div>
-
-      <p onClick={(e) => props.changePage(pages.WelcomePage)}><button>Welcome Page</button> </p>
-      <p>
-        Left arrow: <button><i class = "arrow left">
-          </i>
-          </button>
-          </p>
-
-    </div>
     
 
-      <h1>Manage community</h1>
+      <h1>
+      <p onClick={(e) => props.changePage(pages.WelcomePage)}><button><i class = "arrow left">
+          </i>
+          </button>Manage community</p></h1>
       <div class = "Friends">
         <h2><b>Friends</b></h2>
  
