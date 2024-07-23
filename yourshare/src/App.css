@@ -14,11 +14,11 @@
   .App-logo {
     animation: App-logo-spin infinite 5s linear;
   }
-=======
+
   /* .App-logo {
     /* animation: App-logo-spin infinite 20s linear; */
   /* } */
->>>>>>> 1803e827db34471fc2bfbbf66a3c4428e562f803
+
 }
 
 .App-header {
@@ -29,7 +29,7 @@
   align-items: right;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #a0cb83;
 }
 
 .App-link {
