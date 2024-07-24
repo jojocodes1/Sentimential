@@ -8,15 +8,15 @@ import { Row } from "react-bootstrap";
 export const BorrowItemPage = (props) => {
     return (
         <div>
-          <Row>
-            <Col sm={1}><Button href="/welcomePage" variant="outline-dark">Back</Button></Col>
-            <Col sm={2}><h1>Borrow item</h1></Col>
+          <Row className="align-items-center">
+            <Col xs="auto"><Button href="/welcomePage" variant="outline-dark">Back</Button></Col>
+            <Col xs="auto"><h1>Borrow item</h1></Col>
           </Row>
           
           <Form>
-            <Row>
-              <Col sm={1}></Col>
-              <Col sm={5}>
+            <Row className="align-items-center">
+              <Col xs="auto"></Col>
+              <Col sm={4}>
               <Form.Group className="mb-3" controlId="Item Name">
                 <Form.Control type="itemInfo" placeholder="Item Name:" />
               </Form.Group>
@@ -35,9 +35,9 @@ export const BorrowItemPage = (props) => {
             <Row>
               <Col></Col>
               <Col sm={3}>
-              <Row>
-                <Col sm={2}><p><Button href="/welcomePage" variant="outline-light">Cancel</Button> </p></Col>
-                <Col sm={6}><p><Button href="/welcomePage" type="submit" variant="secondary">Request to borrow</Button> </p></Col>
+              <Row className="align-items-center">
+                <Col xs="auto"><p><Button href="/welcomePage" variant="outline-light" size="sm">Cancel</Button> </p></Col>
+                <Col xs="auto"><p><Button href="/welcomePage" type="submit" variant="secondary">Request to borrow</Button> </p></Col>
               </Row>
               </Col>
             </Row>
