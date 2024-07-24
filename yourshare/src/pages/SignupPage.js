@@ -11,6 +11,9 @@ export const SignupPage = (props) => {
       <b><h1>YourShare</h1></b>
       
       <h1>Join your community</h1>
+      <p style={{ position: 'relative', left: '20%', transform: 'translateX(-50%)' }}><h2>YourShare</h2></p>
+      
+      
       <img src={logo} className="App-logo" alt="logo" />
 
       <h2>Sign-Up</h2>
@@ -33,6 +36,8 @@ export const SignupPage = (props) => {
       <Link to="/WelcomePage"> Sign-In </Link>
       {/* <p><Button onClick={(e) => props.changePage(pages.WelcomePage)} href="/welcomePage">Join</Button> </p>
       <p onClick={(e) => props.changePage(pages.WelcomePage)}>Sign-in</p> */}
+      {/* <p style={{ textDecoration: 'underline', cursor: 'pointer' }} onClick={(e) => props.changePage(pages.WelcomePage)}>Join</p>
+      <p style={{ textDecoration: 'underline', cursor: 'pointer' }} onClick={(e) => props.changePage(pages.WelcomePage)}>Sign-in</p> */}
     </div>
   );
 };
