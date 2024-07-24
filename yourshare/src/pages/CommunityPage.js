@@ -9,13 +9,17 @@ export const CommunityPage = (props) => {
     
     <div>
 
+
     <div>
 
       
 
     </div>
+
+
     
       <div>
+
 
           <header>
               <h1 class = "ma">
@@ -36,6 +40,12 @@ export const CommunityPage = (props) => {
 
       
       
+
+      <h1>
+      <p onClick={(e) => props.changePage(pages.WelcomePage)}><button><i class = "arrow left">
+          </i>
+          </button>Manage community</p></h1>
+
       <div class = "Friends">
         
         <h2><b>Friends</b></h2>
