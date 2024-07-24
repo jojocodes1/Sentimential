@@ -65,7 +65,7 @@ export const AddItemPage = (props) => {
               <Col sm={3}>
               <Row className="align-items-center">
                 <Col xs="auto"><p><Button href="/welcomePage" variant="outline-light" size="sm">Cancel</Button> </p></Col>
-                <Col xs="auto"><p><Button href="/welcomePage" type="submit" variant="secondary">Add Item</Button> </p></Col>
+                <Col xs="auto"><p><Button href="/welcomePage" type="submit" variant="secondary">Add Item </Button> </p></Col>
               </Row>
               </Col>
             </Row>
