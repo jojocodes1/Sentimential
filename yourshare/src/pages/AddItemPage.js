@@ -5,6 +5,8 @@ import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Col from "react-bootstrap/esm/Col";
+import { Row } from "react-bootstrap";
 
 
 
@@ -23,11 +25,16 @@ export const AddItemPage = (props) => {
           </Nav>
         </Container>
       </Navbar>
+      <Row className="align-items-center">
+            <Col xs="auto"><Button href="/welcomePage" variant="outline-dark">Back</Button></Col>
+            <Col xs="auto"><h1>Add item</h1></Col>
+          </Row>
           
-      <h2>Add Item</h2>
       
 
       <form>
+      <Row className="align-items-center">
+              <Col sm={7}>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         <Form.Label></Form.Label>
         <Form.Control type="Item name" placeholder="Item name" />
@@ -40,14 +47,31 @@ export const AddItemPage = (props) => {
         <Form.Label></Form.Label>
         <Form.Control as="textarea" rows={3}  placeholder="Description"/>
       </Form.Group>
-      <Form.Group controlId="formFileLg" className="mb-3">
-        <Form.Label>Large file input example</Form.Label>
-        <Form.Control type="file" size="lg" />
-      </Form.Group>
-    </form>
 
-    <p><Button href="/welcomePage">Cancel</Button> </p>
-      <p><Button href="/welcomePage" type="submit">Add Item</Button> </p>
+      </Col>
+      <Row className="align-items-center">
+        <Col></Col>
+              <Col sm={4}>
+      <Form.Group controlId="formFileLg" className="mb-3">
+        <Form.Label></Form.Label>
+        <Form.Control type="file" size="sm" />
+      </Form.Group>
+      </Col>
+      </Row>
+      </Row>
+    </form>
+    <Row>
+              <Col></Col>
+              <Col sm={3}>
+              <Row className="align-items-center">
+                <Col xs="auto"><p><Button href="/welcomePage" variant="outline-light" size="sm">Cancel</Button> </p></Col>
+                <Col xs="auto"><p><Button href="/welcomePage" type="submit" variant="secondary">Add Item</Button> </p></Col>
+              </Row>
+              </Col>
+            </Row>
+    
+
+   
 
     </div>
 

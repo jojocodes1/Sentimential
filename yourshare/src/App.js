@@ -15,7 +15,7 @@ export const pages = {
 };
 
 function App() {
-  const [currentPage, setCurrentPage] = React.useState(pages.SignupPage);
+  const [currentPage, setCurrentPage] = React.useState();
 
   const componentToShow = React.useMemo(() => {
     let whichComponentToShow;
