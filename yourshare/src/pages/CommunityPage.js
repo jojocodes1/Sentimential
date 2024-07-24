@@ -1,6 +1,6 @@
-
 import React, { useState } from "react";
-import { pages } from "../App";
+// import { pages } from "../App";
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 
@@ -35,12 +35,22 @@ export const CommunityPage = (props) => {
   };
 
   return (
+
+    
+    
+    // <div>
+
+    // <div>
+
+    //   {/* <p onClick={(e) => props.changePage(pages.WelcomePage)}><button>Welcome Page</button> </p> */}
+    //   <Link to="/WelcomePage"></Link>
+    //   <p>
+    //     Left arrow: <button><i class = "arrow left">
+    //       </i>
     <div className="container mt-4">
       <h1>
-        <p onClick={(e) => props.changePage(pages.WelcomePage)}>
-          <button className="btn btn-light">
-            <i className="arrow left"></i>
-          </button>
+        <Link to="/WelcomePage"> <button className="btn btn-light"> <i className="arrow left"></i> </button> </Link>
+        <p>
           Manage community
         </p>
       </h1>

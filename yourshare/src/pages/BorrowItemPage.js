@@ -1,6 +1,7 @@
 import React from "react";
-import { pages } from "../App";
+// import { pages } from "../App";
 import Form from 'react-bootstrap/Form';
+import { Link } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 import Col from "react-bootstrap/esm/Col";
 import { Row } from "react-bootstrap";
@@ -41,6 +42,10 @@ export const BorrowItemPage = (props) => {
               </Col>
             </Row>
           </Form>
+          {/* <p onClick={(e) => props.changePage("/WelcomePage)}>Request to borrow </p> */}
+          <Link to="/WelcomePage"> Request to borrow </Link>
+          <Link to="/WelcomePage"> Back to welcome </Link>
+          {/* <p onClick={(e) => props.changePage(pages.WelcomePage)}></p> */}
         </div>
     );
 };
