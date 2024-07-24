@@ -1,6 +1,7 @@
 import React from "react";
-import { pages } from "../App";
+// import { pages } from "../App";
 import Form from 'react-bootstrap/Form';
+import { Link } from "react-router-dom";
 
 export const BorrowItemPage = (props) => {
     return (
@@ -23,8 +24,10 @@ export const BorrowItemPage = (props) => {
             <Form.Control as="textarea" rows={3} />
             </Form.Group>
           </Form>
-          <p onClick={(e) => props.changePage(pages.WelcomePage)}>Request to borrow </p>
-          <p onClick={(e) => props.changePage(pages.WelcomePage)}>Back to welcome</p>
+          {/* <p onClick={(e) => props.changePage("/WelcomePage)}>Request to borrow </p> */}
+          <Link to="/WelcomePage"> Request to borrow </Link>
+          <Link to="/WelcomePage"> Back to welcome </Link>
+          {/* <p onClick={(e) => props.changePage(pages.WelcomePage)}></p> */}
         </div>
     );
 };

@@ -1,5 +1,6 @@
 import React from "react";
-import { pages } from "../App";
+// import { pages } from "../App";
+import { Link } from "react-router-dom";
 
 export const CommunityPage = (props) => {
   return (
@@ -10,7 +11,8 @@ export const CommunityPage = (props) => {
 
     <div>
 
-      <p onClick={(e) => props.changePage(pages.WelcomePage)}><button>Welcome Page</button> </p>
+      {/* <p onClick={(e) => props.changePage(pages.WelcomePage)}><button>Welcome Page</button> </p> */}
+      <Link to="/WelcomePage"></Link>
       <p>
         Left arrow: <button><i class = "arrow left">
           </i>
@@ -21,7 +23,7 @@ export const CommunityPage = (props) => {
     
 
       <h1>Manage community</h1>
-      <div class = "Friends">
+      <div className="Friends">
         <h2><b>Friends</b></h2>
  
 
