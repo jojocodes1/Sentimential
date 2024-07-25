@@ -13,60 +13,99 @@ Please make sure to keep those two things in separate folders, so it's easy to s
 
 ## Problem statement
 
-There's value in what communities collectively own today that's untapped. People are likely to buy something they use infrequently and there are barriers to sharing and discovering what's available in friend and community circles. How might we enable individuals to share what they own, reducing waste and creating stronger local communities.
-
-## Summary
-
-Today sharing economy is in the hands of large corporations who operate bike, car, and living sharing marketplaces. Free exchange of goods falls onto platforms based on ad revenue. How do we bring that back down to communities and enable neighbors and friends to get collective benefit of what they own today? YourShare enables individuals to open what they have to their circles. Lenders can post items for sharing and borrowers can find what they need to get a job done. Have a car that you don't drive daily? Have a blender you only use sometime? Post these items and let others share value in what you own. Need a weed wacker to cleanup the block? Check out YourShare to see if a neighbor can chip in. YourShare starts with individuals and grows into a community lending library.
+Currently, the number of media being consumed is parallel to the rise of the mental health crisis. “According to the World Health Organization, the prevalence of mental health problems is increasing at a rate of 13% each year” (National Center of Biotechnology Information, 2023).  As the current global population is about 7 billion people, this equates to over 900 million people who will develop mental health concerns this year alone. Consequently, more people are consulting with mental health professionals  than ever before. However, medical professionals are struggling to receive accurate and consistent information on their patients during consultations. Patients tend to omit critical details, hindering effective diagnosis and treatment. Mind Bridge aids both medical professionals and patients to have a more efficient consultation. Initially the Medical Professional will recommend the patient downloads our product. We will then provide professionals with a list of trends that showcases sentimental analysis from the media the client is consuming. Furthermore, the medical professional will be able to look that all the data provided and make a more accurate diagnosis for the client. All in all, our mission is to aid medical professionals in producing better diagnosis and treatments.
 
 ## Customer profile
 
-YourShare's initial target market is college students and the communities around college and university campuses.
+(who, what, when, why, how)
+Who: Patients: Individuals experiencing mental health challenges, particularly those influenced by media consumption.
 
-* Who - college students and people who live and work in the surrounding communities.
-* What - who don't always have what the need to get something done, nor have the space or money to own a lot.
-* Where - locally, leave physically near one another.
-* Why - in a survey conducted of college students 78% of students responded that they had items they were willing to loan, 82% said that they were interested in borrowing items, and 88% said they'd prefer to borrow and loan items from people they know. (100 students surveyed from colleges and universities across the country)
-* When - as needed, with the flexibility have having access to the right item, tool, or transportation.
-* How - reach out and share through an app.
+Therapists: Mental health professionals (such as psychologists, psychiatrists, counselors) who provide treatment and support to patients.
 
-Cam is a college junior. They just moved into their own apartment. Later in the fall Cam notices the leaves need cleaning up in their elderly neighbors yard. Cam looks to borrow a rake from someone nearby. They're glad they found another neighbor with two rakes and who offered to jump in to help out.
+What: A digital tool/platform designed to:
+Analyze media consumption (e.g., music lyrics) to understand emotional states and provide trends about such.
 
-Stacey is a graduate student. She's accumulated some kitchen appliances as friends have moved away. She only uses them sometimes but isn't ready to give them away. Stacey is looking for any easy way to let friends, and friends of friends, know they can barrow her blender and popcorn air popper whenever they'd like. Stacey is happy that her appliances are getting more ues.
+When: Ongoing use: Mental Health Professionals can use the tool continuously to track their patients’ emotional trends related to the consumed media. 
+Before consultations: Data-driven reports are generated to provide insights before therapy sessions.
 
-Marcos has a car on campus. He uses it occasionally to drive out to the grocery store. Marcos's friends borrow the car frequently. He wants an easy way to manage sharing his ride. Marcos is relieved that some of the stress is taken out of lending is car.
+Why: Addressing the mental health crisis: To help patients and therapists navigate increasing mental health challenges exacerbated by media consumption.
+Enhancing therapeutic outcomes: By providing therapists with deeper insights into patients' emotional states and facilitating personalized care.
+
+Improving efficiency : Streamlining patient information to ensure therapists have accurate and consistent data for consultations and diagnosis rather than just relying on talk therapy.
+
+How: Seamless Onboarding : Patients download the intuitive tool recommended by their medical professionals (MP). Then they get their MP’s code which is unique to each patient and the MP will confirm on their side if that person is their client, then the patient doesn’t have to do anything. The MP will see the trends on their end and then will combine this information with their talk therapy and use it to benefit the patient
+
+Sentiment Analysis: Media consumption is analyzed with patient consent, focusing on emotional trends derived from music lyrics.
+
+Data-Driven Insights: Comprehensive reports are generated, empowering therapists with a deeper understanding of patients' emotional landscapes.
+
+Privacy and Consent/Security: All data handling is conducted with strict confidentiality, prioritizing patient trust.
+
+Professional Integration: Designed to integrate seamlessly into therapists' existing workflows, enhancing their ability to provide empathetic and precise care.
+
 
 ## Goals
 
-* Reduce waste - many appliances are needed infrequently, once or twice a month. In an effort of conservation, borrowing something reduces energy and material used in manufacturing the product and reduces the waste at the end of the product life, preventing one more thing from ending up in the landfill.
-  * Number and variety of items listed on YourShare
-  * User service prompt to measure if it saved a purchase
-* Create local sharing economies - large companies drive the sharing economy today. YourShare gives it back to communities.
-  * Adoption of YourShare with a college or university community area, % of population
-* Improve resiliency of communities - communities that share can depend on another in good times and in times of trial.
-  * Average number of shares over time against economic and health highs and lows
+  What are you improving in the customers' life? How can it be measured?  
+Patient: trust with medical professionals and communication
+Therapist: Getting information about patient and helping give more accurate diagnosis
+Our  initiative aims to significantly enhance the relationship between patients and mental health professionals, addressing fundamental barriers that hinder trust and communication. Historically, patients have struggled to build rapport with MP’s, often viewing them as licensed strangers. Our platform seeks to alleviate this by fostering an environment where patients feel more comfortable opening and establishing trust with their therapists. Simultaneously, we empower MP’s with tools to gather more comprehensive patient information, thereby improving diagnostic accuracy and treatment effectiveness. This addresses common frustrations among patients who feel their medical professionals lack sufficient understanding of their circumstances. To measure our impact, we plan to track metrics such as user engagement, therapist and patient adoption rates, geographic reach, and the overall increase in therapy attendance facilitated by our platform. By focusing on these areas, we aim to not only improve individual patient outcomes but also contribute to broader advancements in mental health care accessibility and efficacy.
+
+Media consumption patterns - what sorts of data and info to potentially be looking for  
+-	Music genres: displaying the different genres of music the patient listens to and how often
+-	Viewing history: which is the most used platform (e.g. songs, podcasts, audiobooks etc.)
+-	Search history: what does the user search for and transcription of the songs that are being searched
+-	Duration and frequency: track amount of time spent on media
+-	Times of day: morning, afternoon, nig
 
 ## In scope
 
-* P0: A user can sign-up for the app
-* P0: A user can post new items
-* P0: A user can browse items
-* P0: A user can request to borrow items
-* P0: A user can add friends and manage permissions
-* P1: A user can manage the items they have posted
-* P1: A user can sort items
-* P2: A user can upload a photo of the item.
-* P2: A user can search for items
-* P2: A user can see items on a map
+*(Target user stories/scenarios)	
+First time opening – Practicing Mental Health Professional:
+
+1.	A user opens the app for the first time and specifies if they are a patient/client or a practicing mental health professional.
+
+2.	A user specifies that they are a practicing mental health professional and is prompted to provide certification
+
+a.	Must agree with terms of agreements for collecting data and permission to send it towards mental health professionals before next step
+
+3.	The practicing mental health professional user’s certification is verified (to prevent misuse)
+
+4.	After verification, the practicing mental health professional is prompted to enter some information
+
+a.	Profile pic
+b.	Small bio (optional)
+c.	Preferred contact method and info
+
+5.	Incorporate emergency crisis feature
+
+Regular use opening – Practicing Mental Health Professional:
+
+1.	A mental health professional user opens the app on a regular day, and is presented with their home page
+
+a.	They are presented with their unique user code which they can give to patients/clients to use this app
+b.	Mental health professional promises to keep and maintain privacy of data of patient agreement
+c.	They press on their profile pic to edit their profile
+d.	They are presented with a list of their patients/clients
+
+2.	A mental health professional opens the app on a regular day and wishes to seek more information on one of their patients/clients
+
+a.	They press that person’s name on the patient/client list presented to them on their home page
+b.	The person’s data is presented to the mental health professional
+
+i.	A list of the different kinds of data is presented
+ii.	The mental health professional taps on a certain kind of data
+iii.	The specific of that data is presented to the mental health professional in a readable manner (graphics?)
+
+Backend
+1.	Get lyrics from Genius API
+2.	Spotify login
+3.	Perform sentiment analysis using established methods
+4.	Display results
 
 ## Out of scope
 
-* A user can schedule the availability of items
-* A user can block a user from borrowing items
-* A user can access default circles based on location
-* A user can see where items are on a map
-* A local community group can integrate their existing lending library
-* A local community group can manage their library
+-	Collect data and implement sentimental analysis on different media sources (podcast, audiobooks, videos) 
 
 ## UX
 
@@ -95,66 +134,44 @@ This screen describes the app navigation, how the screens of the app are connect
 ![Navigation](YourShare-screens/YS_navigation.png)
 
 ## Breakdown of work
+[Prioritization]
+[P0] Display song data, keywords, genre, time listened on Spotify API – Kelly
+[P0] Data pipeline (parsing text data) – design pipeline that fetches data from API, processes it, and sends it to Azure for sentiment analysis -Ayo
+[P0] Using Azure AI for sentiment analysis (default capability of Azure AI)– Frankli n
+[P0] Developing the Initial UI and Navigation between screens - Joel
+[P1] Final presentation of analysis in readable format for mental health professionals- Ugonna
+[P2] Beautifying the appearance of UI/UX (as described in the prototypes)  - Joel
+[Future work] Security and privacy, data encryption to protect patient information, access control to ensure only authorized users can access the data, and compliance with regulation
 
-|  User Story | Engineering Description  | Assigned to  |
-|---|---|---|
-| A user can sign-up for the app  | | Jorge   |
-| A user can post new items  |   | Sam  |
-| A user can request to borrow items  |   | Gina  |
-| ... | ... | ... |
-
-*How is the app being built?, Who's doing the work?*
 
 ## Compete analysis
 
-Competitors of YourShare today include:
-
-* Buy Nothing groups - community groups, often on Facebook, based on address for given away free items. Over 6,000 volunteers and 1.2 million participants.
-* Bike shares like JUMP from Uber - startups that place individual bikes or bike stations around cities to pick up and leave bikes you need. Millions of bike share trips are completed a year.
-* NeighborGoods - a website for loaning and renting goods from your neighbor, no longer in operation.
-* Local lending libraries - individuals host small tool and book libraries. There are about 120 lending tool libraries in the United States.
-
-From the summary of the competitive analysis, the primary strength, weaknesses, opportunities, and threats of YourShare are:
-
-Strengths:
-
-* Better discovery - compiling types of items in one place
-* Control over who has access to items, preferred people, not just internet strangers
-* Can reach outside the U.S., app provides a platform that can be deployed anywhere decentralized from a physical location
-
-Weaknesses:
-
-* Need to generate incentives for lenders to add items to start flywheel of demand from borrowers
-* Depends on goodwill of lenders to post items and borrowers to return items in good condition
-* Won't initially have have many items
-
+Top competitors? Sentiment.io (Spotify sentiment analysis app), Spotify Inc. 
+Strength:
+•	Using Spotify API, trends what the user consumes (times, repeated songs, tracks common words/synonyms).
+•	Providing a larger amount of context than is available through surveys or conversation.
+•	Analyzing large amounts of data and providing trends and other info much faster than a human could.
+•	Could help medical professionals know their patients better
+Weakness:
+•	Information presented by our product could be misinterpreted
 Opportunities:
+•	Could expand to other platforms and perform sentimental analysis to understand patient better
+•	So far, research has revealed no similar products
+•	possibility of expanding past just music, and eventually past just the theme of art and design, analyzing someone’s digital footprint
+Threats: 
+•	Could mishandle data causing privacy issues, such as leakage in information
+•	Users might not trust our product to handle their data safely and securely 
+•	Product could be stolen, minimal differentiation
+•	Irresponsible Ai use
+•	APIs getting taken down
+•	Spotify changing their use policies
 
-* College and universities provide a ready to go community to tap as a lending market
-* Sharing economies are expected to last for many more years, the trend is on the up
-* Some users report being dissatisfied with the safety and privacy on current platforms
 
-Threats:
-
-* Other applications may move to reach college audience, bike shares are scattered across college campuses
-* Already some adoption and use of lending platforms, need to enroll untapped audience
-* Need good local connections to promote and get off the ground
 
 ## Future opportunities
 
-Expand target communities
+In the future, this product holds significant potential to expand into various areas, including integrating with video consumption platforms such as YouTube and Netflix, and social media platforms like Instagram and TikTok. This expansion aims to effectively analyze and trend the user's daily consumption habits.
+These popular platforms provide tools that can be leveraged efficiently. For example, integrating with TikTok will involve tracking not only liked posts and TikTok lives but also conducting semantic analysis on transcriptions to understand content preferences. Additionally, the app will monitor the time spent on the app to provide valuable insights into usage patterns.
+This strategy aligns with the current trends in entertainment and social media application usage, supported by insights gathered from user interviews. The goal is to expand the product's capabilities without compromising its potential to effectively integrate technology into mental health practices
 
-* YouShare's initial release focuses on college and university campus areas. Here there are high densities of populations and existing community identities. YouShare will recruit campus reps to get the application off the ground.
-* After learning and iterating, YourShare could expand to other communities through neighborhood groups, city neighborhood initiatives, and by reaching out to local area leaders bringing YourShare's convincing track record of success.
 
-Incorporating lending libraries
-
-* Some towns and libraries have existing lending programs for items like tools, cake pans, and games.
-* Existing organizations could integrate into YourShare expanding the items available for borrowing and driving traction to other local organizations.
-
-Revenue model
-
-* YourShare will not chase a revenue model of ads or selling user data.
-* YourShare can expand to have chip-in options, leveraging existing methods of mobile payment like Venmo, to allow individuals to contribute to the maintenance and care of goods. YourShare can capture interest on these transactions.
-* YourShare can expand to have a rental option and charge a fee on the transaction. It's an extension of the original value prop, still keeps the sharing locally.
-* YourShare can expand to a subscription model with advance features like geo-tracking service for items, reservation features for popular items, and discounts on rentals.
