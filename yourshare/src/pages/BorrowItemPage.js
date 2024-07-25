@@ -16,7 +16,6 @@ export const BorrowItemPage = (props) => {
           
           <Form>
             <Row className="align-items-center">
-              <Col xs="auto"></Col>
               <Col sm={4}>
               <Form.Group className="mb-3" controlId="Item Name">
                 <Form.Control type="itemInfo" placeholder="Item Name:" />

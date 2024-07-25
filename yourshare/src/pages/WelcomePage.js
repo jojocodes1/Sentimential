@@ -1,7 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export const WelcomePage = (props) => {
+
+  
+  const location = useLocation();
+  const { username } = location.state || { username: "Guest" };
+
   const [items, setItems] = useState([]);
   const [newItem, setNewItem] = useState("");
   const [lentTo, setLentTo] = useState("");
@@ -25,7 +30,7 @@ export const WelcomePage = (props) => {
 
   return (
     <div className="container">
-      <h1>Welcome, [username]!</h1>
+     <h1>Welcome {username}</h1>
 
       <table className="table">
         <thead>
@@ -123,12 +128,7 @@ export const WelcomePage = (props) => {
         </div>
       </div>
       
-      
-      <div>
      
       </div>
-   
-
-    </div>
-  );
+  )
 };
