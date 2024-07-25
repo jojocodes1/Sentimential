@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export const WelcomePage = (props) => {
-
-  
   const location = useLocation();
   const { username } = location.state || { username: "Guest" };
+  const navigate = useNavigate();
 
   const [items, setItems] = useState([]);
   const [newItem, setNewItem] = useState("");
@@ -28,9 +27,13 @@ export const WelcomePage = (props) => {
     }
   };
 
+  const handleBorrowItemClick = () => {
+    navigate("/BorrowItemPage");
+  };
+
   return (
     <div className="container">
-     <h1>Welcome {username}</h1>
+      <h1>Welcome {username}</h1>
 
       <table className="table">
         <thead>
@@ -41,7 +44,20 @@ export const WelcomePage = (props) => {
         </thead>
         <tbody>
           <tr>
-            <td>Blender</td>
+            <td>
+              <button onClick={handleBorrowItemClick}
+              style={{
+                background: "none", 
+                border: "none", 
+                padding: "0", 
+                color: "black", 
+                textDecoration: "", 
+                cursor: "pointer"
+
+              }}
+              
+              >Blender</button>
+            </td>
             <td>Stacey</td>
           </tr>
           <tr>
@@ -127,8 +143,6 @@ export const WelcomePage = (props) => {
           </button>
         </div>
       </div>
-      
-     
-      </div>
-  )
+    </div>
+  );
 };
