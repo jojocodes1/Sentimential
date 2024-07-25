@@ -125,10 +125,7 @@ export const WelcomePage = (props) => {
       
       
       <div>
-      <img src = "lightskin.jpg.jpg" class = 
-      "borderimg"
-    width = "300"
-    height = "300"/>
+     
       </div>
    
 
