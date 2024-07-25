@@ -10,7 +10,7 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-<<<<<<< HEAD
+ HEAD
   .App-logo {
     animation: App-logo-spin infinite 5s linear;
   }
@@ -74,4 +74,14 @@
 
 .ma{
   margin-left: -1000px;
+}
+
+.borderimg{
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+  border: 2px solid;
+  border-color: green;
+  padding: 5px;
+  /* opacity: ; */
 }
