@@ -31,6 +31,8 @@ export const WelcomePage = (props) => {
     navigate("/BorrowItemPage");
   };
 
+
+  
   return (
     <div className="container">
       <h1>Welcome {username}</h1>

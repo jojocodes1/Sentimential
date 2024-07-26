@@ -1,10 +1,29 @@
-import React from "react";
+import React, { createContext, useState, useContext } from "react";
 // import { pages } from "../App";
 import Form from 'react-bootstrap/Form';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 import Col from "react-bootstrap/esm/Col";
 import { Row } from "react-bootstrap";
+
+
+
+export const ItemContext = createContext();
+
+
+export const ItemProvider = ({ children }) => {
+  const [items, setItems] = useState([]);
+
+  return (
+    <ItemContext.Provider value={{ items, setItems }}>
+      {children}
+    </ItemContext.Provider>
+  );
+};
+
+
+
+
 
 export const BorrowItemPage = (props) => {
     return (
