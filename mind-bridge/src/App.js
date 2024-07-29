@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
 import InitialSignInPage from './components/InitialSignInPage.js';
-import logo from './logo.svg';
+import logo from './logo.png';
 
 function App() {
   return (
@@ -10,16 +10,17 @@ function App() {
       <div className="App">
         <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" /> {/* Add logo here */}
-          <h1>Welcome to My App</h1>
+          <h1>Psionic <br></br>Synchronicity</h1>
+          <h3>Select One</h3>
           <nav>
             <ul>
               <li>
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/signup">Sign Up</Link>
+                <Link to="/signup">Sign In</Link>
               </li>
-            </ul>
+              </ul>
           </nav>
         </header>
         <main>
