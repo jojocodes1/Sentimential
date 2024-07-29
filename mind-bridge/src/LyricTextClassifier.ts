@@ -6,34 +6,33 @@ export class LyricTextClassifier{
 
   async Classify(lyric: String): Promise<String> {
 
-    const bodytext = `
-      {
-    "displayName": "Classifying documents",
-    "analysisInput": {
-      "documents": [
-        {
-          "id": "1",
-          "language": "en-us",
-          "text": ${lyric}
-        }
+    const bodytext = {
+      displayName: "Classifying documents",
+      analysisInput: {
+          documents: [
+              {
+                  id: "1",
+                  language: "en-us",
+                  text: lyric
+              }
+          ]
+      },
+      tasks: [
+          {
+              kind: "CustomMultiLabelClassification",
+              taskName: "Multi Label Classification",
+              parameters: {
+                  projectName: "PsionicSync",
+                  deploymentName: "psionicsynctest"
+              }
+          }
       ]
-    },
-    "tasks": [
-       {
-        "kind": "CustomMultiLabelClassification",
-        "taskName": "Multi Label Classification",
-        "parameters": {
-          "projectName": "PsionicSync",
-          "deploymentName": "psionicsynctest"
-        }
-      }
-    ]
-  }`;
+  };
   
     const reqOptions = {
       method: 'POST',
-      headers: { 'Ocp-Apim-Subscription-Key': '0344a2e729204d3b9c7091d9a2fe25fb'},
-      body: bodytext  
+      headers: { 'Ocp-Apim-Subscription-Key': '0344a2e729204d3b9c7091d9a2fe25fb', "Content-Type": "application/json"},
+      body: JSON.stringify(bodytext)
     };
 
     const reqResult = {
@@ -46,11 +45,15 @@ export class LyricTextClassifier{
     if (response.status === 202) {
       //extract url from operation location header field
     const results = await fetch(response.headers['operation-location'], reqResult);
+    console.log(response.headers);
 
 
     //TODO parse results and 
-    const data = results.json;
-    return data["tasks"].items[0].results["documents"]["class"].category;
+    const data = await results.json();
+    //const dataParse = JSON.parse(data);
+    console.log(data);
+    console.log(data["tasks"].items[0].results["documents"]["classes"].category);
+    return data["tasks"].items[0].results["documents"]["classes"].category;
     }
     return 'error';
   };
