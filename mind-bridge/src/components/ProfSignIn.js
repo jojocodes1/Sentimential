@@ -1,5 +1,9 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { getAuth, signInWithEmailAndPassword    } from "firebase/auth";
+import firebaseApp from "../FirbaseConfig/firebase"
+
+const auth = getAuth(firebaseApp);
 
 const ProfSignIn = (props) => {
   const [email, setEmail] = useState('')
@@ -37,6 +41,19 @@ const ProfSignIn = (props) => {
         }
       
         // Authentication calls will be made here...
+        signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            navigate("/editProfilePage")
+            console.log(user);
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage)
+        });
+    //navigate('/editProfPage'); 
     navigate('/editProfilePage'); 
  }
 
