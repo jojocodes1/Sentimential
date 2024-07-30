@@ -53,7 +53,7 @@ const ProfSignUp = (props) => {
           }
       
         // Authentication calls will be made here...
-        navigate('/editProfPage');
+        navigate('/editProfilePage');
 
       
 }

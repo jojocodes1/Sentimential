@@ -34,7 +34,7 @@ const InitialSignInPage = (props) => {
           onClick={onSignUpButtonClick}
           value={'Sign up'}
         />
-        {loggedIn ? <div>Your email address is {email}</div> : <div />}
+        {loggedIn ? <div>Your email address is  {email}</div> : <div />}
       </div>
     </div>
   )
