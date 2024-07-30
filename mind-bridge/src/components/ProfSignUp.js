@@ -39,7 +39,7 @@ const ProfSignUp = (props) => {
         }
       
         if ('' === password) {
-          setPasswordError('Please enter a password')
+          setPasswordError('Please enter a password ')
           return
         }
       
