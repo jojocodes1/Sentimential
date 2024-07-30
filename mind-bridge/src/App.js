@@ -1,4 +1,41 @@
-import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import InitialSignInPage from './components/InitialSignInPage'
+import ProfSignIn from './components/ProfSignIn'
+import ProfSignUp from './components/ProfSignUp'
+import EditProfilePage from './components/EditProfilePage'
+import './App.css'
+import { useEffect, useState } from 'react'
+
+function App() {
+  const [loggedIn, setLoggedIn] = useState(false)
+  const [email, setEmail] = useState('')
+
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/" element={<InitialSignInPage email={email} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
+          />
+          <Route path="/profSignIn" element={<ProfSignIn setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
+          <Route path="/editProfilePage" element={<EditProfilePage  />} />
+          <Route path="/profSignUp" element={<ProfSignUp setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
+
+        </Routes>
+      </BrowserRouter>
+    </div>
+  )
+}
+
+export default App
+
+
+
+
+
+
+
+/*import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
 import InitialSignInPage from './components/InitialSignInPage.js';
@@ -9,7 +46,7 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" /> {/* Add logo here */}
+        <img src={logo} className="App-logo" alt="logo" /> {/* Add logo here }
           <h1>Psionic <br></br>Synchronicity</h1>
           <h3>Select One</h3>
           <nav>
