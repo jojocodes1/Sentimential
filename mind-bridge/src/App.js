@@ -3,8 +3,11 @@ import InitialSignInPage from './components/InitialSignInPage'
 import ProfSignIn from './components/ProfSignIn'
 import ProfSignUp from './components/ProfSignUp'
 import EditProfilePage from './components/EditProfilePage'
+import ProfOverview from './components/ProfOverview'
 import './App.css'
 import { useEffect, useState } from 'react'
+
+
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false)
@@ -20,7 +23,7 @@ function App() {
           <Route path="/profSignIn" element={<ProfSignIn setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
           <Route path="/editProfilePage" element={<EditProfilePage  />} />
           <Route path="/profSignUp" element={<ProfSignUp setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
-
+          <Route path="/ProfOverview" element={<ProfOverview  />} />
         </Routes>
       </BrowserRouter>
     </div>

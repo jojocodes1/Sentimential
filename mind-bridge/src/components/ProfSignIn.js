@@ -54,6 +54,7 @@ const ProfSignIn = (props) => {
             console.log(errorCode, errorMessage)
         });
     //navigate('/editProfPage'); 
+    navigate('/editProfilePage'); 
  }
 
   return (
