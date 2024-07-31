@@ -1,45 +1,59 @@
-
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import logo from '../logo.png';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import logo from '../logo.png'; // Ensure the path to your logo is correct
 
 const InitialSignInPage = (props) => {
-  const { loggedIn, email } = props
-  const navigate = useNavigate()
+  const [role, setRole] = useState('client'); // Default role
+  const navigate = useNavigate();
 
-  const onButtonClick = () => {
-    
-    navigate('/profSignIn');  
-  
-  }
-  const onSignUpButtonClick = () => {
-    
-    navigate('/ProfSignUp')
-  }
+  const handleRoleChange = (newRole) => {
+    setRole(newRole);
+  };
+
+  const handleSignIn = () => {
+    navigate(`/${role}SignIn`);
+  };
+
+  const handleSignUp = () => {
+    navigate(`/${role}SignUp`);
+  };
 
   return (
     <div className="mainContainer">
       <div className={'titleContainer'}>
-      <img src={logo} className="App-logo" alt="logo" /> 
-        <div>Psionic <br></br>Synchronicity</div>
+        <img src={logo} className="App-logo" alt="logo" />
+        <div>Psionic <br />Synchronicity</div>
+      </div>
+      <div className={'roleSelector'}>
+        <button
+          className={`roleButton ${role === 'client' ? 'active' : ''}`}
+          onClick={() => handleRoleChange('client')}
+        >
+          Client
+        </button>
+        <button
+          className={`roleButton ${role === 'prof' ? 'active' : ''}`}
+          onClick={() => handleRoleChange('prof')}
+        >
+          Professional
+        </button>
       </div>
       <div className={'buttonContainer'}>
         <input
           className={'inputButton'}
           type="button"
-          onClick={onButtonClick}
-          value={loggedIn ? 'Log out' : 'Log in'}
+          onClick={handleSignIn}
+          value={`${role.charAt(0).toUpperCase() + role.slice(1)} Log In`}
         />
-         <input
+        <input
           className={'inputButton'}
           type="button"
-          onClick={onSignUpButtonClick}
-          value={'Sign up'}
+          onClick={handleSignUp}
+          value={`${role.charAt(0).toUpperCase() + role.slice(1)} Sign Up`}
         />
-        {loggedIn ? <div>Your email address is  {email}</div> : <div />}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default InitialSignInPage
+export default InitialSignInPage;

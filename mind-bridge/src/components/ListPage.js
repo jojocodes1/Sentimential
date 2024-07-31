@@ -55,7 +55,7 @@ const ListPage = () => {
         <input
           className={'inputButton'}
           type="button"
-          onClick={onButtonClick}
+          //onClick={}
           value={'Remove Client'}
         />
       </div>
