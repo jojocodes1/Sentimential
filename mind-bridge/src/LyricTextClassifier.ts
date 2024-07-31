@@ -1,3 +1,8 @@
+/**
+ * Author: Franklin Munoz
+ * Date of Last Update: 7/30/2024
+ * Description: Class for calling into the rest api for the custom text classification model, contains one method which takes in a string (lyrics) and returns its classification as a string.
+ */
 export class LyricTextClassifier{
 
   //singleton pattern  
