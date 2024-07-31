@@ -65,7 +65,7 @@ function EditProfilePage() {
   };
  
   const handleContinue = () => {
-    navigate('/PatientLandingPage');
+    navigate('/listPage');
   };
  
   return (
