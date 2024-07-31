@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo from '../logo.png'; // Ensure the path to your logo is correct
+import logo from '../logo.png'; // Ensure the path to your logo is correcttt
 
 const InitialSignInPage = (props) => {
   const [role, setRole] = useState('client'); // Default role
