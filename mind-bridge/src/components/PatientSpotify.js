@@ -12,7 +12,7 @@ const PatientSpotify = () => {
 
   return (
     <div>
-      <button className="linc2spot" onClick={handleButtonClick}>Link Spotify Account</button>
+      <button className="linc2spot" onClick={handleButtonClick}>Link Spotify Account </button>
     </div>
   );
 };
