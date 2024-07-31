@@ -4,6 +4,8 @@ import ProfSignIn from './components/ProfSignIn'
 import ProfSignUp from './components/ProfSignUp'
 import EditProfilePage from './components/EditProfilePage'
 import ProfOverview from './components/ProfOverview'
+import PatientSpotify from './components/PatientSpotify'
+
 import './App.css'
 import { useEffect, useState } from 'react'
 import ListPage from './components/ListPage'
@@ -24,6 +26,7 @@ function App() {
           <Route path="/profSignIn" element={<ProfSignIn setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
           <Route path="/editProfilePage" element={<EditProfilePage  />} />
           <Route path="/profSignUp" element={<ProfSignUp setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
+          <Route path="/PatientSpotify" element={<PatientSpotify  />} />
           <Route path="/profOverview" element={<ProfOverview  />} />
           <Route path="/listPage" element={<ListPage  />} />
         </Routes>
