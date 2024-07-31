@@ -1,54 +1,45 @@
 
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import logo from '../logo.png';
 
+const InitialSignInPage = (props) => {
+  const { loggedIn, email } = props
+  const navigate = useNavigate()
 
-
-
-export const InitialSignInPage = () => {
-    return(
-
-import React, { useState } from "react";
-import {Route, Routes} from "react-router-dom";
-
-
-export function InitialSignInPage() {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
+  const onButtonClick = () => {
+    
+    navigate('/profSignIn');  
   
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      // Handle form submission
-      console.log(`Name: ${name}, Email: ${email}`);
-    };
-  
-    return (
-      <div>
-        <h1>Sign Up</h1>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="name">Name:</label>
-            <input
-              type="text"
-              id="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <button type="submit">Sign Up</button>
-        </form>
-      </div>
-    );
-
-
   }
-export default InitialSignInPage;
+  const onSignUpButtonClick = () => {
+    
+    navigate('/ProfSignUp')
+  }
+
+  return (
+    <div className="mainContainer">
+      <div className={'titleContainer'}>
+      <img src={logo} className="App-logo" alt="logo" /> 
+        <div>Psionic <br></br>Synchronicity</div>
+      </div>
+      <div className={'buttonContainer'}>
+        <input
+          className={'inputButton'}
+          type="button"
+          onClick={onButtonClick}
+          value={loggedIn ? 'Log out' : 'Log in'}
+        />
+         <input
+          className={'inputButton'}
+          type="button"
+          onClick={onSignUpButtonClick}
+          value={'Sign up'}
+        />
+        {loggedIn ? <div>Your email address is  {email}</div> : <div />}
+      </div>
+    </div>
+  )
+}
+
+export default InitialSignInPage
