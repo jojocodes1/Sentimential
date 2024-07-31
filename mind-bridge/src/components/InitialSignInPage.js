@@ -1,6 +1,9 @@
+
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import '//firekey.js';
+import logo from '../logo.png';
+
 
 const InitialSignInPage = (props) => {
   const { loggedIn, email } = props
@@ -19,9 +22,9 @@ const InitialSignInPage = (props) => {
   return (
     <div className="mainContainer">
       <div className={'titleContainer'}>
-        <div>Welcome!</div>
+      <img src={logo} className="App-logo" alt="logo" /> 
+        <div>Psionic <br></br>Synchronicity</div>
       </div>
-      <div>This is the home page.</div>
       <div className={'buttonContainer'}>
         <input
           className={'inputButton'}
@@ -35,7 +38,7 @@ const InitialSignInPage = (props) => {
           onClick={onSignUpButtonClick}
           value={'Sign up'}
         />
-        {loggedIn ? <div>Your email address is {email}</div> : <div />}
+        {loggedIn ? <div>Your email address is  {email}</div> : <div />}
       </div>
     </div>
   )
