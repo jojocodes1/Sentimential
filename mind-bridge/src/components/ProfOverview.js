@@ -8,6 +8,14 @@ import firebaseApp from '../FirbaseConfig/firebase'; // Ensure the path is corre
 
 const auth = getAuth(firebaseApp);
 
+const emotionImages = [
+  { src: 'path/to/happy.png', alt: 'Happiness' },
+  { src: 'path/to/sad.png', alt: 'Sadness' },
+  { src: 'path/to/angry.png', alt: 'Anger' },
+  { src: 'path/to/fear.png', alt: 'Fear' },
+  { src: 'path/to/surprise.png', alt: 'Surprise' },
+];
+
 const ProfOverview = () => {
   const [userEmail, setUserEmail] = useState(null);
   const navigate = useNavigate();
@@ -33,66 +41,60 @@ const ProfOverview = () => {
   return (
     <div className="mainContainer">
       <h1>Mind Bridge</h1>
-      <h1> {userEmail}</h1>
-      
+      <h1>{userEmail}</h1>
 
-      <Row xs={1} md={10} className="g-4">
-        {Array.from({ length: 1 }).map((_, idx) => (
-          <Col key={idx}>
-            <Card border="secondary">
-              <Card.Img variant="top" src="holder.js/100px160" />
-              <Card.Body>
-                <Card.Title><h1>Sentiment Analysis Emotion Images</h1></Card.Title>
-                <Card.Text>
-                  <p>Radar Graph of metrics on Top songs</p>
-                  <p>Sentimental Analysis Emotion Chart</p>
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
+      <Row xs={1} md={2} className="g-4">
+        <Col>
+          <Card border="secondary">
+            <Card.Body>
+              <Card.Title><h1>Sentiment Analysis Emotion Images</h1></Card.Title>
+              <Card.Text>
+                <Row xs={1} md={5} className="g-2">
+                  {emotionImages.map((image, idx) => (
+                    <Col key={idx}>
+                      <Card.Img variant="top" src={image.src} alt={image.alt} />
+                      <Card.Text>{image.alt}</Card.Text>
+                    </Col>
+                  ))}
+                </Row>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+                  <br />
+        <Col>
+          <Card border="secondary">
+            <Card.Body>
+              <Card.Title><h1>Common Keywords</h1></Card.Title>
+              <Card.Text>
+                <ul>
+                  <li>Pain</li>
+                  <li>Cry</li>
+                  <li>Happy</li>
+                  <li>Need You</li>
+                </ul>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
       </Row>
       <br />
       <Row xs={1} md={10} className="g-4">
-        {Array.from({ length: 1 }).map((_, idx) => (
-          <Col key={idx}>
-            <Card border="secondary">
-              <Card.Img variant="top" src="holder.js/100px160" />
-              <Card.Body>
-                <Card.Title><h1>Common Keywords</h1></Card.Title>
-                <Card.Text>
-                  <ul>
-                    <li>Pain</li>
-                    <li>Cry</li>
-                    <li>Happy</li>
-                    <li>Need You</li>
-                  </ul>
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
-      </Row>
-      <br />
-      <Row xs={1} md={10} className="g-4">
-        {Array.from({ length: 1 }).map((_, idx) => (
-          <Col key={idx}>
-            <Card border="secondary">
-              <Card.Img variant="top" src="holder.js/100px160" />
-              <Card.Body>
-                <Card.Title><h1>Common Genres</h1></Card.Title>
-                <Card.Text>
-                  <ul>
-                    <li>Pain</li>
-                    <li>Cry</li>
-                    <li>Happy</li>
-                    <li>Need You</li>
-                  </ul>
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
+        <Col>
+          <Card border="secondary">
+            <Card.Body>
+              <Card.Title><h1>Common Genres</h1></Card.Title>
+              <Card.Text>
+                <ul>
+                  <li>Rap</li>
+                  <li>Country</li>
+                  <li>Gospel</li>
+                  <li>Rock</li>
+                </ul>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
       </Row>
 
       <div className={'buttonContainer'}>
