@@ -45,7 +45,7 @@ const ProfSignIn = () => {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password)
       console.log('User signed in:', userCredential.user)
-      navigate('/editProfilePage')
+      navigate('/listPage')
     } catch (error) {
       // Handle errors
       const errorCode = error.code

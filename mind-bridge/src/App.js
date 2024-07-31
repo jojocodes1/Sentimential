@@ -8,6 +8,7 @@ import PatientSpotify from './components/PatientSpotify'
 
 import './App.css'
 import { useEffect, useState } from 'react'
+import ListPage from './components/ListPage'
 
 
 
@@ -25,8 +26,9 @@ function App() {
           <Route path="/profSignIn" element={<ProfSignIn setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
           <Route path="/editProfilePage" element={<EditProfilePage  />} />
           <Route path="/profSignUp" element={<ProfSignUp setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
-          <Route path="/ProfOverview" element={<ProfOverview  />} />
           <Route path="/PatientSpotify" element={<PatientSpotify  />} />
+          <Route path="/profOverview" element={<ProfOverview  />} />
+          <Route path="/listPage" element={<ListPage  />} />
         </Routes>
       </BrowserRouter>
     </div>
@@ -115,7 +117,7 @@ import React from "react";
 import "./App.css";
 import InitialSignInPage from "./components/InitialSignInPage";
 
-function App() {
+async function App() {
   return (
     <div className="App-header">
       <InitialSignInPage />
