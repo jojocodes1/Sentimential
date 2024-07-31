@@ -7,7 +7,7 @@ const PatientSpotify = () => {
 
   const handleButtonClick = () => {
     //route to sign up, change to patientspotify to see page
-    navigate('/profSignUp'); 
+    navigate(); 
   };
 
   return (
