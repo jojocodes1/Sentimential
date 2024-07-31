@@ -5,6 +5,10 @@ import ProfSignUp from './components/ProfSignUp'
 import EditProfilePage from './components/EditProfilePage'
 import ProfOverview from './components/ProfOverview'
 import PatientSpotify from './components/PatientSpotify'
+
+import PatientLandingPage from './components/PatientLandingPage'
+
+
 import './App.css'
 import { useEffect, useState } from 'react'
 import ListPage from './components/ListPage'
@@ -28,7 +32,11 @@ function App() {
           <Route path="/PatientSpotify" element={<PatientSpotify  />} />
           <Route path="/profOverview" element={<ProfOverview  />} />
           <Route path="/listPage" element={<ListPage  />} />
+
           <Route path="/patientSignIn" element={<PatientSignIn  />} />
+
+
+          <Route path="/PatientLandingPage" element={<PatientLandingPage  />} />
 
         </Routes>
       </BrowserRouter>

@@ -118,3 +118,22 @@ body {
   transform: translateY(-10%);
 
 }
+
+.dis4rmspot {
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: black;
+  border-radius: 12px;
+  margin: 0;
+  position: relative; /* Changed from absolute to relative */
+  top: 0;
+  transform: translateY(0);
+}
+
+.patientbox {
+  background-color: lightgrey;
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+}
