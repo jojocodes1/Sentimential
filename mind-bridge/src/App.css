@@ -33,6 +33,10 @@ body {
   color: #61dafb;
 }
 
+.titlofpsionic{
+  text-shadow: 2px 1px 1px grey;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -125,15 +129,20 @@ body {
   background-color: black;
   border-radius: 12px;
   margin: 0;
-  position: relative; /* Changed from absolute to relative */
+  position: relative; 
   top: 0;
   transform: translateY(0);
 }
 
 .patientbox {
   background-color: lightgrey;
-  width: 300px;
-  border: 15px solid green;
+  width: 500px;
+  border: 15px solid black;
   padding: 50px;
   margin: 20px;
+
+  top: 50%;
+  left:50%;
+  margin-left: 500px;
+  margin-top: 320px;
 }
