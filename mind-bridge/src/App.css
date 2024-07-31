@@ -102,3 +102,17 @@
   border: 1px solid grey;
   padding-left: 8px;
 }
+
+.linc2spot {
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: black;
+  border-radius: 12px;
+
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-10%);
+  transform: translateY(-10%);
+
+}

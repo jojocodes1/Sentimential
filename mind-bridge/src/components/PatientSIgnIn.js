@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 
 
+
 function App(){
 
     const [items, setItems] = useState([]);
@@ -18,7 +19,7 @@ function App(){
 <html>
 
     <meta chasrset="utf-8">
-    I love MindBridge
+   
     </meta>
 
 <div>
@@ -26,7 +27,8 @@ function App(){
             <div>
                 <h1>
 
-                    Ayo
+
+                   
                 </h1>
 
             </div>

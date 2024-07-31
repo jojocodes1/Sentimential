@@ -14,7 +14,7 @@ const InitialSignInPage = (props) => {
   }
   const onSignUpButtonClick = () => {
     
-    navigate('/ProfSignUp')
+    navigate('/profSignUp');
   }
 
   return (
