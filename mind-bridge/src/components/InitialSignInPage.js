@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import logo from '../logo.png'; // Ensure the path to your logo is correcttt
 
 const InitialSignInPage = (props) => {
-  const [role, setRole] = useState('client'); // Default role
+  const [role, setRole] = useState('Patient'); // Default role
   const navigate = useNavigate();
 
   const handleRoleChange = (newRole) => {
@@ -26,10 +26,10 @@ const InitialSignInPage = (props) => {
       </div>
       <div className={'roleSelector'}>
         <button
-          className={`roleButton ${role === 'client' ? 'active' : ''}`}
-          onClick={() => handleRoleChange('client')}
+          className={`roleButton ${role === 'Patient' ? 'active' : ''}`}
+          onClick={() => handleRoleChange('Patient')}
         >
-          Client
+          Patient
         </button>
         <button
           className={`roleButton ${role === 'prof' ? 'active' : ''}`}
