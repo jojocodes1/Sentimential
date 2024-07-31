@@ -14,6 +14,8 @@ const PatientLandingPage = () => {
     <div>
       <div className="patientbox">
         <h1>Medical Professional</h1>
+        <br></br>
+        <br></br>
         <button className="dis4rmspot" onClick={handleButtonClick}>Disconnect Spotify Account</button>
       </div>
     </div>

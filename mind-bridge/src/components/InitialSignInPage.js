@@ -22,7 +22,7 @@ const InitialSignInPage = (props) => {
     <div className="mainContainer">
       <div className={'titleContainer'}>
         <img src={logo} className="App-logo" alt="logo" />
-        <div>Psionic <br />Synchronicity</div>
+        <div class = "titlofpsionic">Psionic <br />Synchronicity</div>
       </div>
       <div className={'roleSelector'}>
         <button
