@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import '/firekey.js';
 
 const InitialSignInPage = (props) => {
   const { loggedIn, email } = props
