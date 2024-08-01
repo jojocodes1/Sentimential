@@ -34,7 +34,10 @@ body {
 }
 
 .titlofpsionic{
-  text-shadow: 2px 1px 1px grey;
+  color: #000000;
+  line-height: 5rem;
+  font-family: 'Roboto Mono', monospace;
+  text-shadow: 1px 1px 1px black;
 }
 
 @keyframes App-logo-spin {

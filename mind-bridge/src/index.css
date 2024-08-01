@@ -41,6 +41,13 @@ code {
     monospace;
 }
 
+.roleButton{
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: black;
+  border-radius: 10px;
+}
+
 input[type='button'] {
   border: none;
   background: cornflowerblue;
