@@ -58,6 +58,4 @@ export class clientListeningClassification{
         const jsonString = JSON.stringify(obj);
         return jsonString;
     }
-
-
 }
