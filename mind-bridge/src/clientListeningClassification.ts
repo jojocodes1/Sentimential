@@ -47,14 +47,17 @@ export class clientListeningClassification{
     }
     
     /**
-     * updates map to match counters
+     * updates map to match counters and returns the map as a json string
      */
-    public updateMap(): void {
+    public updateMap(): string {
         this.emotionMap.set("Joy", this.joyCounter);
         this.emotionMap.set("Sadness", this.sadnessCounter);
         this.emotionMap.set("Fear", this.fearCounter);
         this.emotionMap.set("Anger", this.angerCounter);
+        const obj = Object.fromEntries(this.emotionMap);
+        const jsonString = JSON.stringify(obj);
+        return jsonString;
     }
 
-    
+
 }
