@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+body {
+  font-family: 'Cinzel', serif;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -29,6 +31,10 @@
 }
 .App-link {
   color: #61dafb;
+}
+
+.titlofpsionic{
+  text-shadow: 2px 1px 1px grey;
 }
 
 @keyframes App-logo-spin {
@@ -101,4 +107,42 @@
   border-radius: 8px;
   border: 1px solid grey;
   padding-left: 8px;
+}
+
+.linc2spot {
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: black;
+  border-radius: 12px;
+
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-10%);
+  transform: translateY(-10%);
+
+}
+
+.dis4rmspot {
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: black;
+  border-radius: 12px;
+  margin: 0;
+  position: relative; 
+  top: 0;
+  transform: translateY(0);
+}
+
+.patientbox {
+  background-color: lightgrey;
+  width: 500px;
+  border: 15px solid black;
+  padding: 50px;
+  margin: 20px;
+
+  top: 50%;
+  left:50%;
+  margin-left: 500px;
+  margin-top: 320px;
 }
