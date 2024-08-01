@@ -1,9 +1,8 @@
 .App {
   text-align: center;
+  background-color: #8390a0;
 }
-body {
-  font-family: 'Cinzel', serif;
-}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -14,6 +13,8 @@ body {
     animation: App-logo-spin infinite 20s linear;
   }*/
 }
+
+
 
 .App-header {
   background-color: #5a5f65;
