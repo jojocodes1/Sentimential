@@ -7,13 +7,14 @@ const PatientSpotify = () => {
 
   const handleButtonClick = () => {
     //route to sign up, change to patientspotify to see page
-    navigate('/PatientLandingPage'); 
+    //navigate only works with other pages within react
+    window.location.href = 'https://accounts.spotify.com/authorize?';
   };
 
   return (
     <div>
       <button className="linc2spot" onClick={handleButtonClick}>Link Spotify Account </button>
-      
+
     </div>
   );
 };

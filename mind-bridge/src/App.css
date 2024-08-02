@@ -161,3 +161,18 @@
 .card-body {
   padding: 0;
 }
+
+.inputButton{
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: black;
+  border-radius: 10px;
+  
+}
+
+input.inputButton{
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: black;
+  border-radius: 10px;
+}
