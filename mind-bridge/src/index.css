@@ -60,3 +60,20 @@ input[type='button'] {
   border-radius: 8px;
   cursor: pointer;
 }
+
+/* Dimmed added functions*/
+.roleButton.dimmed {
+  opacity: 0.5;
+}
+
+.roleButton.active {
+  opacity: 1;
+}
+
+.inputButton {
+  display: none;
+}
+
+.buttonContainer .inputButton {
+  display: inline-block;
+}
