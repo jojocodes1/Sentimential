@@ -1,39 +1,48 @@
+/**
+ * Author: Franklin Munoz
+ * Date of Last Update: 7/30/2024
+ * Description: Class for calling into the rest api for the custom text classification model, contains one method which takes in a string (lyrics) and returns its classification as a string.
+ */
+
+const delay = ms => new Promise( res => setTimeout(res, ms));
+
 export class LyricTextClassifier{
 
   //singleton pattern  
   public static I = new LyricTextClassifier();
   private constructor() { };
 
-  async Classify(lyric: String): Promise<String> {
+  
 
-    const bodytext = `
-      {
-    "displayName": "Classifying documents",
-    "analysisInput": {
-      "documents": [
-        {
-          "id": "1",
-          "language": "en-us",
-          "text": ${lyric}
-        }
+  async Classify(lyric: String ): Promise<String> {
+
+    const bodytext = {
+      displayName: "Classifying documents",
+      analysisInput: {
+          documents: [
+              {
+                  id: "1",
+                  language: "en-us",
+                  text: lyric
+              }
+          ]
+      },
+      tasks: [
+          {
+              kind: "CustomMultiLabelClassification",
+              taskName: "Multi Label Classification",
+              parameters: {
+                  projectName: "PsionicSync",
+                  deploymentName: "psionicsynctest"
+              }
+          }
       ]
-    },
-    "tasks": [
-       {
-        "kind": "CustomMultiLabelClassification",
-        "taskName": "Multi Label Classification",
-        "parameters": {
-          "projectName": "PsionicSync",
-          "deploymentName": "psionicsynctest"
-        }
-      }
-    ]
-  }`;
+  };
   
     const reqOptions = {
       method: 'POST',
-      headers: { 'Ocp-Apim-Subscription-Key': '0344a2e729204d3b9c7091d9a2fe25fb'},
-      body: bodytext  
+      headers: { 'Ocp-Apim-Subscription-Key': '0344a2e729204d3b9c7091d9a2fe25fb', "Content-Type": "application/json"},
+      body: JSON.stringify(bodytext)
     };
 
     const reqResult = {
@@ -41,18 +50,21 @@ export class LyricTextClassifier{
         headers: { 'Ocp-Apim-Subscription-Key': '0344a2e729204d3b9c7091d9a2fe25fb'}  
     };
   
-    const response = await fetch('https://psionicsynctc.cognitiveservices.azure.com/language/analyze-text/jobs?api-version=2022-05-01', reqOptions);
+    return new Promise((resolve) => {
+      fetch('https://psionicsynctc.cognitiveservices.azure.com/language/analyze-text/jobs?api-version=2022-05-01', reqOptions).then((response)=> {
 
-    if (response.status === 202) {
-      //extract url from operation location header field
-    const results = await fetch(response.headers['operation-location'], reqResult);
+        delay(3000).then(()=>{
+          const operationLocation = response.headers.get('operation-location')!;
 
-
-    //TODO parse results and 
-    const data = results.json;
-    return data["tasks"].items[0].results["documents"]["class"].category;
-    }
-    return 'error';
+        fetch(operationLocation, reqResult).then((response)=> {
+          response.json().then((json) => {
+            const result = json['tasks'].items[0].results.documents[0].class[0].category;
+            resolve(result);
+          });
+        });
+        });
+      });
+    });
   };
 
 };

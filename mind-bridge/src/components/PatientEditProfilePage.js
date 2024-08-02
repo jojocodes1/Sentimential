@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 const auth = getAuth(firebaseApp);
 const storage = getStorage(firebaseApp);
  
-function EditProfilePage() {
+function PatientEditProfilePage() {
   const [userEmail, setUserEmail] = useState(null);
   const [bio, setBio] = useState('');
   const [profilePic, setProfilePic] = useState(null);
@@ -65,7 +65,7 @@ function EditProfilePage() {
   };
  
   const handleContinue = () => {
-    navigate('/listPage');
+    navigate('/PatientSpotify');
   };
  
   return (
@@ -98,5 +98,5 @@ function EditProfilePage() {
   );
 }
  
-export default EditProfilePage;
+export default PatientEditProfilePage;
  
