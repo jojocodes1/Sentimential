@@ -18,38 +18,43 @@ export class clientListeningClassification{
             ["Joy", 0],
             ["Sadness", 0],
             ["Fear", 0],
-            ["Anger", 0],
+            ["Anger", 0],   
         ]);
     }
 
     /**
      * classifies text and updates counters
      */
-    public classifyThis(toClassify: string): void {
-        LyricTextClassifier.I.Classify(toClassify).then((result) => {
-            switch (result) {
-                case 'Joy':
-                    this.joyCounter += 1;
-                    break;
-                case 'Sadness':
-                    this.sadnessCounter += 1;
-                    break;
-                case 'Fear':
-                    this.fearCounter += 1;
-                    break;
-                case 'Anger':
-                    this.angerCounter += 1;
-                    break;
-                default:
-                    console.log("HELP HELP SOMETHINGS WRONG OH NO SOMETHING WENT HORRIBLY WRONG");
-            }
-          });
+    public classifyThis(toClassify: string): Promise<void> {
+
+        return new Promise(resolve => {
+            LyricTextClassifier.I.Classify(toClassify).then((result) => {
+                switch (result) {
+                    case 'Joy':
+                        this.joyCounter += 1;
+                        break;
+                    case 'Sadness':
+                        this.sadnessCounter += 1;
+                        break;
+                    case 'Fear':
+                        this.fearCounter += 1;
+                        break;
+                    case 'Anger':
+                        this.angerCounter += 1;
+                        break;
+                    default:
+                        console.log("HELP HELP SOMETHINGS WRONG OH NO SOMETHING WENT HORRIBLY WRONG");
+                }
+                resolve();
+              });
+        });
+        
     }
     
     /**
      * updates map to match counters and returns the map as a json string
      */
-    public updateMap(): string {
+    public getMap(): string {
         this.emotionMap.set("Joy", this.joyCounter);
         this.emotionMap.set("Sadness", this.sadnessCounter);
         this.emotionMap.set("Fear", this.fearCounter);
@@ -58,6 +63,4 @@ export class clientListeningClassification{
         const jsonString = JSON.stringify(obj);
         return jsonString;
     }
-
-
 }
