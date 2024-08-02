@@ -50,13 +50,13 @@ const InitialSignInPage = (props) => {
 
       <div className={'roleSelector'}>
         <button
-          className={`roleButton ${role === 'Patient' ? 'active' : ''}`}
+          className={`roleButton ${role === 'Patient' ? '' : ''}`}
           onClick={(event) => handleRoleChange('Patient', event)}
         >
           Patient
         </button>
         <button
-          className={`roleButton ${role === 'prof' ? 'active' : ''}`}
+          className={`roleButton ${role === 'prof' ? '' : ''}`}
           onClick={(event) => handleRoleChange('prof', event)}
         >
           Professional
