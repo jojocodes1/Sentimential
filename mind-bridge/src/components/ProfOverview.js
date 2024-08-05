@@ -8,6 +8,8 @@ import firebaseApp from '../FirbaseConfig/firebase'; // Ensure the path is corre
 import { clientListeningClassification } from "../clientListeningClassification.ts";
 import { Bar, Radar } from 'react-chartjs-2';
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, RadarController, RadialLinearScale, PointElement, LineElement } from 'chart.js';
+import logo from '../logo.png'; // playlist_comp.png Ensure the path to your logo is correct
+
 
 const auth = getAuth(firebaseApp);
 
@@ -623,21 +625,21 @@ const radarChartData = {
   datasets: [
     {
       label: 'acousticness',
-      data: [0.7, 1, 0.9],
+      data: [7, 1, 9],
       backgroundColor: 'rgba(255, 99, 132, 0.2)',
       borderColor: 'rgba(255, 99, 132, 1)',
       borderWidth: 2,
     },
     {
       label: 'danceability',
-      data: [1, 0.6, 0.8],
+      data: [1, 6, 8],
       backgroundColor: 'rgba(54, 162, 235, 0.2)',
       borderColor: 'rgba(54, 162, 235, 1)',
       borderWidth: 2,
     },
     {
       label: 'energy',
-      data: [.8, 0.7, 0.6],
+      data: [8, 9, 1],
       backgroundColor: 'rgba(75, 192, 192, 0.2)',
       borderColor: 'rgba(75, 192, 192, 1)',
       borderWidth: 2,
@@ -651,7 +653,7 @@ const radarChartData = {
     },
     {
       label: 'instrumentalness',
-      data: [6, 8, 4],
+      data: [2, 8, 4],
       backgroundColor: 'rgba(255, 218, 185, 0.2)', // Peach Puff
       borderColor: 'rgba(255, 218, 185, 1)',       // Darker Peach
       borderWidth: 2,
@@ -729,8 +731,8 @@ const ProfOverview = () => {
 
   return (
     <div className="mainContainer">
-      <h1 className="text-center">Mind Bridge</h1>
-      <h2 className="text-center">{userEmail}</h2>
+      <h1 className="text-center">Psionic Synchronicity</h1>
+      
 
       <Row className="justify-content-center">
         <Col xs={12} md={5} lg={5} className="mb-4">
@@ -745,29 +747,14 @@ const ProfOverview = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col xs={12} md={5} lg={5} className="mb-4">
+        <Col xs={100} md={15} lg={20} className="mb-4">
           <Card border="secondary" className="text-center">
             <Card.Body>
               <Card.Title><h1>Sentiment Radar Chart</h1></Card.Title>
               <Card.Text>
                 <div className="radar-chart-container">
-                  <Radar data={radarChartData} options={{ responsive: true }} />
+                <img src={logo} className="card-logo" alt="logo" />
                 </div>
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col xs={12} md={5} lg={5} className="mb-4">
-          <Card border="secondary" className="text-center">
-            <Card.Body>
-              <Card.Title><h1>Common Genres</h1></Card.Title>
-              <Card.Text>
-                <ul className="list-unstyled">
-                  <li>Rap</li>
-                  <li>Country</li>
-                  <li>Gospel</li>
-                  <li>Rock</li>
-                </ul>
               </Card.Text>
             </Card.Body>
           </Card>

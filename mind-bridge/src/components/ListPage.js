@@ -32,8 +32,8 @@ const ListPage = () => {
 
   return (
     <div className="mainContainer">
-      <h1>Mind Bridge</h1>
-      <h1> {userEmail}</h1>
+      <h1> Psionic Synchronicity </h1>
+    
       
 
       <Row xs={1} md={10} className="g-4">
@@ -43,13 +43,18 @@ const ListPage = () => {
               <Card.Body>
                 <Card.Title><h1>Clients</h1></Card.Title>
                 <Card.Text>
-                  <ul>
-                    <li>Client 1</li>
-                    <li>Client 2</li>
-                    <li>Client 3</li>
-                    <li>Client 4</li>
-                    <li>Client 5</li>
-                  </ul>
+                  <ol>
+                    <li>John Doe</li>
+                    <li>Eli Manning</li>
+                    <li>Aliza Bell</li>
+                    <li>Kelly Smith</li>
+                    <li>Daniel Cunning</li>
+                    <li>John Doe</li>
+                    <li>Eli Manning</li>
+                    <li>Aliza Bell</li>
+                    <li>Kelly Smith</li>
+                    <li>Daniel Cunning</li>
+                  </ol>
                   <div className={''}>
                     <div className={'buttonContainer'}>
         <input
@@ -63,7 +68,7 @@ const ListPage = () => {
           className={''}
           type="button"
           onClick={onButtonClick}
-          value={'See  Overview'}
+          value={'See Overview'}
         />
       </div>
                 </Card.Text>

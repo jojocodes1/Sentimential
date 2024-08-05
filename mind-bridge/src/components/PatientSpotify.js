@@ -1,20 +1,26 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../App.css'; // Ensure the correct path to the CSS file
+import { useNavigate } from 'react-router-dom'; // Import if needed for internal routing
+import '../App.css'; // Ensure the path to the CSS file is correct
 
 const PatientSpotify = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); 
 
   const handleButtonClick = () => {
-    //route to sign up, change to patientspotify to see page
-    //navigate only works with other pages within react
-    window.location.href = 'https://accounts.spotify.com/authorize?';
+    // Redirect to an external URL
+    window.location.href = 'http://localhost:8888'; 
   };
 
-  return (
-    <div>
-      <button className="linc2spot" onClick={handleButtonClick}>Link Spotify Account </button>
+  const onButtonClick = () => {
+    navigate('/patientLandingPage');  
+  }
 
+  return (
+    <div className="button-container">
+      <button  onClick={handleButtonClick}>
+        Link Spotify Account
+      </button>
+
+      <button  type='button' onClick={onButtonClick}>Continue</button>
     </div>
   );
 };
