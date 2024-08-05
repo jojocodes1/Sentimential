@@ -1278,60 +1278,137 @@ You know it, you know it (Ooh)
 Yeah, we got it goin' on, got it goin' on (Girl, we got it)
 Don't it feel so good to be us? Ayy (Baby)
 Yeah, we got it goin' on, got it goin' on (Woo)
-You know it, you know it`,
-`
-My baby want a Birkin, she's been tellin' me all night long
+You know it, you know it`, `Same bed, but it feels just a little bit bigger now
+Our song on the radio, but it don't sound the same
+When our friends talk about you, all it does is just tear me down
+'Cause my heart breaks a little when I hear your name
+It all just sounds like (Ooh, ooh)
+Mm, too young, too dumb to realize
+That I should've bought you flowers
+And held your hand
+Shoulda gave you all my hours
+When I had the chance
+Take you to every party
+'Cause all you wanted to do was dance
+Now my baby's dancin'
+But she's dancin' with another man
+Uh, my pride, my ego, my needs, and my selfish ways
+Caused a good, strong woman like you to walk out my life
+Now I'll never, never get to clean up the mess I made, oh
+And that haunts me every time I close my eyes
+It all just sounds like (Ooh, ooh)
+Mm, too young, too dumb to realize
+That I should've bought you flowers
+And held your hand
+Shoulda gave you all my hours
+When I had the chance
+Take you to every party
+'Cause all you wanted to do was dance
+Now my baby's dancin'
+But she's dancin' with another man
+Although it hurts
+I'll be the first to say that
+I was wrong
+Oh, I know I'm probably much too late
+To try and apologize for my mistakes
+But I just want you to know
+I hope he buys you flowers
+I hope he holds your hand
+Give you all his hours
+When he has the chance
+Take you to every party
+'Cause I remember how much you love to dance
+Do all the things I should've done
+When I was your man
+Do all the things I should've done
+When I was your man`, `Let's take our time tonight, girl
+Above us all the stars are watchin'
+There's no place I'd rather be in this world
+Your eyes are where I'm lost in
+Underneath the chandelier
+We're dancin' all alone
+There's no reason to hide
+What we're feelin' inside
+Right now
+So, baby, let's just turn down the lights
+And close the door
+Oooh I love that dress
+But you won't need it anymore
+No, you won't need it no more
+Let's just kiss 'til we're naked, baby
+Versace on the floor
+Oooh take it off for me, for me, for me, for me now, girl
+Versace on the floor
+Oooh take it off for me, for me, for me, for me now, girl
+Now I unzip the back to watch it fall
+While I kiss your neck and shoulders
+No, don't be afraid to show it all
+I'll be right here ready to hold you
+Girl, you know you're perfect from
+Your head down to your heels
+Don't be confused by my smile
+'Cause I ain't ever been more for real, for real
+So just turn down the lights
+And close the door
+Oooh I love that dress
+But you won't need it anymore
+No, you won't need it no more
+Let's just kiss 'til we're naked, baby
+Versace on the floor
+Oooh take it off for me, for me, for me, for me now, girl
+Versace on the floor
+Oooh take it off for me, for me, for me, for me now, girl
+Dance
+It's warmin' up
+Can you feel it?
+It's warmin' up
+Can you feel it?
+It's warmin' up
+Can you feel it, baby?
+It's warmin' up
+Oh, seems like you're ready for more, more, more
+Let's just kiss 'til we're naked
+Versace on the floor
+Hey, baby
+Take it off for me, for me, for me, for me now, girl
+Versace on the floor
+Oooh take it off for me, for me, for me, for me now, girl
+Versace on the floor
+Floor
+Floor`, `My baby want a Birkin, she's been tellin' me all night long
 Gasoline and groceries, the list goes on and on
 This nine-to-five ain't workin', why the hell do I work so hard?
 I can't worry 'bout my problems, I can't take 'em when I'm gone, uh
-
-
 One, here comes the two to the three to the four
 Tell 'em "Bring another round," we need plenty more
 Two-steppin' on the table, she don't need a dance floor
 Oh my, good Lord
-
-
 Someone pour me up a double shot of whiskey
 They know me and Jack Daniеl's got a history
 There's a party downtown near 5th Street
 Evеrybody at the bar gettin' tipsy
-
-
 Everybody at the bar gettin' tipsy
 Everybody at the bar gettin' tipsy
-
-
 I've been Boozey since I left
 I ain't changin' for a check
 Tell my ma, I ain't forget (Oh Lord), I
 Woke up drunk at 10 a.m.​
 We gon' do this shit again
 Tell your girl to bring a friend, oh Lord
-
-
 One, here comes the two to the three to the four
 Tell 'em "Bring another round," we need plenty more
 Two-steppin' on the table, she don't need a dance floor
 Oh my, good Lord
-
-
 Someone pour me up a double shot of whiskey (Double shot of whiskey)
 They know me and Jack Daniel's got a history (We go way back)
 There's a party downtown near 5th Street
 Everybody at the bar gettin' tipsy
-
-
 Everybody at the bar gettin' tipsy (At the bar gettin' tipsy)
 Everybody at the bar gettin' tipsy
-
-
 One, here comes the two to the three to the four
 When it's last call and they kick us out the door
 It's gettin' kind of late, but the ladies want some more
 Oh my, good Lord (Tell 'em drinks on me)
-
-
 Someone pour me up a double shot of whiskey (Double shot of whiskey)
 They know me and Jack Daniel's got a history (Way back)
 There's a party downtown near 5th Street (Come on)
@@ -1340,92 +1417,152 @@ Someone pour me up a double shot of whiskey (Double shot of whiskey)
 They know me and Jack Daniel's got a history (It's Jack D)
 At the bottom of a bottle, don't miss me (Baby, don't miss me)
 Everybody at the bar gettin' tipsy (At the bar gettin' tipsy)
-
-
 Everybody at the bar gettin' tipsy
 Everybody at the bar gettin' tipsy
-
-
-That's fuckin' messed up, bro, they kicked me out the bar`,
-`Tonight
-I just wanna take you higher
-Throw your hands up in the sky
-Let's set this party off right
-Players
-
-Put your pinky rings up to the moon
-Girls, what y'all tryna do?
-24-karat magic in the air
-Head to toe so player
-Look out, uh
-
-Pop-pop, it's show time (Show time), show time (Show time)
-Guess who's back again? (Brrah)
-Oh, they don't know? (Go on, tell 'em) Oh, they don't know? (Go on, tell 'em)
-I bet they know as soon as we walk in (Showin' up)
-Wearin' Cuban links (Yeah), designer minks (Yeah)
-Inglewood's finest shoes (Woop, woop)
-Don't look too hard, might hurt yourself
-Known to give the color red the blues
-Woo, shit
-
-
-I'm a dangerous man with some money in my pocket (Keep up)
-So many pretty girls around me and they wakin' up the rocket (Keep up)
-Why you mad? Fix your face, ain't my fault they all be jockin' (Keep up)
-Players only, come on
-
-
-Put your pinky rings up to the moon
-Girls, what y'all tryna do?
-24-karat magic in the air
-Head to toe so player
-Look out, uh
-
-Second verse for the hustlers (Hustlers), gangsters (Gangsters)
-Bad bitches and your ugly ass friends (Haha)
-Can I preach? (Uh-oh) Can I preach? (Uh-oh)
-I gotta show 'em how a pimp get it in
-First, take your sip (Sip), do your dip (Dip)
-Spend your money like money ain't shit
-Ooh-ooh (We too fresh)
-Got to blame it on Jesus (Hashtag blessed)
-They ain't ready for me, uh
-
-
-I'm a dangerous man with some money in my pocket (Keep up)
-So many pretty girls around me and they wakin' up the rocket (Keep up)
-Why you mad? Fix your face, ain't my fault they all be jockin' (Keep up)
-Players only, come on
-
-
-Put your pinky rings up to the moon (Woo, hey, girls)
-What y'all tryna do? (What you tryna do?)
-24-karat magic in the air (Air, air)
-Head to toe so player (Ooh)
-Look out, uh
-
-
-(Woo) Everywhere I go, they be like (Ooh, so player)
-(Woo) Everywhere I go, they be like (Ooh, so player; ah)
-(Woo) Everywhere I go, they be like (Ooh, so player, ooh)
-Now, now, now
-Now watch me break it down like, ugh
-24-karat (Woo), 24-karat magic (What's that sound?)
-24-karat, 24-karat magic (Come on now)
-24-karat, 24-karat magic
-Don't fight the feelin', invite the feelin', just
-
-
-Put your pinky rings up to the moon (Ooh)
-Girls, what y'all tryna do? (Tell me what you're tryna do)
-24-karat magic in the air (Yeah, get up)
-Head to toe so player (Hands up)
-Put your pinky rings up to the moon (24-karat, 24-karat magic)
-Girls, what y'all tryna do? (24-karat, 24-karat magic; do)
-24-karat magic in the air (24-karat, 24-karat magic)
-Head to toe so player (24-karat)
-Look out, uh (24-karat magic)`];
+That's fuckin' messed up, bro, they kicked me out the bar`, `Drop top Porsche (Porsche), Rollie on my wrist (Wrist)
+Diamonds up and down my chain (Aha)
+Cardi B, straight stuntin', can't tell me nothin'
+Bossed up and I changed the game (You see me?)
+It's my big Bronx boogie, got all them girls shook (Shook)
+My big fat ass got all them boys hooked (Hooked)
+Went from dollar bills, now we poppin' rubber bands (Ha)
+Bruno sang to me while I do my money dance like
+Ayy, flexin' on the 'Gram like
+Ayy, hit the Lil Jon
+Okay (Okay), okay (Okay)
+Oh yeah, we drippin' in finesse and gettin' paid, ow
+Ooh, don't we look good together?
+There's a reason why they watch all night long (All night long, woo)
+Yeah, I know we'll turn heads forever
+So tonight, I'm gonna show you off
+When I walk in with you (When I walk in with you)
+I watch the whole room change (I watch the whole room change)
+Baby, that's what you do (Baby, that's what you do)
+No, my baby don't play (No)
+Blame it on my confidence or blame it on your measurements
+Shut the shit down on sight
+That's right
+We out here drippin' in finesse
+It don't make no sense
+Out here drippin' in finesse
+You know it, you know
+We out here drippin' in finesse
+It don't make no sense
+Out here drippin' in finesse
+You know it, you know it
+Now, slow it down for me, baby (Slow it down, girl)
+'Cause I love the way it feels when we grind (When we grind), yeah
+Our connection's so magnetic on the floor
+Nothing can stop us tonight
+When I walk in with you (When I walk in with you)
+I watch the whole room change (I watch the whole room change)
+Baby, that's what you do (Baby, that's what you do)
+No, my baby don't play (No)
+Blame it on my confidence or blame it on your measurements
+Shut the shit down on sight
+That's right
+We out here drippin' in finesse
+It don't make no sense
+Out here drippin' in finesse
+You know it, you know
+We out here drippin' in finesse
+It don't make no sense
+Out here drippin' in finesse
+You know it, you know it (Woo)
+Fellas, grab your ladies if your lady fine
+Tell her she the one, she the one for life (Woo)
+Ladies, grab your fellas and let's do this right (Do this right)
+If you're on one like me and mine (Ow)
+Yeah, we got it goin' on, got it goin' on
+Don't it feel so good to be us? Ayy
+Yeah, we got it goin' on, got it goin' on, yeah
+Girl, we got it goin' on
+Yeah, we got it goin' on, got it goin' on (Hey, hey)
+Don't it feel so good to be us? Ayy (It feels so good with you)
+Yeah, we got it goin' on, got it goin' on, yeah (Woo)
+We out here drippin' in finesse (We drippin' on 'em)
+It don't make no sense
+Out here drippin' in finesse
+You know it, you know it
+We out here drippin' in finesse with my baby
+It don't make no sense (Oh-oh)
+Out here drippin' in finesse (Yeah, yeah)
+You know it, you know it (Girl, you know we got it goin' on)
+Yeah, we got it goin' on, got it goin' on
+Don't it feel so good to be us? Ayy
+Yeah, we got it goin' on, got it goin' on
+You know it, you know it (Ooh)
+Yeah, we got it goin' on, got it goin' on (Girl, we got it)
+Don't it feel so good to be us? Ayy (Baby)
+Yeah, we got it goin' on, got it goin' on (Woo)
+You know it, you know it`, `Yeah, yeah, Pluto
+I don't hang with rats, that's some new type shit
+Get a nigga whacked on the news type shit
+Sippin' drank and Actavis on some Screw type shit
+Just a sad ho runnin' through the crew type shit
+I got a bad bitch at home, voodoo type shit
+Take down Meg Thee Stallions by the group type shit
+That's some thick shit, I just thought you knew type shit
+I just tricked off, I don't just usually do this type of shit
+Pockets racked up, all blue type shit
+Bunch of rich niggas, hoes get confused type shit
+Atlanta nigga, I live like Ted Turner type shit
+On camera, knockin' jaws loose typе shit
+I canceled her, kick hеr out the stu' type shit
+A silent hitter, I just keep it cool with you bitches
+A solid nigga, countin' dog food type shit
+Movin' through the city with your boo type shit
+She's ready to suck it up like soup type shit
+You goin' against the guys and you gon' lose type shit
+Pray to God they knock you out your shoes type shit (Type shit)
+Pop it, pop it, right up out the blue type shit
+Put the Double O in a mood
+Serotonin, that's a cool type mix
+Oxycontin, mix it with balloons (Alright)
+East Atlanta feelin' like a zoo type mix (Open up)
+Shawty, shawty strippin', takin' shrooms
+Eatin' all the Percs, on some food type shit (Open up)
+Shawty make it work, 9-to-5 type shit (Open up)
+Eatin' all the Perkies, on some food type shit (Open up)
+Eatin' all the Perkies, on some food type shit (Going up)
+All the homies crushin' on some fool type— (Going up)
+Floodin' out the spot, it's like a pool type mix (Add it up)
+All the homies crushin' on some fool type shit (Going up)
+All the homies crushin' on some fool type— (Open up)
+Eatin' all the Perkies, on some food type shit
+Feelin' so high, I'm on the moon type shit
+Kick the slow flow, jitsu type shit (Open it up, add it up)
+Red lock in my dreadlocks, I'm on bool type shit (Fuck it up, add it up)
+Cook a nigga up like food type shit (Fuck it up, fuck it up)
+Posted up with my dogs, Scooby Doo type shit (Fuck it up, woo)
+She grippin' all on my balls, I gotta move type shit
+Diamonds, they cover my flaws, I'm actin' brand new type shit
+Hundred round drum, make it burst, soundin' like a nuke type shit
+All of my jeans is saggin', I think I'm over tight shit
+Put the ho down with the gang, now she think she my manager type shit
+Shawty thought she was the one, I will forever have a boss bitch
+The presi' set on me plain, I'm on some naked type shit
+Eighty-one thou' for the teeth, I still ain't smiling for this bitch
+This ho think she better than me? She on that IG model shit
+Shawty said I'm a superhero, so how the fuck I'ma hide from shit?
+Bitch give me dome in the back, she on her bobblehead type shit
+All I want is ass and titties, I ain't got no type, shit
+Sippin' on drank, Pluto, hold up
+Sippin' my drank, Metro
+Sittin' right here with my yayo type shit
+Might put some diamonds in my gloves, woah, on my Mike shit
+What the fuck y'all talking about bodies for? Y'all just type shit (Pluto)
+I don't hang with rats, that's some new type shit (New type shit)
+Get a nigga whacked on the news type shit
+Sippin' drank and Actavis on some Screw type shit
+Just a sad ho runnin' through the crew type shit
+I got a bad bitch at home, voodoo type shit
+Take down Meg Thee Stallions by the group type shit
+Tags all over my shirt, uh, rockstar type shit (Open it up, open it up)
+Molly all in my dreads, uh, Rasta type shit (Open it up, open it up)
+'Bout to take a ho to Turks, she a monster type shit (Type shit)
+She don't speak no English, money talk type shit
+She fuck me, ran her mouth 'cause I'm a boss type shit (Woo)`];
 const dummy = new clientListeningClassification("bob");
 
 // Register the necessary components for Bar and Radar charts
