@@ -60,7 +60,7 @@ const ListPage = () => {
         />
       </div>
         <input
-          className={'inputButton'}
+          className={''}
           type="button"
           onClick={onButtonClick}
           value={'See  Overview'}
