@@ -59,6 +59,10 @@ export class clientListeningClassification{
         this.emotionMap.set("Sadness", this.sadnessCounter);
         this.emotionMap.set("Fear", this.fearCounter);
         this.emotionMap.set("Anger", this.angerCounter);
+        this.joyCounter = 0;
+        this.sadnessCounter = 0;
+        this.fearCounter = 0;
+        this.angerCounter = 0;
         const obj = Object.fromEntries(this.emotionMap);
         const jsonString = JSON.stringify(obj);
         return jsonString;

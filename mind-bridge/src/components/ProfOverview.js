@@ -692,7 +692,7 @@ const ProfOverview = () => {
       const jsonData = JSON.parse(dummyMap);
     
       setBarCharData({
-        labels: ['Joy',  'Sadness', 'Anger', 'Fear' ],
+        labels: ['Joy', 'Sadness', 'Anger', 'Fear' ],
         datasets: [
           {
             label: 'Amount of Songs',
