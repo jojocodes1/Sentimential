@@ -1,3 +1,4 @@
+/* Original CSS styles */
 .App {
   text-align: center;
   background-color: #8390a0;
@@ -7,14 +8,6 @@
   height: 40vmin;
   pointer-events: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  /*.App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }*/
-}
-
-
 
 .App-header {
   background-color: #5a5f65;
@@ -26,15 +19,8 @@
   font-size: calc(10px + 2vmin);
   color: rgb(0, 0, 0);
 }
-.App-logo {
-  height: 40vmin; /* Adjust as needed */
-  pointer-events: none; /* Prevents clicking */
-}
-.App-link {
-  color: #61dafb;
-}
 
-.titlofpsionic{
+.titlofpsionic {
   color: #000000;
   line-height: 5rem;
   font-family: 'Roboto Mono', monospace;
@@ -49,6 +35,7 @@
     transform: rotate(360deg);
   }
 }
+
 .mainContainer {
   flex-direction: column;
   display: flex;
@@ -118,13 +105,11 @@
   font-family: 'Courier New', Courier, monospace;
   background-color: black;
   border-radius: 12px;
-
   margin: 0;
   position: absolute;
   top: 50%;
   -ms-transform: translateY(-10%);
   transform: translateY(-10%);
-
 }
 
 .dis4rmspot {
@@ -133,7 +118,7 @@
   background-color: black;
   border-radius: 12px;
   margin: 0;
-  position: relative; 
+  position: relative;
   top: 0;
   transform: translateY(0);
 }
@@ -144,35 +129,87 @@
   border: 15px solid black;
   padding: 50px;
   margin: 20px;
-
-  top: 50%;
-  left:50%;
-  margin-left: 500px;
-  margin-top: 320px;
-}
-.radar-chart-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: 300px; /* or adjust as needed */
+  justify-content: center;
+  /* Center the patient box */
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.card-body {
+/* New Styles for PatientLandingPage */
+.topTracks {
+  margin-bottom: 20px;
+}
+
+.topTracks ul {
+  list-style-type: none;
   padding: 0;
 }
 
-.inputButton{
-  color: white;
-  font-family: 'Courier New', Courier, monospace;
-  background-color: black;
-  border-radius: 10px;
-  
+.topTracks li {
+  font-size: 1.2em;
+  margin: 5px 0;
 }
 
-input.inputButton{
+.topGenres {
+  width: 100%;
+  max-width: 600px;
+}
+
+.histogram {
+  width: 100%;
+  height: 400px; /* Adjust as needed */
+}
+
+/* General Button styles */
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
   color: white;
   font-family: 'Courier New', Courier, monospace;
   background-color: black;
+  border: none;
   border-radius: 10px;
+  padding: 10px 20px;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 1);
+  transform: scale(1.05);
+}
+
+/* Hotbars */
+.hotbar-container {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.patient-hotbar {
+  background-color: #3a3a3a;
+  color: white;
+}
+
+.professional-hotbar {
+  background-color: #1f1f1f;
+  color: white;
+}
+
+/* Specific styles for hotbar items */
+.hotbar-item {
+  margin: 0 15px;
+  font-size: 16px;
 }

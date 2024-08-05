@@ -689,21 +689,7 @@ const ProfOverview = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col xs={12} md={5} lg={5} className="mb-4">
-          <Card border="secondary" className="text-center">
-            <Card.Body>
-              <Card.Title><h1>Common Genres</h1></Card.Title>
-              <Card.Text>
-                <ul className="list-unstyled">
-                  <li>Rap</li>
-                  <li>Country</li>
-                  <li>Gospel</li>
-                  <li>Rock</li>
-                </ul>
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
+        
       </Row>
 
       <div className={'buttonContainer'}>
