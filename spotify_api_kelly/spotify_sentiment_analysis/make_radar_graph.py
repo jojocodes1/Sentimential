@@ -81,4 +81,5 @@ ax.set_facecolor('#FAFAFA')              # Background color inside the circle it
 ax.set_title('Playlist Comparison', y=1.08)
 ax.legend(loc='upper right', bbox_to_anchor=(1.1, 1.1))
 
-fig.savefig('playlist_comp.png')
+fig.savefig('C:/Users/v-zhangkelly/Downloads/Team14-2024-AppPrototype/mind-bridge/public/playlist_comp.png')
+
