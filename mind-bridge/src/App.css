@@ -4,8 +4,10 @@
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -26,10 +28,7 @@
   font-size: calc(10px + 2vmin);
   color: rgb(0, 0, 0);
 }
-.App-logo {
-  height: 40vmin; /* Adjust as needed */
-  pointer-events: none; /* Prevents clicking */
-}
+
 .App-link {
   color: #61dafb;
 }
@@ -168,11 +167,14 @@
   background-color: black;
   border-radius: 10px;
   
+  
 }
 
-input.inputButton{
-  color: white;
-  font-family: 'Courier New', Courier, monospace;
-  background-color: black;
-  border-radius: 10px;
+
+/* styles.css */
+.card-logo {
+  width: 250px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
