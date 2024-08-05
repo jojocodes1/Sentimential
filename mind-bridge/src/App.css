@@ -3,12 +3,94 @@
   text-align: center;
   background-color: #8390a0;
 }
+/* General container styling */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f8f9fa; /* Light background color */
+}
+
+/* Logo container styling */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 100px; /* Adjust the size as needed */
+  animation: pulsate 1.5s infinite;
+}
+
+/* Pulsating animation for the logo */
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Loading dots styling */
+.loading-dots {
+  display: flex;
+  justify-content: center;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: #007bff; /* Blue color for dots */
+  border-radius: 50%;
+  margin: 0 5px;
+  animation: bounce 1.5s infinite;
+}
+
+.dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Bounce animation for the dots */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+.navbar {
+  width: 100%;
+}
 
+.nav-links {
+  display: flex;
+  flex-direction: row;
+}
+.nav-link {
+  margin-right: 15px;
+}
 .App-header {
   background-color: #5a5f65;
   min-height: 100vh;
@@ -19,6 +101,25 @@
   font-size: calc(10px + 2vmin);
   color: rgb(0, 0, 0);
 }
+.clientList {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  height: calc(100vh - 56px); /* Adjust height minus the navbar height */
+}
+.clientCard {
+  margin-bottom: 15px;
+}
+.userPhoto {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.card-img {
+  width: 80%;
+  height: 200px; /* Adjust height as needed */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
 
 .titlofpsionic {
   color: #000000;
@@ -26,21 +127,17 @@
   font-family: 'Roboto Mono', monospace;
   text-shadow: 1px 1px 1px black;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.content {
+  flex: 1;
+  overflow: auto;
+  padding: 20px
 }
-
 .mainContainer {
   flex-direction: column;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
   height: 100vh;
 }
 
@@ -78,7 +175,10 @@
   justify-content: center;
   height: 260px;
 }
-
+.card-img {
+  height: 180px;
+  object-fit: cover;
+}
 .inputContainer {
   display: flex;
   flex-direction: column;

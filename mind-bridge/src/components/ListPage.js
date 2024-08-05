@@ -4,75 +4,87 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import firebaseApp from '../FirbaseConfig/firebase'; // Ensure the path is correct
+import firebaseApp from '../FirbaseConfig/firebase';
+import { Navbar, Nav } from 'react-bootstrap';
+import a from '../a.jpg';
+import b from '../b.jpg';
+import c from '../c.jpg';
+import d from '../d.jpg';
+import e from '../e.jpg';
+
+import '../App.css';
 
 const auth = getAuth(firebaseApp);
 
 const ListPage = () => {
   const [userEmail, setUserEmail] = useState(null);
+  const [userPhotoURL, setUserPhotoURL] = useState('path/to/default/profile.jpg');
+  const [clients, setClients] = useState([
+    { id: 1, name: 'Client 1', image: a },
+    { id: 2, name: 'Client 2', image: b },
+    { id: 3, name: 'Client 3', image: c },
+    { id: 4, name: 'Client 4', image: d },
+    { id: 5, name: 'Client 5', image: e }
+  ]);
   const navigate = useNavigate();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUserEmail(user.email);
+        setUserPhotoURL(user.photoURL || 'path/to/default/profile.jpg');
         console.log('User:', user);
       } else {
         setUserEmail(null);
       }
     });
 
-    // Clean up subscription on unmount
     return () => unsubscribe();
   }, []);
 
-  const onButtonClick = () => {
-    navigate('/profOverview');  
-  }
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
 
   return (
     <div className="mainContainer">
-      <h1>Mind Bridge</h1>
-      <h1> {userEmail}</h1>
-      
+      <Navbar bg="dark" variant="dark" expand="lg" className="navbar">
+        <Navbar.Brand href="#home">
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto nav-links">
+          <div className="ml-auto d-flex align-items-center">
+            <span className="ml-2 text-light">Welcome: {userEmail}</span>
+          </div>
+            <Nav.Link onClick={() => handleNavigation('/invite')}>Invite Page</Nav.Link>
+            <Nav.Link onClick={() => handleNavigation('/profOverview')}>Prof Overview</Nav.Link>
+            <Nav.Link onClick={() => handleNavigation('/logout')}>Log Out</Nav.Link>
+          </Nav>
+    
+        </Navbar.Collapse>
+      </Navbar>
 
-      <Row xs={1} md={10} className="g-4">
-        {Array.from({ length: 1 }).map((_, idx) => (
-          <Col key={idx}>
-            <Card border="secondary">
+      <div className="content">
+        <div className="clientList">
+          {clients.map((client) => (
+            <Card key={client.id} border="secondary" className="clientCard">
+              <Card.Img className="card-img" variant="top" src={client.image} alt={`Image of ${client.name}`} />
               <Card.Body>
-                <Card.Title><h1>Clients</h1></Card.Title>
+                <Card.Title><h3>{client.name}</h3></Card.Title>
                 <Card.Text>
-                  <ul>
-                    <li>Client 1</li>
-                    <li>Client 2</li>
-                    <li>Client 3</li>
-                    <li>Client 4</li>
-                    <li>Client 5</li>
-                  </ul>
-                  <div className={''}>
-                    <div className={'buttonContainer'}>
-        <input
-          className={'inputButton'}
-          type="button"
-          //onClick={}
-          value={'Remove Client'}
-        />
-      </div>
-        <input
-          className={''}
-          type="button"
-          onClick={onButtonClick}
-          value={'See  Overview'}
-        />
-      </div>
+                  <button
+                    className="btn btn-dark"
+                    onClick={() => handleNavigation('/profOverview')}
+                  >
+                    See Overview
+                  </button>
                 </Card.Text>
               </Card.Body>
             </Card>
-          </Col>
-        ))}
-      </Row>
-      <br />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
