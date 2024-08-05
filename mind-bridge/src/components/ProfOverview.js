@@ -532,7 +532,42 @@ Sweet dreams till sunbeams find you
 Leave the worries behind you
 But in your dreams, whatever may be
 You've gotta make me a promise, promise to me
-You'll dream, dream a little dream of me`];
+You'll dream, dream a little dream of me`, `I'm done dancing with the dead
+I can see their faces melt onto the pavement
+When I dream I can see the end
+I'm the one who makes it
+So close to God that you can taste it
+So close to God that you can almost taste it
+I'm done dancing with the dead
+Heavy lies the crown, bear down on me
+Heavy lies the crown, eternally
+I am king
+I am king
+I'm done dancing with the dead
+I can see their faces melt onto the pavement
+When I dream I can see the end
+I'm the one who makes it
+So close to God that you can taste it
+So close to God that you can almost taste it
+I'm done dancing with the dead
+Witness me
+Eradication of everything
+Behold
+All of the things that you'll never be
+Go
+Spiral down to the bottom of agony
+So close to God that you can taste it
+So close to God that you can almost taste it
+I'm done dancing with the dead
+I'm done dancing with the dead
+I can see their faces melt onto the pavement
+When I dream I can see the end
+I'm the one who makes it
+'Cause I'm done dancing with the dead
+I can see their faces melt onto the pavement
+When I dream I can see the end
+I'm the one who makes it
+So close to God that you can taste it`];
 const dummy = new clientListeningClassification("bob");
 
 // Register the necessary components for Bar and Radar charts
@@ -624,7 +659,7 @@ const ProfOverview = () => {
       const jsonData = JSON.parse(dummyMap);
     
       setBarCharData({
-        labels: ['Joy', 'Sadness', 'Anger', 'Fear' ],
+        labels: ['Joy',  'Sadness', 'Anger', 'Fear' ],
         datasets: [
           {
             label: 'Amount of Songs',
