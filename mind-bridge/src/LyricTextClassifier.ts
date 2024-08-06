@@ -33,7 +33,7 @@ export class LyricTextClassifier{
               taskName: "Multi Label Classification",
               parameters: {
                   projectName: "PsionicSync",
-                  deploymentName: "psionicsynctest"
+                  deploymentName: "psionicSynccurrent"
               }
           }
       ]

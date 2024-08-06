@@ -77,8 +77,10 @@
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 .navbar {
   width: 100%;
@@ -250,66 +252,17 @@
   padding: 0;
 }
 
-.topTracks li {
-  font-size: 1.2em;
-  margin: 5px 0;
-}
-
-.topGenres {
-  width: 100%;
-  max-width: 600px;
-}
-
-.histogram {
-  width: 100%;
-  height: 400px; /* Adjust as needed */
-}
-
-/* General Button styles */
-button,
-input[type="button"],
-input[type="submit"],
-input[type="reset"] {
+.inputButton{
   color: white;
   font-family: 'Courier New', Courier, monospace;
   background-color: black;
-  border: none;
   border-radius: 10px;
-  padding: 10px 20px;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  
 }
 
-button:hover,
-input[type="button"]:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover {
-  box-shadow: 0 0 15px rgba(255, 255, 255, 1);
-  transform: scale(1.05);
-}
-
-/* Hotbars */
-.hotbar-container {
-  display: flex;
-  justify-content: space-between;
-  position: fixed;
-  width: 100%;
-  padding: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.patient-hotbar {
-  background-color: #3a3a3a;
+input.inputButton{
   color: white;
-}
-
-.professional-hotbar {
-  background-color: #1f1f1f;
-  color: white;
-}
-
-/* Specific styles for hotbar items */
-.hotbar-item {
-  margin: 0 15px;
-  font-size: 16px;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: black;
+  border-radius: 10px;
 }

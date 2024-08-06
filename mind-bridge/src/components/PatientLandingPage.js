@@ -59,28 +59,10 @@ const PatientLandingPage = () => {
   return (
     <div className="mainContainer">
       <div className="patientbox">
-        <h1>Medical Professional</h1>
-        <button className="dis4rmspot" onClick={handleButtonClick}>
-          Disconnect Spotify Account
-        </button>
-      </div>
-
-      <div className="content">
-        <div className="topTracks">
-          <h2>Top Tracks</h2>
-          <ul>
-            {topTracks.map((track, index) => (
-              <li key={index}>{track}</li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="topGenres">
-          <h2>Top Genres</h2>
-          <div className="histogram">
-            <Bar data={genreData} options={{ responsive: true, plugins: { legend: { position: 'top' } } }} />
-          </div>
-        </div>
+        <h1> Psionic Synchronicity </h1>
+        <br></br>
+        <br></br>
+        <button className="dis4rmspot" onClick={handleButtonClick}>Disconnect Spotify Account</button>
       </div>
     </div>
   );
