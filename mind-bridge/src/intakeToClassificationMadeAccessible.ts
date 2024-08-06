@@ -3,7 +3,7 @@
  * Date of Last Update: 8/6/2024
  * Description: class which intakes lyric data as an array of multi-line strings and returns a json string of a map for the front end to use to display
  */
-import { clientListeningClassification } from "./clientListeningClassification";
+import { clientListeningClassification } from "./clientListeningClassification.ts";
 
 export class intakeToClassificationMadeAccessible{
     private lyrics;
