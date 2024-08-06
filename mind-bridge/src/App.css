@@ -1,8 +1,9 @@
 /* Original CSS styles */
 .App {
   text-align: center;
-  background-color: #8390a0;
+  background-color: #202020 ;
 }
+/*#8390a0*/
 /* General container styling */
 .loading-container {
   display: flex;

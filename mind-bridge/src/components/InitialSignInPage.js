@@ -35,6 +35,7 @@ const InitialSignInPage = (props) => {
   return (
     <div className="mainContainer">
       <div className={'titleContainer'}>
+        <></>
         <img src={logo} className="App-logo" alt="logo" />
         <div className="titlofpsionic">
           Psionic <br />Synchronicity
