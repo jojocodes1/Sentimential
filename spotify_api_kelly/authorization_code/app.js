@@ -263,8 +263,7 @@ app.get('/callback', (req, res) => {
     }
   
   }
-
-
+  
 
 // async function getBrunoMars(accessToken) {
 //   const response = await fetch('https://api.spotify.com/v1/artists/0du5cEVh5yTK9QJze8zA0C?si=mSDucTY2Rx2IBW6oDzrXQA', { //can do bruno mars and it works, MUST GO TO LOGIN PAGE FIRST
