@@ -110,7 +110,9 @@ app.get('/callback', (req, res) => {
             console.log(body);
           });
   
-          topTracks(access_token);
+          // topTracks(access_token);
+          // topArtists(access_token);
+          getPodcasts(access_token);
   
           res.redirect('/#' + querystring.stringify({
             access_token: access_token,
@@ -150,6 +152,8 @@ app.get('/callback', (req, res) => {
     });
   });
 
+
+  //professional side
   async function topTracks(accessToken) {
     try {
       const response = await fetch('https://api.spotify.com/v1/me/top/tracks', {
@@ -174,7 +178,91 @@ app.get('/callback', (req, res) => {
     } catch (error) {
       console.error('Error fetching top tracks:', error);
     }
-}
+  }
+
+  //client side
+  async function topArtists(accessToken) {
+    try {
+      const response = await fetch('https://api.spotify.com/v1/me/top/artists', {
+        headers: { Authorization: 'Bearer ' + accessToken }
+      });
+
+      const data = await response.json();
+        // Extract track names and artist names
+
+      const artists = data.items.map(artist => ({
+        name: artist.name,
+        genres: artist.genres
+      }));
+
+      console.log(artists); // Display artists for debugging
+    }
+    catch (error) {
+      console.error('Error fetching top artists:', error);
+    }
+  
+  }
+
+  async function userAudiobooks(accessToken) {
+    try {
+      const response = await fetch('https://api.spotify.com/v1/me/audiobooks', {
+        headers: { Authorization: 'Bearer ' + accessToken }
+      });
+
+      const data = await response.json();
+        // Extract audiobook description
+
+      const audiobooks = data.items.map(audiobook => ({
+        name: audiobook.name,
+        description: audiobook.description
+      }));
+
+      console.log(audiobooks); // Display artists for debugging
+    }
+    catch (error) {
+      console.error('Error fetching user audiobooks:', error);
+    }
+  
+  }
+  async function getGenre(accessToken) {
+    try {
+      const response = await fetch('https://api.spotify.com/v1/recommendations/available-genre-seeds', {
+        headers: { Authorization: 'Bearer ' + accessToken }
+      });
+
+      const data = await response.json();
+
+      const getGenre = data.genres;
+        
+      console.log(getGenre); // Display artists for debugging
+    }
+    catch (error) {
+      console.error('Error fetching user getGenres:', error);
+    }
+  
+  }
+
+  async function getPodcasts(accessToken) {
+    try {
+      const response = await fetch('https://api.spotify.com/v1/me/episodes', {
+        headers: { Authorization: 'Bearer ' + accessToken }
+      });
+
+      const data = await response.json();
+        // Extract podcast episode names and descriptions
+
+        const getPodcasts = data.items.map(podcast => ({
+          name: podcast.episode.name,
+          description: podcast.episode.description
+        }));
+
+      console.log(getPodcasts); // Display artists for debugging
+    }
+    catch (error) {
+      console.error('Error fetching user podcasts:', error);
+    }
+  
+  }
 
 
 // async function getBrunoMars(accessToken) {
@@ -190,70 +278,6 @@ app.get('/callback', (req, res) => {
 //   console.log(data);
 // }
 
-// async function getDrake(accessToken) {
-//   const response = await fetch('https://api.spotify.com/v1/artists/3TVXtAsR1Inumwj472S9r4?si=kP-fU28vSvi83-LckOA_ng', { 
-//     headers: {
-//       Authorization: 'Bearer ' + accessToken
-//     }
-//   });
-
-//   console.log("hi drake")
-
-//   const data = await response.json();
-//   console.log(data);
-// }
-
-// async function getMetro(accessToken) {
-//   const response = await fetch('https://api.spotify.com/v1/artists/0iEtIxbK0KxaSlF7G42ZOp?si=T4CCnmzdSZukNoZc2ekLzQ', { 
-//     headers: {
-//       Authorization: 'Bearer ' + accessToken
-//     }
-//   });
-
-//   console.log("hi Metro Boomin")
-
-//   const data = await response.json();
-//   console.log(data);
-// }
-
-// async function getSkeletonWitch(accessToken) {
-//   const response = await fetch('https://api.spotify.com/v1/artists/213mmq3zkNWx7CtfzftTC5?si=pHa9_9EHRUWabpERTJcPvQ', { 
-//     headers: {
-//       Authorization: 'Bearer ' + accessToken
-//     }
-//   });
-
-//   console.log("hi Skeletonwitch")
-
-//   const data = await response.json();
-//   console.log(data);
-// }
-
-// async function getOmah(accessToken) {
-//   const response = await fetch('https://api.spotify.com/v1/artists/5yOvAmpIR7hVxiS6Ls5DPO?si=_BCNA9OfRkyTyKcqgg9vqw', { 
-//     headers: {
-//       Authorization: 'Bearer ' + accessToken
-//     }
-//   });
-
-//   console.log("hi Omah Lay")
-
-//   const data = await response.json();
-//   console.log(data);
-// }
-
-// async function getAsake(accessToken) {
-//   const response = await fetch('https://api.spotify.com/v1/artists/3a1tBryiczPAZpgoZN9Rzg?si=Vs3DQim4SQyVAocYXuh31Q', { 
-//     headers: {
-//       Authorization: 'Bearer ' + accessToken
-//     }
-//   });
-
-//   console.log("hi Asake")
-
-//   const data = await response.json();
-//   console.log(data);
-// }
 
 //OLD STUFF, FOR WHEN WE HARDCODED SONGS
 // const top_tracks = ['Overdue (with Travis Scott)', 'I Know ?', 'A Bar Song (Tipsy)', 'Ric Flair Drip', 'Like That', 'Type Shit'];
@@ -283,6 +307,3 @@ app.listen(8888);
 
 // Run the app.js file in the terminal
 // Creates an access_token specific to the user
-
-
-//TODO: needs to direct to Joel's user stats page
