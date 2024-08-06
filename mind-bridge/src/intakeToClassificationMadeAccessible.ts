@@ -9,11 +9,18 @@ export class intakeToClassificationMadeAccessible{
     private lyrics;
     private lyricCount;
     private lyricMap;
-    constructor(lyrics, size){
+    public static accessible;
+    private constructor(lyrics, size){
         this.lyrics = new Array<String>(size);
         this.lyricCount = size;
     }
-
+    public getInstance(lyrics, size): intakeToClassificationMadeAccessible{
+        if (intakeToClassificationMadeAccessible.accessible == null) {
+            return intakeToClassificationMadeAccessible.accessible = new intakeToClassificationMadeAccessible(lyrics, size);
+        } else {
+            return intakeToClassificationMadeAccessible.accessible;
+        }
+    }
     /**
      * classifies all strings in array and returns string of map
      */
