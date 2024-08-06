@@ -26,7 +26,6 @@ export class clientListeningClassification{
      * classifies text and updates counters
      */
     public classifyThis(toClassify: string): Promise<void> {
-
         return new Promise(resolve => {
             LyricTextClassifier.I.Classify(toClassify).then((result) => {
                 switch (result) {
