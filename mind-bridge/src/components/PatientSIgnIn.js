@@ -45,7 +45,8 @@ const PatientSignIn = () => {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password)
       console.log('User signed in:', userCredential.user)
-      navigate('/listPage')
+      // Navigate to PatientLandingPage
+      navigate('/patientLandingPage')
     } catch (error) {
       // Handle errors
       const errorCode = error.code
@@ -94,14 +95,11 @@ const PatientSignIn = () => {
             className={'inputButton'}
             type="submit"
             value={'Login'}
-            
-          
           />
-            
         </div>
       </form>
     </div>
   )
 }
 
-export default PatientSignIn;
+export default PatientSignIn
