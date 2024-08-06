@@ -8,7 +8,7 @@ import firebaseApp from '../FirbaseConfig/firebase'; // Ensure the path is corre
 import { clientListeningClassification } from "../clientListeningClassification.ts";
 import { Bar, Radar } from 'react-chartjs-2';
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, RadarController, RadialLinearScale, PointElement, LineElement } from 'chart.js';
-import logo from '../logo.png'; // playlist_comp.png Ensure the path to your logo is correct
+// import playlistCompImage from '../../playlist_comp.png'; // playlist_comp.png Ensure the path to your logo is correct
 
 
 const auth = getAuth(firebaseApp);
@@ -753,7 +753,7 @@ const ProfOverview = () => {
               <Card.Title><h1>Sentiment Radar Chart</h1></Card.Title>
               <Card.Text>
                 <div className="radar-chart-container">
-                <img src={logo} className="card-logo" alt="logo" />
+                <img src={`${process.env.PUBLIC_URL}/playlist_comp.png`} className="card-logo" alt="playlist_comp_image" />
                 </div>
               </Card.Text>
             </Card.Body>

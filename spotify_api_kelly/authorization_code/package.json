@@ -7,12 +7,16 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "axios": "^1.7.3",
     "cookie-parser": "1.4.6",
     "cors": "2.8.5",
     "express": "4.18.2",
+    "express-session": "^1.18.0",
     "fs": "^0.0.1-security",
+    "node-fetch": "^2.7.0",
     "node-sessionstorage": "^1.0.0",
     "querystring": "~0.2.0",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "spotify-web-api-node": "^5.0.2"
   }
 }

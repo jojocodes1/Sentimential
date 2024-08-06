@@ -1,175 +1,179 @@
-//import variables from secrets.json file
-
+const SpotifyWebApi = require('spotify-web-api-node');
+const express = require('express');
+const request = require('request');
+const crypto = require('crypto');
+const cors = require('cors');
+const querystring = require('querystring');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const fetch = require('node-fetch');
 const fs = require('fs');
-// Read the secrets.json file
+const { queryGeniusAPI } = require('../genius_api/user_top_songs_genius_query.js');
+
+// Read secrets from file
 const rawData = fs.readFileSync('secrets.json');
-// Parse the JSON data
 const secrets = JSON.parse(rawData);
 
-// Access your API keys
 const spotify_client_id = secrets.spotify_client_id;
 const spotify_client_secret = secrets.spotify_client_secret;
+const redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
 
-// request authorization from the user so that our app can access to the Spotify resources on the user's behalf. 
+const spotifyApi = new SpotifyWebApi({
+  clientId: spotify_client_id,
+  clientSecret: spotify_client_secret,
+  redirectUri: redirect_uri
+});
 
-const sessionStorage = require('node-sessionstorage');
-var express = require('express');
-var request = require('request');
-var crypto = require('crypto');
-var cors = require('cors');
-var querystring = require('querystring');
-var cookieParser = require('cookie-parser');
+// Generate a random state string
+const generateRandomString = (length) => crypto.randomBytes(length).toString('hex');
 
-var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
-
-
-const generateRandomString = (length) => {
-  return crypto
-  .randomBytes(60)
-  .toString('hex')
-  .slice(0, length);
-}
-
-var stateKey = 'spotify_auth_state';
-
-var app = express();
+const app = express();
 
 app.use(express.static(__dirname + '/public'))
    .use(cors())
-   .use(cookieParser());
-
-app.get('/login', function(req, res) {
-
-  var state = generateRandomString(16);
-  res.cookie(stateKey, state);
-
-  // your application requests authorization
-  var scope = 'user-read-private user-read-email';
-  res.redirect('https://accounts.spotify.com/authorize?' +
-    querystring.stringify({
-      response_type: 'code',
-      client_id: spotify_client_id,
-      redirect_uri: redirect_uri,
-      state: state,
-      scope: scope
-    }));
+   .use(cookieParser())
+   .use(session({
+     secret: 'your-session-secret', // Change this to a strong, unique secret
+     resave: false,
+     saveUninitialized: true
+   }));
+   
+app.get('/login', (req, res) => {
+    const state = generateRandomString(16);
+    res.cookie('spotify_auth_state', state);
   
-});
+    const scopes = [
+      'user-library-read',
+      'user-library-modify',
+      'playlist-read-private',
+      'playlist-read-collaborative',
+      'playlist-modify-public',
+      'playlist-modify-private',
+      'user-top-read',
+      'user-follow-read',
+      'user-follow-modify',
+      'user-read-playback-state',
+      'user-modify-playback-state',
+      'user-read-currently-playing',
+      'user-read-private',
+      'user-read-email',
+      'user-read-recently-played',
+      'app-remote-control',
+      'streaming',
+      'ugc-image-upload',
+      'user-read-playback-position'
+    ];
+    
+    const authUrl = spotifyApi.createAuthorizeURL(scopes, state);
+    
+    res.redirect(authUrl);
+  });
 
-app.get('/callback', function(req, res) {
-
-  // your application requests refresh and access tokens
-  // after checking the state parameter
-
-  var code = req.query.code || null;
-  var state = req.query.state || null;
-  var storedState = req.cookies ? req.cookies[stateKey] : null;
-
-  if (state === null || state !== storedState) {
-    res.redirect('/#' +
-      querystring.stringify({
-        error: 'state_mismatch'
-      }));
-  } else {
-    res.clearCookie(stateKey);
-    var authOptions = {
-      url: 'https://accounts.spotify.com/api/token',
-      form: {
-        code: code,
-        redirect_uri: redirect_uri,
-        grant_type: 'authorization_code'
-      },
-      headers: {
-        'content-type': 'application/x-www-form-urlencoded',
-        Authorization: 'Basic ' + (new Buffer.from(spotify_client_id + ':' + spotify_client_secret).toString('base64'))
-      },
-      json: true
-    };
-
-    request.post(authOptions, function(error, response, body) {
-      if (!error && response.statusCode === 200) {
-
-        var access_token = body.access_token,
-            refresh_token = body.refresh_token;
-
-        sessionStorage.setItem('access_token', access_token); //storing into session storage
-
-        var options = {
-          url: 'https://api.spotify.com/v1/me', //log user data
-          headers: { 'Authorization': 'Bearer ' + access_token },
-          json: true
-        };
-
-        // use the access token to access the Spotify Web API
-        request.get(options, function(error, response, body) {
-          console.log(body);
-        });
-
-        
-        let accessToken = sessionStorage.getItem('access_token');
-        topTracks(accessToken);
-        // getBrunoMars(accessToken);
-        // getDrake(accessToken);
-        // getMetro(accessToken);
-        // getSkeletonWitch(accessToken);
-        // getOmah(accessToken);
-        // getAsake(accessToken);
-
-        // we can also pass the token to the browser to make requests from there
-        res.redirect('/#' +
-          querystring.stringify({
+app.get('/callback', (req, res) => {
+    const code = req.query.code || null;
+    const state = req.query.state || null;
+    const storedState = req.cookies ? req.cookies['spotify_auth_state'] : null;
+  
+    if (state === null || state !== storedState) {
+      res.redirect('/#' + querystring.stringify({ error: 'state_mismatch' }));
+    } else {
+      res.clearCookie('spotify_auth_state');
+      
+      const authOptions = {
+        url: 'https://accounts.spotify.com/api/token',
+        form: {
+          code: code,
+          redirect_uri: redirect_uri,
+          grant_type: 'authorization_code'
+        },
+        headers: {
+          'content-type': 'application/x-www-form-urlencoded',
+          Authorization: 'Basic ' + Buffer.from(`${spotify_client_id}:${spotify_client_secret}`).toString('base64')
+        },
+        json: true
+      };
+  
+      request.post(authOptions, (error, response, body) => {
+        if (!error && response.statusCode === 200) {
+          const access_token = body.access_token;
+          const refresh_token = body.refresh_token;
+  
+          req.session.access_token = access_token; // Store token in session
+  
+          const options = {
+            url: 'https://api.spotify.com/v1/me',
+            headers: { 'Authorization': 'Bearer ' + access_token },
+            json: true
+          };
+  
+          request.get(options, (error, response, body) => {
+            console.log(body);
+          });
+  
+          topTracks(access_token);
+  
+          res.redirect('/#' + querystring.stringify({
             access_token: access_token,
             refresh_token: refresh_token
           }));
-      } else {
-        res.redirect('/#' +
-          querystring.stringify({
-            error: 'invalid_token'
-          }));
-      }
-    });
-  }
-});
-
-app.get('/refresh_token', function(req, res) {
-
-  var refresh_token = req.query.refresh_token;
-  var authOptions = {
-    url: 'https://accounts.spotify.com/api/token',
-    headers: { 
-      'content-type': 'application/x-www-form-urlencoded',
-      'Authorization': 'Basic ' + (new Buffer.from(spotify_client_id + ':' + spotify_client_secret).toString('base64')) 
-    },
-    form: {
-      grant_type: 'refresh_token',
-      refresh_token: refresh_token
-    },
-    json: true
-  };
-
-  request.post(authOptions, function(error, response, body) {
-    if (!error && response.statusCode === 200) {
-      var access_token = body.access_token,
-          refresh_token = body.refresh_token;
-      res.send({
-        'access_token': access_token,
-        'refresh_token': refresh_token
+        } else {
+          res.redirect('/#' + querystring.stringify({ error: 'invalid_token' }));
+        }
       });
     }
   });
-});
 
-async function topTracks(accessToken) {
-  const response = await fetch('https://api.spotify.com/v1/me/top/tracks', { //can do bruno mars and it works, MUST GO TO LOGIN PAGE FIRST
-    headers: {
-      Authorization: 'Bearer ' + accessToken
-    }
+
+  app.get('/refresh_token', (req, res) => {
+    const refresh_token = req.query.refresh_token;
+    const authOptions = {
+      url: 'https://accounts.spotify.com/api/token',
+      headers: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'Authorization': 'Basic ' + Buffer.from(`${spotify_client_id}:${spotify_client_secret}`).toString('base64')
+      },
+      form: {
+        grant_type: 'refresh_token',
+        refresh_token: refresh_token
+      },
+      json: true
+    };
+  
+    request.post(authOptions, (error, response, body) => {
+      if (!error && response.statusCode === 200) {
+        const access_token = body.access_token;
+        res.send({
+          access_token: access_token,
+          refresh_token: body.refresh_token
+        });
+      }
+    });
   });
 
-  console.log("hi top tracks")
+  async function topTracks(accessToken) {
+    try {
+      const response = await fetch('https://api.spotify.com/v1/me/top/tracks', {
+        headers: { Authorization: 'Bearer ' + accessToken }
+      });
+  
+      const data = await response.json();
+       // Extract track names and artist names
+      const tracks = data.items.map(track => ({
+        name: track.name,
+        artist: track.artists[0].name // Assuming the first artist is the primary artist
+      }));
+      
+      // console.log(tracks); // Display tracks for debugging
+      
+      // Save tracks to a JSON file
+      fs.writeFileSync('top_tracks.json', JSON.stringify(tracks));
 
-  const data = await response.json();
-  console.log(data);
+      // query Genius API here
+      await queryGeniusAPI(tracks);
+
+    } catch (error) {
+      console.error('Error fetching top tracks:', error);
+    }
 }
 
 
@@ -251,8 +255,9 @@ async function topTracks(accessToken) {
 //   console.log(data);
 // }
 
-const top_tracks = ['Overdue (with Travis Scott)', 'I Know ?', 'A Bar Song (Tipsy)', 'Ric Flair Drip', 'Like That', 'Type Shit'];
-fs.writeFileSync('top_tracks.json', JSON.stringify(top_tracks));
+//OLD STUFF, FOR WHEN WE HARDCODED SONGS
+// const top_tracks = ['Overdue (with Travis Scott)', 'I Know ?', 'A Bar Song (Tipsy)', 'Ric Flair Drip', 'Like That', 'Type Shit'];
+// fs.writeFileSync('top_tracks.json', JSON.stringify(top_tracks));
 
 
 //this part is working, go to new page localhost:8888/artist
