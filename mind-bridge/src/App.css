@@ -260,9 +260,9 @@
   
 }
 
-input.inputButton{
-  color: white;
-  font-family: 'Courier New', Courier, monospace;
-  background-color: black;
-  border-radius: 10px;
+.card-logo {
+  width: 320px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
