@@ -112,7 +112,11 @@ app.get('/callback', (req, res) => {
   
           // topTracks(access_token);
           // topArtists(access_token);
-          getPodcasts(access_token);
+          // userAudiobooks(access_token);
+          // getGenre(access_token);
+          // getPodcasts(access_token);
+          // recentTracks(access_token);
+          savedTracks(access_token); //songs in your liked songs playlist
   
           res.redirect('/#' + querystring.stringify({
             access_token: access_token,
@@ -261,8 +265,50 @@ app.get('/callback', (req, res) => {
     catch (error) {
       console.error('Error fetching user podcasts:', error);
     }
-  
   }
+
+  async function recentTracks(accessToken) {
+    try {
+      const response = await fetch('https://api.spotify.com/v1/me/player/recently-played', {
+        headers: { Authorization: 'Bearer ' + accessToken }
+      });
+  
+      const data = await response.json();
+        // Extract track names and artist names
+      const tracks = data.items.map(track => ({
+        name: track.track.name,
+        artist: track.track.artists[0].name // Assuming the first artist is the primary artist
+      }));
+      
+      console.log(tracks); // Display tracks for debugging
+
+    } catch (error) {
+      console.error('Error fetching top tracks:', error);
+    }
+  }
+
+  async function savedTracks(accessToken) { //songs in your liked songs playlist
+    try {
+      const response = await fetch('https://api.spotify.com/v1/me/tracks?limit=50', {
+        headers: { Authorization: 'Bearer ' + accessToken }
+      });
+  
+      const data = await response.json();
+        // Extract user saved tracks
+      const tracks = data.items.map(track => ({
+        name: track.track.name,
+        artist: track.track.artists[0].name // Assuming the first artist is the primary artist
+      }));
+      
+      console.log(tracks); // Display tracks for debugging
+
+    } catch (error) {
+      console.error('Error fetching top tracks:', error);
+    }
+  }
+  
+
+  
 
 
 // async function getBrunoMars(accessToken) {
