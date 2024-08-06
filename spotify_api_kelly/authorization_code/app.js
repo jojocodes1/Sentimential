@@ -69,7 +69,7 @@ app.get('/login', (req, res) => {
     res.redirect(authUrl);
   });
 
-app.get('/callback', (req, res) => {
+  app.get('/callback', (req, res) => {
     const code = req.query.code || null;
     const state = req.query.state || null;
     const storedState = req.cookies ? req.cookies['spotify_auth_state'] : null;
@@ -78,7 +78,7 @@ app.get('/callback', (req, res) => {
       res.redirect('/#' + querystring.stringify({ error: 'state_mismatch' }));
     } else {
       res.clearCookie('spotify_auth_state');
-      
+  
       const authOptions = {
         url: 'https://accounts.spotify.com/api/token',
         form: {
@@ -93,26 +93,17 @@ app.get('/callback', (req, res) => {
         json: true
       };
   
-      request.post(authOptions, (error, response, body) => {
+      request.post(authOptions, async (error, response, body) => {
         if (!error && response.statusCode === 200) {
           const access_token = body.access_token;
           const refresh_token = body.refresh_token;
   
           req.session.access_token = access_token; // Store token in session
   
-          const options = {
-            url: 'https://api.spotify.com/v1/me',
-            headers: { 'Authorization': 'Bearer ' + access_token },
-            json: true
-          };
-  
-          request.get(options, (error, response, body) => {
-            console.log(body);
-          });
-  
-          // topTracks(access_token);
-          // topArtists(access_token);
-          getPodcasts(access_token);
+          // Fetch and save data
+          await topTracks(access_token);
+          await topArtists(access_token);
+          await getPodcasts(access_token);
   
           res.redirect('/#' + querystring.stringify({
             access_token: access_token,
@@ -124,6 +115,7 @@ app.get('/callback', (req, res) => {
       });
     }
   });
+  
 
 
   app.get('/refresh_token', (req, res) => {
@@ -161,24 +153,26 @@ app.get('/callback', (req, res) => {
       });
   
       const data = await response.json();
-       // Extract track names and artist names
+  
+      // Extract track names and artist names
       const tracks = data.items.map(track => ({
         name: track.name,
         artist: track.artists[0].name // Assuming the first artist is the primary artist
       }));
-      
-      // console.log(tracks); // Display tracks for debugging
-      
+  
       // Save tracks to a JSON file
-      fs.writeFileSync('top_tracks.json', JSON.stringify(tracks));
-
-      // query Genius API here
+      fs.writeFileSync('top_tracks.json', JSON.stringify(tracks, null, 2));
+  
+      console.log('Top tracks saved to top_tracks.json');
+  
+      // Optional: Query Genius API if needed
       await queryGeniusAPI(tracks);
-
+  
     } catch (error) {
       console.error('Error fetching top tracks:', error);
     }
   }
+  
 
   //client side
   async function topArtists(accessToken) {
@@ -186,22 +180,25 @@ app.get('/callback', (req, res) => {
       const response = await fetch('https://api.spotify.com/v1/me/top/artists', {
         headers: { Authorization: 'Bearer ' + accessToken }
       });
-
+  
       const data = await response.json();
-        // Extract track names and artist names
-
+  
+      // Extract artist names and genres
       const artists = data.items.map(artist => ({
         name: artist.name,
         genres: artist.genres
       }));
-
-      console.log(artists); // Display artists for debugging
-    }
-    catch (error) {
+  
+      // Save artists to a JSON file
+      fs.writeFileSync('top_artists.json', JSON.stringify(artists, null, 2));
+  
+      console.log('Top artists saved to top_artists.json');
+  
+    } catch (error) {
       console.error('Error fetching top artists:', error);
     }
-  
   }
+  
 
   async function userAudiobooks(accessToken) {
     try {
@@ -247,22 +244,25 @@ app.get('/callback', (req, res) => {
       const response = await fetch('https://api.spotify.com/v1/me/episodes', {
         headers: { Authorization: 'Bearer ' + accessToken }
       });
-
-      const data = await response.json();
-        // Extract podcast episode names and descriptions
-
-        const getPodcasts = data.items.map(podcast => ({
-          name: podcast.episode.name,
-          description: podcast.episode.description
-        }));
-
-      console.log(getPodcasts); // Display artists for debugging
-    }
-    catch (error) {
-      console.error('Error fetching user podcasts:', error);
-    }
   
+      const data = await response.json();
+  
+      // Extract podcast episode names and descriptions
+      const podcasts = data.items.map(podcast => ({
+        name: podcast.episode.name,
+        description: podcast.episode.description
+      }));
+  
+      // Save podcasts to a JSON file
+      fs.writeFileSync('podcasts.json', JSON.stringify(podcasts, null, 2));
+  
+      console.log('Podcasts saved to podcasts.json');
+  
+    } catch (error) {
+      console.error('Error fetching podcasts:', error);
+    }
   }
+  
   
 
 // async function getBrunoMars(accessToken) {
