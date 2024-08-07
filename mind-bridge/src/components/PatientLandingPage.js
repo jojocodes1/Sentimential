@@ -6,63 +6,93 @@ import '../App.css'; // Ensure the correct path to the CSS file
 
 const PatientLandingPage = () => {
   const [topTracks, setTopTracks] = useState([]);
-  const [topGenres, setTopGenres] = useState({});
+  const [topArtists, setTopArtists] = useState([]);
+  const [topGenres, setTopGenres] = useState([]);
+  const [audiobooks, setAudiobooks] = useState([]);
+  const [podcasts, setPodcasts] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Fetch top tracks and genres from an API or your data source
     async function fetchData() {
-      // Example data fetching; replace with actual API calls
-      const tracksResponse = await fetch('/api/top-tracks');
-      const tracksData = await tracksResponse.json();
-      setTopTracks(tracksData.tracks);
+      try {
+        const tracksResponse = await fetch('/api/top-tracks');
+        const tracksData = await tracksResponse.json();
+        setTopTracks(tracksData.tracks);
 
-      const genresResponse = await fetch('/api/top-genres');
-      const genresData = await genresResponse.json();
-      setTopGenres(genresData.genres);
+        const artistsResponse = await fetch('/api/top-artists');
+        const artistsData = await artistsResponse.json();
+        setTopArtists(artistsData.artists);
+
+        const genresResponse = await fetch('/api/top-genres');
+        const genresData = await genresResponse.json();
+        setTopGenres(genresData.genres);
+
+        const audiobooksResponse = await fetch('/api/audiobooks');
+        const audiobooksData = await audiobooksResponse.json();
+        setAudiobooks(audiobooksData.audiobooks);
+
+        const podcastsResponse = await fetch('/api/podcasts');
+        const podcastsData = await podcastsResponse.json();
+        setPodcasts(podcastsData.podcasts);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
     }
     fetchData();
   }, []);
 
   const handleButtonClick = () => {
-    // Route to sign up, change to patientspotify to see page
-    navigate(''); 
-  };
-/*<Col xs={12} md={5} lg={5} className="mb-4">
-          <Card border="secondary" className="text-center">
-            <Card.Body>
-              <Card.Title><h1>Common Genres</h1></Card.Title>
-              <Card.Text>
-                <ul className="list-unstyled">
-                  <li>Rap</li>
-                  <li>Country</li>
-                  <li>Gospel</li>
-                  <li>Rock</li>
-                </ul>
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>*/
-  const genreData = {
-    labels: Object.keys(topGenres),
-    datasets: [
-      {
-        label: 'Top Genres',
-        data: Object.values(topGenres),
-        backgroundColor: 'rgba(75, 192, 192, 0.6)',
-        borderColor: 'rgba(75, 192, 192, 1)',
-        borderWidth: 1,
-      },
-    ],
+    navigate(''); // Adjust navigation path if needed
   };
 
   return (
     <div className="mainContainer">
       <div className="patientbox">
-        <h1> Psionic Synchronicity </h1>
-        <br></br>
-        <br></br>
+        <h1>Psionic Synchronicity</h1>
+        <br />
+        <br />
         <button className="dis4rmspot" onClick={handleButtonClick}>Disconnect Spotify Account</button>
+        <h2>Top Tracks</h2>
+        <ul>
+          {topTracks.map((track, index) => (
+            <li key={index}>{track.name} by {track.artist}</li>
+          ))}
+        </ul>
+
+        <h2>Top Artists</h2>
+        <ul>
+          {topArtists.map((artist, index) => (
+            <li key={index}>{artist.name} - Genres: {artist.genres.join(', ')}</li>
+          ))}
+        </ul>
+
+        <h2>Top Genres</h2>
+        <Bar
+          data={{
+            labels: topGenres,
+            datasets: [{
+              label: 'Top Genres',
+              data: topGenres.map(() => 1), // Dummy data for display; adjust as needed
+              backgroundColor: 'rgba(75, 192, 192, 0.6)',
+              borderColor: 'rgba(75, 192, 192, 1)',
+              borderWidth: 1,
+            }]
+          }}
+        />
+
+        <h2>Audiobooks</h2>
+        <ul>
+          {audiobooks.map((audiobook, index) => (
+            <li key={index}>{audiobook.name}: {audiobook.description}</li>
+          ))}
+        </ul>
+
+        <h2>Podcasts</h2>
+        <ul>
+          {podcasts.map((podcast, index) => (
+            <li key={index}>{podcast.name}: {podcast.description}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );

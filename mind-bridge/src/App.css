@@ -1,8 +1,96 @@
 /* Original CSS styles */
+/*.App {
+  text-align: center;
+  background-color: #8390a0 ;
+}*/
+/* Original CSS styles */
+/* General App styling */
+/* General App styling */
 .App {
   text-align: center;
-  background-color: #8390a0;
+  background: url('background.png') no-repeat center center fixed; 
+  background-size: cover; /* Ensures the image covers the entire background */
+  color: #87c7fe; /* Adjust text color for better contrast with the background */
+  min-height: 100vh; /* Ensure the container takes up at least the full viewport height */
+  display: flex; /* Use flexbox to center the content */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
 }
+
+/* Logo styling */
+.App-logo {
+  width: 70px; /* Adjusted size to make it smaller */
+  height: auto;
+  position: absolute; /* Position it relative to the nearest positioned ancestor */
+  top: 10px; /* Adjust the top position */
+  left: 10px; /* Adjust the left position */
+}
+
+/* Title container styling */
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  font-size: 64px;
+  font-weight: bolder;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px; /* Ensure space for the logo */
+}
+
+/* Title styling */
+.titlofpsionic {
+  color: #87c7fe; /* Changed color to specified hex */
+  line-height: 5rem;
+  font-family: 'Cinzel', serif;
+  text-shadow: 1px 1px 1px black;
+  margin-bottom: 10px; /* Space below the title */
+}
+
+/* Quote styling */
+.quote {
+  color: white; /* Set text color to white */
+  font-size: 16px; /* Adjust font size */
+  font-style: italic; 
+  text-align: center;
+  max-width: 80%; /* Ensure it doesn't overflow on small screens */
+  margin: 0 auto; /* Center the quote */
+  margin-bottom: 30px; /* Space below the quote */
+}
+
+/* Button styling */
+.inputButton:hover {
+  box-shadow: 0 0 10px rgba(135, 199, 254, 0.7); /* Glow effect on hover */
+}
+
+/* Role buttons styling */
+.roleSelector {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between the buttons */
+}
+.roleButton, .inputButton {
+  color: #151019 !important; /* Button text color */
+  font-family: 'Cinzel', serif !important; /* Use Cinzel font */
+  background-color: #87c7fe !important; /* Button background color */
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase; /* Make the text uppercase for consistency */
+}
+
+.roleButton:hover {
+  box-shadow: 0 0 10px rgba(135, 199, 254, 0.7); /* Glow effect on hover */
+}
+
+/* Dimmed effect for non-selected buttons */
+.dimmed {
+  opacity: 0.6; /* Dimmed effect for non-selected buttons */
+}
+
 /* General container styling */
 .loading-container {
   display: flex;
@@ -10,20 +98,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #f8f9fa; /* Light background color */
-}
-
-/* Logo container styling */
-.logo-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.logo {
-  width: 100px; /* Adjust the size as needed */
-  animation: pulsate 1.5s infinite;
+  background-color: rgba(248, 249, 250, 0.8); /* Light background color with transparency */
 }
 
 /* Pulsating animation for the logo */
@@ -76,111 +151,129 @@
   }
 }
 
-.App-logo {
-  width: auto;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+/* Scrollbar styles for the entire page */
+html, body {
+  height: 100%; /* Ensure body takes full height */
+  margin: 0; /* Remove default margin */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
 }
+
+/* General container and content styles */
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Ensures full viewport height */
+  padding: 20px; /* Add padding for inner content */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.content {
+  overflow: auto; /* Allows scrolling within this element if content overflows */
+  width: 100%; /* Ensure it takes full width */
+  max-width: 1200px; /* Limit the maximum width to avoid overly wide content */
+}
+
+/* Other existing styles */
 .navbar {
-  width: 100%;
+  width: 100vw;
+  position: fixed; /* Fix the navbar at the top of the page */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensure it stays on top of other content */
+  padding: 0; 
+}
+.navbar-logo {
+  width: 70px; /* Adjust logo size as needed */
+  height: auto;
 }
 
 .nav-links {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  gap: 20px; /* Space between nav items */
 }
+
 .nav-link {
   margin-right: 15px;
+  color: #ffffff; /* White color for nav links */
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition */
+}
+
+.nav-link:hover {
+  color: #87c7fe; /* Glowing color on hover */
+  text-shadow: 0 0 10px #87c7fe; /* Glowing effect */
 }
 .App-header {
-  background-color: #5a5f65;
+  background-color: rgba(90, 95, 101, 0.8); /* Semi-transparent background color */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255); /* Light text color */
 }
+
 .clientList {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
   height: calc(100vh - 56px); /* Adjust height minus the navbar height */
 }
+
 .clientCard {
+  display: flex;
+  align-items: center; /* Center items vertically */
   margin-bottom: 15px;
+  padding: 10px; /* Optional: Add padding around the card content */
+  border: 1px solid #ddd; /* Optional: Add border for visual separation */
+  border-radius: 1px; /* Optional: Add border radius for rounded corners */
+  background-color: #f9f9f9;
+}
+  
+
+.cardContent {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  width: 50%;
+}
+.cardDetails {
+  flex: 1; /* Allow the text to take the remaining space */
+}
+
+.cardDetails h3 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 18px; /* Adjust font size as needed */
+}
+
+.cardDetails p {
+  margin: 5px 0; /* Space between paragraphs */
+  font-size: 16px; /* Font size for longer text lines */
+  line-height: 1.5; /* Line height for better readability */
+}
+
+/* Optional: Style the See Overview button */
+.cardDetails .btn {
+  margin-top: 10px; /* Space above the button */
 }
 .userPhoto {
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
+
 .card-img {
   width: 80%;
   height: 200px; /* Adjust height as needed */
   object-fit: cover; /* Ensures the image covers the area without distortion */
+  border-radius: 8px; /* Optional: Add border radius for rounded corners */
+  margin-right: 15px; /* Space between the image and text */
 }
 
-.titlofpsionic {
-  color: #000000;
-  line-height: 5rem;
-  font-family: 'Roboto Mono', monospace;
-  text-shadow: 1px 1px 1px black;
-}
-.content {
-  flex: 1;
-  overflow: auto;
-  padding: 20px
-}
-.mainContainer {
-  flex-direction: column;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  height: 100vh;
-}
-
-.titleContainer {
-  display: flex;
-  flex-direction: column;
-  font-size: 64px;
-  font-weight: bolder;
-  align-items: center;
-  justify-content: center;
-}
-
-.resultContainer,
-.historyItem {
-  flex-direction: row;
-  display: flex;
-  width: 400px;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.historyContainer {
-  flex-direction: column;
-  display: flex;
-  height: 200px;
-  align-items: center;
-  flex-grow: 5;
-  justify-content: flex-start;
-}
-
-.buttonContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 260px;
-}
-.card-img {
-  height: 180px;
-  object-fit: cover;
-}
 .inputContainer {
   display: flex;
   flex-direction: column;
@@ -217,7 +310,7 @@
 .dis4rmspot {
   color: white;
   font-family: 'Courier New', Courier, monospace;
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   border-radius: 12px;
   margin: 0;
   position: relative;
@@ -250,14 +343,6 @@
 .topTracks ul {
   list-style-type: none;
   padding: 0;
-}
-
-.inputButton{
-  color: white;
-  font-family: 'Courier New', Courier, monospace;
-  background-color: black;
-  border-radius: 10px;
-  
 }
 
 .card-logo {

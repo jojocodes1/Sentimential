@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from '../logo.png'; // Ensure the path to your logo is correct
 
@@ -33,20 +33,16 @@ const InitialSignInPage = (props) => {
   };
 
   return (
-    <div className="mainContainer">
-      <div className={'titleContainer'}>
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className="App">
+      <img src={logo} className="App-logo" alt="logo" />
+      <div className="titleContainer">
         <div className="titlofpsionic">
           Psionic <br />Synchronicity
         </div>
+        <div className="quote">
+          "Empowering minds, one connection at a time. Our app bridges the gap between patients and mental health professionals, enriched with resources and media to support every step of the journey."
+        </div>
       </div>
-
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
-        rel="stylesheet"
-      />
 
       <div className={'roleSelector'}>
         <button
