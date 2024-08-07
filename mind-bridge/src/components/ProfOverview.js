@@ -15,6 +15,7 @@ import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, Li
 
 const lyricsData = require('../lyrics_array.json');
 const lyrics_array = lyricsData.lyrics_array;
+console.log('lyrics_array:', lyrics_array);
 
 const auth = getAuth(firebaseApp);
 
@@ -124,7 +125,7 @@ const ProfOverview = () => {
         ],
       });
     });
-  },[]);
+  },);
 
   const [userEmail, setUserEmail] = useState(null);
   const navigate = useNavigate();
