@@ -5,7 +5,8 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import firebaseApp from '../FirbaseConfig/firebase';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav, Container } from 'react-bootstrap';
+import { FaUserCircle } from 'react-icons/fa';
 import logo from '../logo.png'; // Ensure you have the logo image in your assets
 
 import a from '../a.jpg';
@@ -19,11 +20,11 @@ import '../App.css';
 const auth = getAuth(firebaseApp);
 
 const clientsData = [
-  { id: 1, name: 'Sophia Bennett', info: 'Experienced in cognitive-behavioral therapy and mindfulness techniques.', image: a },
-  { id: 2, name: 'Jackson Miller', info: 'Specializes in trauma-informed care and support for anxiety disorders.', image: b },
-  { id: 3, name: 'Olivia Johnson', info: 'Expert in family therapy and child psychology.', image: c },
-  { id: 4, name: 'Liam Smith', info: 'Focuses on stress management and interpersonal relationship counseling.', image: d },
-  { id: 5, name: 'Isabella Davis', info: 'Offers personalized therapy for depression and life transitions.', image: e }
+  { id: 1, name: 'Sophia Bennett', image: a },
+  { id: 2, name: 'Jackson Miller', image: b },
+  { id: 3, name: 'Olivia Johnson', image: c },
+  { id: 4, name: 'Liam Smith', image: d },
+  { id: 5, name: 'Isabella Davis', image: e }
 ];
 
 const ListPage = () => {
@@ -52,42 +53,48 @@ const ListPage = () => {
 
   return (
     <div className="mainContainer">
-      <Navbar bg="dark" variant="dark" expand="lg" className="navbar">
-        <Navbar.Brand href="#home">
-          <img src={logo} alt="Logo" className="navbar-logo" /></Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto nav-links">
-            <span className="text-light mr-3">Patient List</span>
-            <Nav.Link onClick={() => handleNavigation('/invite')}>Invite Page</Nav.Link>
-            <Nav.Link onClick={() => handleNavigation('/logout')}>Log Out</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
+      <Navbar bg="dark" variant="dark" expand="lg" className="navbar py-2 fixed-top">
+        <Container>
+          <Navbar.Brand href="#home" className="d-flex align-items-center">
+            <span className="font-weight-bold">Psionic Synchronicity</span>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ms-auto align-items-center">
+              <Nav.Link onClick={() => handleNavigation('/invite')} className="text-light">Invite</Nav.Link>
+              <Nav.Link onClick={() => handleNavigation('/logout')} className="text-light">Log Out</Nav.Link>
+              <Nav.Link className="d-flex align-items-center">
+                <FaUserCircle className="text-light mr-2" size={24} />
+                <span className="text-light"> DR. ALEXANDER </span>
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
       </Navbar>
 
-      <div className="content">
-        <div className="clientList">
+      <div className="content mt-5 pt-4">
+        <Row xs={1} md={2} className="g-4">
           {clients.map((client) => (
-            <Card key={client.id} border="secondary" className="clientCard">
-  <div className="cardContent">
-    <Card.Img className="card-img" variant="top" src={client.image} alt={`Image of ${client.name}`} />
-    <div className="cardDetails">
-      <Card.Title><b>{client.name}</b></Card.Title>
-      <Card.Text>{client.info}</Card.Text>
-      <Card.Text>
-        <button
-          className="btn btn-dark"
-          onClick={() => handleNavigation('/profOverview')}
-        >
-          See Overview
-        </button>
-      </Card.Text>
-    </div>
-  </div>
-</Card>
-
+            <Col key={client.id}>
+              <Card border="secondary" className="clientCard h-100">
+                <div className="cardContent d-flex flex-column h-100">
+                  <Card.Img className="card-img" variant="top" src={client.image} alt={`Image of ${client.name}`} />
+                  <div className="cardDetails flex-grow-1 d-flex flex-column">
+                    <Card.Title><b>{client.name}</b></Card.Title>
+                    <Card.Text>
+                      <button
+                        className="inputButton"
+                        onClick={() => handleNavigation('/profOverview')}
+                      >
+                        See Overview
+                      </button>
+                    </Card.Text>
+                  </div>
+                </div>
+              </Card>
+            </Col>
           ))}
-        </div>
+        </Row>
       </div>
     </div>
   );
