@@ -9,6 +9,7 @@ const session = require('express-session');
 const fetch = require('node-fetch');
 const fs = require('fs');
 const { queryGeniusAPI } = require('../genius_api/user_top_songs_genius_query.js');
+// const { queryGeniusAPI } = require('../genius_api/songs_to_text.py');
 
 // Read secrets from file
 const rawData = fs.readFileSync('secrets.json');
@@ -110,13 +111,13 @@ app.get('/callback', (req, res) => {
             console.log(body);
           });
   
-          // topTracks(access_token);
-          // topArtists(access_token);
+          topTracks(access_token);
+          topArtists(access_token); // TODO: get rid of genres, put artist names as strings in an array in a json
           // userAudiobooks(access_token);
           // getGenre(access_token);
           // getPodcasts(access_token);
-          // recentTracks(access_token);
-          savedTracks(access_token); //songs in your liked songs playlist
+          recentTracks(access_token);
+          // savedTracks(access_token); //songs in your liked songs playlist
   
           res.redirect('/#' + querystring.stringify({
             access_token: access_token,
@@ -200,6 +201,7 @@ app.get('/callback', (req, res) => {
       }));
 
       console.log(artists); // Display artists for debugging
+      
     }
     catch (error) {
       console.error('Error fetching top artists:', error);
@@ -306,8 +308,6 @@ app.get('/callback', (req, res) => {
       console.error('Error fetching top tracks:', error);
     }
   }
-  
-
   
 
 
