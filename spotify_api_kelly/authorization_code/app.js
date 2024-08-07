@@ -70,7 +70,7 @@ app.get('/login', (req, res) => {
     res.redirect(authUrl);
   });
 
-app.get('/callback', (req, res) => {
+  app.get('/callback', (req, res) => {
     const code = req.query.code || null;
     const state = req.query.state || null;
     const storedState = req.cookies ? req.cookies['spotify_auth_state'] : null;
@@ -79,7 +79,7 @@ app.get('/callback', (req, res) => {
       res.redirect('/#' + querystring.stringify({ error: 'state_mismatch' }));
     } else {
       res.clearCookie('spotify_auth_state');
-      
+  
       const authOptions = {
         url: 'https://accounts.spotify.com/api/token',
         form: {
@@ -94,7 +94,7 @@ app.get('/callback', (req, res) => {
         json: true
       };
   
-      request.post(authOptions, (error, response, body) => {
+      request.post(authOptions, async (error, response, body) => {
         if (!error && response.statusCode === 200) {
           const access_token = body.access_token;
           const refresh_token = body.refresh_token;
@@ -129,6 +129,7 @@ app.get('/callback', (req, res) => {
       });
     }
   });
+  
 
 
   app.get('/refresh_token', (req, res) => {
@@ -166,24 +167,26 @@ app.get('/callback', (req, res) => {
       });
   
       const data = await response.json();
-       // Extract track names and artist names
+  
+      // Extract track names and artist names
       const tracks = data.items.map(track => ({
         name: track.name,
         artist: track.artists[0].name // Assuming the first artist is the primary artist
       }));
-      
-      // console.log(tracks); // Display tracks for debugging
-      
+  
       // Save tracks to a JSON file
-      fs.writeFileSync('top_tracks.json', JSON.stringify(tracks));
-
-      // query Genius API here
+      fs.writeFileSync('top_tracks.json', JSON.stringify(tracks, null, 2));
+  
+      console.log('Top tracks saved to top_tracks.json');
+  
+      // Optional: Query Genius API if needed
       await queryGeniusAPI(tracks);
-
+  
     } catch (error) {
       console.error('Error fetching top tracks:', error);
     }
   }
+  
 
   //client side
   async function topArtists(accessToken) {
@@ -191,10 +194,10 @@ app.get('/callback', (req, res) => {
       const response = await fetch('https://api.spotify.com/v1/me/top/artists', {
         headers: { Authorization: 'Bearer ' + accessToken }
       });
-
+  
       const data = await response.json();
-        // Extract track names and artist names
-
+  
+      // Extract artist names and genres
       const artists = data.items.map(artist => ({
         name: artist.name,
         genres: artist.genres
@@ -206,8 +209,8 @@ app.get('/callback', (req, res) => {
     catch (error) {
       console.error('Error fetching top artists:', error);
     }
-  
   }
+  
 
   async function userAudiobooks(accessToken) {
     try {

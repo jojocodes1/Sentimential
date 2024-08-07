@@ -6,6 +6,8 @@ import Row from 'react-bootstrap/Row';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import firebaseApp from '../FirbaseConfig/firebase';
 import { Navbar, Nav } from 'react-bootstrap';
+import logo from '../logo.png'; // Ensure you have the logo image in your assets
+
 import a from '../a.jpg';
 import b from '../b.jpg';
 import c from '../c.jpg';
@@ -16,16 +18,18 @@ import '../App.css';
 
 const auth = getAuth(firebaseApp);
 
+const clientsData = [
+  { id: 1, name: 'Sophia Bennett', info: 'Experienced in cognitive-behavioral therapy and mindfulness techniques.', image: a },
+  { id: 2, name: 'Jackson Miller', info: 'Specializes in trauma-informed care and support for anxiety disorders.', image: b },
+  { id: 3, name: 'Olivia Johnson', info: 'Expert in family therapy and child psychology.', image: c },
+  { id: 4, name: 'Liam Smith', info: 'Focuses on stress management and interpersonal relationship counseling.', image: d },
+  { id: 5, name: 'Isabella Davis', info: 'Offers personalized therapy for depression and life transitions.', image: e }
+];
+
 const ListPage = () => {
   const [userEmail, setUserEmail] = useState(null);
   const [userPhotoURL, setUserPhotoURL] = useState('path/to/default/profile.jpg');
-  const [clients, setClients] = useState([
-    { id: 1, name: 'Client 1', image: a },
-    { id: 2, name: 'Client 2', image: b },
-    { id: 3, name: 'Client 3', image: c },
-    { id: 4, name: 'Client 4', image: d },
-    { id: 5, name: 'Client 5', image: e }
-  ]);
+  const [clients, setClients] = useState(clientsData);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -50,18 +54,14 @@ const ListPage = () => {
     <div className="mainContainer">
       <Navbar bg="dark" variant="dark" expand="lg" className="navbar">
         <Navbar.Brand href="#home">
-        </Navbar.Brand>
+          <img src={logo} alt="Logo" className="navbar-logo" /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto nav-links">
-          <div className="ml-auto d-flex align-items-center">
-            <span className="ml-2 text-light">Welcome: {userEmail}</span>
-          </div>
+          <Nav className="ml-auto nav-links">
+            <span className="text-light mr-3">Patient List</span>
             <Nav.Link onClick={() => handleNavigation('/invite')}>Invite Page</Nav.Link>
-            <Nav.Link onClick={() => handleNavigation('/profOverview')}>Prof Overview</Nav.Link>
             <Nav.Link onClick={() => handleNavigation('/logout')}>Log Out</Nav.Link>
           </Nav>
-    
         </Navbar.Collapse>
       </Navbar>
 
@@ -69,19 +69,23 @@ const ListPage = () => {
         <div className="clientList">
           {clients.map((client) => (
             <Card key={client.id} border="secondary" className="clientCard">
-              <Card.Img className="card-img" variant="top" src={client.image} alt={`Image of ${client.name}`} />
-              <Card.Body>
-                <Card.Title><h3>{client.name}</h3></Card.Title>
-                <Card.Text>
-                  <button
-                    className="btn btn-dark"
-                    onClick={() => handleNavigation('/profOverview')}
-                  >
-                    See Overview
-                  </button>
-                </Card.Text>
-              </Card.Body>
-            </Card>
+  <div className="cardContent">
+    <Card.Img className="card-img" variant="top" src={client.image} alt={`Image of ${client.name}`} />
+    <div className="cardDetails">
+      <Card.Title><b>{client.name}</b></Card.Title>
+      <Card.Text>{client.info}</Card.Text>
+      <Card.Text>
+        <button
+          className="btn btn-dark"
+          onClick={() => handleNavigation('/profOverview')}
+        >
+          See Overview
+        </button>
+      </Card.Text>
+    </div>
+  </div>
+</Card>
+
           ))}
         </div>
       </div>
