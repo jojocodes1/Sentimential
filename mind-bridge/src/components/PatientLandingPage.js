@@ -102,10 +102,12 @@ const PatientLandingPage = () => {
         </div>
 
         <div className='button-container'>
-          <button className="spotify-button" onClick={handleButtonClick}>
+          <button className="inputButton" onClick={handleButtonClick}>
             <FaSpotify /> Link Spotify Account
           </button>
-          <button className="spotify-button" onClick={handleButtonClick}>
+          <br />
+          <br />
+          <button className="inputButton" onClick={handleButtonClick}>
             <FaSpotify /> Disconnect Spotify
           </button>
         </div>
