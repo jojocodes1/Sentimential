@@ -19,7 +19,7 @@ console.log(lyrics_array);
 const auth = getAuth(firebaseApp);
 
 
-const dummy = new clientListeningClassification("bob");
+const dummy = new clientListeningClassification("patient");
 
 
 // Register the necessary components for Bar and Radar charts
