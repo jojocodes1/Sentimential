@@ -24,11 +24,12 @@ print("songs:", tracks)
 
 LyricsGenius = lyricsgenius.Genius(genius_access_token)
 
-for song in tracks:
-    song = LyricsGenius.search_song(song)
-
-    filename = f'{song.title}'
-    song.save_lyrics(filename = filename, extension='txt', overwrite=True, ensure_ascii=True, sanitize=True, verbose=False) #Saving the lyrics to a JSON file, can also do txt file
+def queryGeniusAPI(tracks):
+    for song in tracks:
+        song = LyricsGenius.search_song(song)
+        print(song.lyrics)
+        filename = f'{song.title}'
+        song.save_lyrics(filename = filename, extension='json', overwrite=True, ensure_ascii=True, sanitize=True, verbose=False) #Saving the lyrics to a JSON file, can also do txt file
 
 # print(song.lyrics)
 # print(artist.songs)

@@ -9,6 +9,7 @@ const session = require('express-session');
 const fetch = require('node-fetch');
 const fs = require('fs');
 const { queryGeniusAPI } = require('../genius_api/user_top_songs_genius_query.js');
+// const { queryGeniusAPI } = require('../genius_api/songs_to_text.py');
 
 // Read secrets from file
 const rawData = fs.readFileSync('secrets.json');
@@ -100,10 +101,23 @@ app.get('/login', (req, res) => {
   
           req.session.access_token = access_token; // Store token in session
   
-          // Fetch and save data
-          await topTracks(access_token);
-          await topArtists(access_token);
-          await getPodcasts(access_token);
+          const options = {
+            url: 'https://api.spotify.com/v1/me',
+            headers: { 'Authorization': 'Bearer ' + access_token },
+            json: true
+          };
+  
+          request.get(options, (error, response, body) => {
+            console.log(body);
+          });
+  
+          topTracks(access_token);
+          topArtists(access_token); // TODO: get rid of genres, put artist names as strings in an array in a json
+          // userAudiobooks(access_token);
+          // getGenre(access_token);
+          // getPodcasts(access_token);
+          recentTracks(access_token);
+          // savedTracks(access_token); //songs in your liked songs playlist
   
           res.redirect('/#' + querystring.stringify({
             access_token: access_token,
@@ -188,13 +202,11 @@ app.get('/login', (req, res) => {
         name: artist.name,
         genres: artist.genres
       }));
-  
-      // Save artists to a JSON file
-      fs.writeFileSync('top_artists.json', JSON.stringify(artists, null, 2));
-  
-      console.log('Top artists saved to top_artists.json');
-  
-    } catch (error) {
+
+      console.log(artists); // Display artists for debugging
+      
+    }
+    catch (error) {
       console.error('Error fetching top artists:', error);
     }
   }
@@ -244,26 +256,63 @@ app.get('/login', (req, res) => {
       const response = await fetch('https://api.spotify.com/v1/me/episodes', {
         headers: { Authorization: 'Bearer ' + accessToken }
       });
+
+      const data = await response.json();
+        // Extract podcast episode names and descriptions
+
+        const getPodcasts = data.items.map(podcast => ({
+          name: podcast.episode.name,
+          description: podcast.episode.description
+        }));
+
+      console.log(getPodcasts); // Display artists for debugging
+    }
+    catch (error) {
+      console.error('Error fetching user podcasts:', error);
+    }
+  }
+
+  async function recentTracks(accessToken) {
+    try {
+      const response = await fetch('https://api.spotify.com/v1/me/player/recently-played', {
+        headers: { Authorization: 'Bearer ' + accessToken }
+      });
   
       const data = await response.json();
-  
-      // Extract podcast episode names and descriptions
-      const podcasts = data.items.map(podcast => ({
-        name: podcast.episode.name,
-        description: podcast.episode.description
+        // Extract track names and artist names
+      const tracks = data.items.map(track => ({
+        name: track.track.name,
+        artist: track.track.artists[0].name // Assuming the first artist is the primary artist
       }));
-  
-      // Save podcasts to a JSON file
-      fs.writeFileSync('podcasts.json', JSON.stringify(podcasts, null, 2));
-  
-      console.log('Podcasts saved to podcasts.json');
-  
+      
+      console.log(tracks); // Display tracks for debugging
+
     } catch (error) {
-      console.error('Error fetching podcasts:', error);
+      console.error('Error fetching top tracks:', error);
+    }
+  }
+
+  async function savedTracks(accessToken) { //songs in your liked songs playlist
+    try {
+      const response = await fetch('https://api.spotify.com/v1/me/tracks?limit=50', {
+        headers: { Authorization: 'Bearer ' + accessToken }
+      });
+  
+      const data = await response.json();
+        // Extract user saved tracks
+      const tracks = data.items.map(track => ({
+        name: track.track.name,
+        artist: track.track.artists[0].name // Assuming the first artist is the primary artist
+      }));
+      
+      console.log(tracks); // Display tracks for debugging
+
+    } catch (error) {
+      console.error('Error fetching top tracks:', error);
     }
   }
   
-  
+
 
 // async function getBrunoMars(accessToken) {
 //   const response = await fetch('https://api.spotify.com/v1/artists/0du5cEVh5yTK9QJze8zA0C?si=mSDucTY2Rx2IBW6oDzrXQA', { //can do bruno mars and it works, MUST GO TO LOGIN PAGE FIRST
