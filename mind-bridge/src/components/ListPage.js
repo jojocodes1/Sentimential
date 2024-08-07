@@ -19,11 +19,11 @@ import '../App.css';
 const auth = getAuth(firebaseApp);
 
 const clientsData = [
-  { id: 1, name: 'Sophia Bennett', info: 'Experienced in cognitive-behavioral therapy and mindfulness techniques.', image: a },
-  { id: 2, name: 'Jackson Miller', info: 'Specializes in trauma-informed care and support for anxiety disorders.', image: b },
-  { id: 3, name: 'Olivia Johnson', info: 'Expert in family therapy and child psychology.', image: c },
-  { id: 4, name: 'Liam Smith', info: 'Focuses on stress management and interpersonal relationship counseling.', image: d },
-  { id: 5, name: 'Isabella Davis', info: 'Offers personalized therapy for depression and life transitions.', image: e }
+  { id: 1, name: 'Sophia Bennett', info: 'In cognitive-behavioral therapy and mindfulness techniques.', image: a },
+  { id: 2, name: 'Jackson Miller', info: 'Dont know much about her she is very shy and reserved.', image: b },
+  { id: 3, name: 'Olivia Johnson', info: 'having problem in relationship.', image: c },
+  { id: 4, name: 'Liam Smith', info: 'started new job and is currently happy.', image: d },
+  { id: 5, name: 'Isabella Davis', info: 'very very angry but doesnt know how to express it.', image: e }
 ];
 
 const ListPage = () => {
