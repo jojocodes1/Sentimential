@@ -54,14 +54,12 @@ const ListPage = () => {
     <div className="mainContainer">
       <Navbar bg="dark" variant="dark" expand="lg" className="navbar">
         <Navbar.Brand href="#home">
-          <img src={logo} alt="Logo" className="navbar-logo" />
-        </Navbar.Brand>
+          <img src={logo} alt="Logo" className="navbar-logo" /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto nav-links">
-            <span className="text-light mr-3">Welcome: {userEmail}</span>
+            <span className="text-light mr-3">Patient List</span>
             <Nav.Link onClick={() => handleNavigation('/invite')}>Invite Page</Nav.Link>
-            <Nav.Link onClick={() => handleNavigation('/profOverview')}>Prof Overview</Nav.Link>
             <Nav.Link onClick={() => handleNavigation('/logout')}>Log Out</Nav.Link>
           </Nav>
         </Navbar.Collapse>

@@ -690,7 +690,7 @@ const ProfOverview = () => {
     ],
   });
 
-  useEffect(()=> {
+  /*useEffect(()=> {
     //Promise.all(inputs.map(input => { return dummy.classifyThis(input)})).then((results) => {
       //const dummyMap = dummy.getMap();
       //const jsonData = JSON.parse(dummyMap);
@@ -709,7 +709,7 @@ const ProfOverview = () => {
         ],
       });
     //});
-  },[]);
+  },[]);*/
 
   const [userEmail, setUserEmail] = useState(null);
   const navigate = useNavigate();
