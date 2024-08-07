@@ -204,7 +204,12 @@ app.get('/login', (req, res) => {
       }));
 
       console.log(artists); // Display artists for debugging
-      
+
+      // Save tracks to a JSON file
+      fs.writeFileSync('top_artists.json', JSON.stringify(artists, null, 2));
+
+      console.log('Top artists saved to top_artists.json');
+  
     }
     catch (error) {
       console.error('Error fetching top artists:', error);
