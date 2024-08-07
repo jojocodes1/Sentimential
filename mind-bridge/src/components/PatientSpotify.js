@@ -16,11 +16,11 @@ const PatientSpotify = () => {
 
   return (
     <div className="button-container">
-      <button  onClick={handleButtonClick}>
+      <button  className="disconnect-spotify" onClick={handleButtonClick}>
         Link Spotify Account
       </button>
 
-      <button  type='button' onClick={onButtonClick}>Continue</button>
+      <button  type='button' className="btn btn-dark" onClick={onButtonClick}>Continue</button>
     </div>
   );
 };
