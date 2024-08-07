@@ -50,7 +50,7 @@ const PatientLandingPage = () => {
         
         <div className="data-grid">
           <div className="data-card">
-            <h2><FaMusic /> Top Recent Tracks</h2>
+            <h2><FaMusic /> Recent Tracks</h2>
             <ul className="data-list">
               {topTracks.slice(0, 5).map((track, index) => (
                 <li key={index}>
