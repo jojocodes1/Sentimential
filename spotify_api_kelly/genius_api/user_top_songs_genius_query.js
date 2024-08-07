@@ -8,7 +8,7 @@ const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 const cheerio = require('cheerio');
-const { intakeToClassificationMadeAccessible } = require('../../mind-bridge/src/intakeToClassificationMadeAccessible.ts');
+// const { intakeToClassificationMadeAccessible } = require('../../mind-bridge/src/intakeToClassificationMadeAccessible.ts');
 
 
 async function queryGeniusAPI(tracks) {
@@ -44,17 +44,18 @@ async function queryGeniusAPI(tracks) {
         }
     }
     console.log(lyrics_array);
+    module.exports = { lyrics_array };
     
 
-    const instance = intakeToClassificationMadeAccessible.getInstance(lyrics_array, length(lyrics_array));
+    // const instance = intakeToClassificationMadeAccessible.getInstance(lyrics_array, length(lyrics_array));
 
-    instance.classifyAllLyrics()
-        .then((result) => {
-            console.log('Classified Lyrics Map:', result);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
+    // instance.classifyAllLyrics()
+    //     .then((result) => {
+    //         console.log('Classified Lyrics Map:', result);
+    //     })
+    //     .catch((error) => {
+    //         console.error('Error:', error);
+    //     });
 
 }
 
