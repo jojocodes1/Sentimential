@@ -19,7 +19,7 @@ export class intakeToClassificationMadeAccessible{
             return intakeToClassificationMadeAccessible.accessible = new intakeToClassificationMadeAccessible(lyrics, size);
         } else {
             return intakeToClassificationMadeAccessible.accessible;
-        }
+        } 
     }
     /**
      * classifies all strings in array and returns string of map
