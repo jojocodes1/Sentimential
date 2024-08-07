@@ -97,21 +97,21 @@ const ProfOverview = () => {
     datasets: [
       {
         label: 'Amount of Songs',
-        data: [5, 3, 2, 1], // Static data
+        data: [0, 0, 0, 0], // Static data
         backgroundColor: 'rgba(75, 192, 192, 0.2)',
         borderColor: 'rgba(75, 192, 192, 1)',
         borderWidth: 3,
       },
     ],
-  });
+  };
 
   useEffect(()=> {
-    Promise.all(inputs.map(input => { return dummy.classifyThis(input)})).then((results) => {
+    Promise.all(lyrics_array.map(lyrics_array => { return dummy.classifyThis(lyrics_array)})).then((results) => {
       const dummyMap = dummy.getMap();
       const jsonData = JSON.parse(dummyMap);
       // const valuesString = intakeToClassificationMadeAccessible.accessible.lyricMap;
       // const valueMap = JSON.parse(valuesString);
-      setBarCharData({
+      barChartData({
         labels: ['Joy', 'Sadness', 'Anger', 'Fear' ],
         datasets: [
           {
