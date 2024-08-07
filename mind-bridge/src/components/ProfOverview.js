@@ -7,6 +7,8 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import firebaseApp from '../FirbaseConfig/firebase'; // Ensure the path is correct
 import { clientListeningClassification } from "../clientListeningClassification.ts";
 import { Bar, Radar } from 'react-chartjs-2';
+import { Navbar, Nav, Container } from 'react-bootstrap';
+import { FaUserCircle } from 'react-icons/fa';
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, RadarController, RadialLinearScale, PointElement, LineElement } from 'chart.js';
 import { intakeToClassificationMadeAccessible } from "../intakeToClassificationMadeAccessible.ts";
 // import playlistCompImage from '../../playlist_comp.png'; // playlist_comp.png Ensure the path to your logo is correct
@@ -38,19 +40,6 @@ const auth = getAuth(firebaseApp);
 // Then my heart drowns out my thoughts, my head's about to explode
 // What I need is some closure
 // I, I can't eat, I can't sleep, I get anxiety
-// When you're not here with me, I get anxiety
-// I can't eat, I can't sleep, don't know why you can't see
-// You give me, you give me, give me
-// Anxiet-xiet, xiet, xiet-xiet-xiet, xiet-xiety-ty
-// Xiet, xiet-xiet-xiet
-// Give me anxiety
-// Xiet-xiet, xiet, xiet-xiety-ty
-// Xiet, xiet-xiet-xiet
-// Anxiety (anxiety)
-// (If you ain't beside me)
-// Every time I smile while I'm doin' fine, does it show?
-// 'Cause' I'm really freaking out, too scared of letting you go
-// I can't eat, I can't sleep, I get anxiety
 // When you're not here with me, I get anxiety
 // I can't eat, I can't sleep, don't know why you can't see
 // You give me, you give me, give me anxiety
@@ -677,39 +666,18 @@ const radarChartData = {
 
 const ProfOverview = () => {
 
-  const [barChartData, setBarCharData] = useState({
-    labels: ['Joy', 'Sadness', 'Anger', 'Fear' ],
+  const barChartData = {
+    labels: ['Joy', 'Sadness', 'Anger', 'Fear'],
     datasets: [
       {
         label: 'Amount of Songs',
-        data: [0, 0, 0, 0],
+        data: [5, 3, 2, 1], // Static data
         backgroundColor: 'rgba(75, 192, 192, 0.2)',
         borderColor: 'rgba(75, 192, 192, 1)',
         borderWidth: 3,
       },
     ],
-  });
-
-  /*useEffect(()=> {
-    //Promise.all(inputs.map(input => { return dummy.classifyThis(input)})).then((results) => {
-      //const dummyMap = dummy.getMap();
-      //const jsonData = JSON.parse(dummyMap);
-      const valuesString = intakeToClassificationMadeAccessible.accessible.lyricMap;
-      const valueMap = JSON.parse(valuesString);
-      setBarCharData({
-        labels: ['Joy', 'Sadness', 'Anger', 'Fear' ],
-        datasets: [
-          {
-            label: 'Amount of Songs',
-            data: [valueMap['Joy'], valueMap['Sadness'], valueMap['Anger'], valueMap['Fear']],
-            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-            borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 3,
-          },
-        ],
-      });
-    //});
-  },[]);*/
+  };
 
   const [userEmail, setUserEmail] = useState(null);
   const navigate = useNavigate();
@@ -734,43 +702,60 @@ const ProfOverview = () => {
 
   return (
     <div className="mainContainer">
-      <h1 className="text-center">Psionic Synchronicity</h1>
-      
+      <Navbar bg="dark" variant="dark" expand="lg" className="navbar py-2 fixed-top">
+        <Container>
+          <Navbar.Brand href="/listPage" className="d-flex align-items-center">
+            <span className="font-weight-bold">Psionic Synchronicity</span>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ms-auto align-items-center">
+              <Nav.Link className="d-flex align-items-center">
+                <FaUserCircle className="text-light mr-2" size={24} />
+                <span className="text-light"> DR. ALEXANDER </span>
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>      
 
-      <Row className="justify-content-center">
-        <Col xs={12} md={5} lg={5} className="mb-4">
-          <Card border="secondary" className="text-center">
-            <Card.Body>
-              <Card.Title><h1>Sentiment Counter</h1></Card.Title>
-              <Card.Text>
-                <div style={{ width: '100%', height: '300px' }}>
-                  <Bar data={barChartData} options={{ responsive: true }} />
-                </div>
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col xs={100} md={15} lg={20} className="mb-4">
-          <Card border="secondary" className="text-center">
-            <Card.Body>
-              <Card.Title><h1>Sentiment Radar Chart</h1></Card.Title>
-              <Card.Text>
-                <div className="radar-chart-container">
-                <img src={`${process.env.PUBLIC_URL}/playlist_comp.png`} className="card-logo" alt="playlist_comp_image" />
-                </div>
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
+      {/* Add a div with padding-top to create space below the navbar */}
+      <div style={{ paddingTop: '80px' }}>
+        <Row className="justify-content-center">
+          <Col xs={12} md={5} lg={5} className="mb-4">
+            <Card border="secondary" className="text-center">
+              <Card.Body>
+                <Card.Title><h1>Sentiment Counter</h1></Card.Title>
+                <Card.Text>
+                  <div style={{ width: '100%', height: '300px' }}>
+                    <Bar data={barChartData} options={{ responsive: true }} />
+                  </div>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col xs={100} md={15} lg={20} className="mb-4">
+            <Card border="secondary" className="text-center">
+              <Card.Body>
+                <Card.Title><h1>Sentiment Radar Chart</h1></Card.Title>
+                <Card.Text>
+                  <div className="radar-chart-container">
+                  <img src={`${process.env.PUBLIC_URL}/playlist_comp.png`} className="card-logo" alt="playlist_comp_image" />
+                  </div>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
 
-      <div className={'buttonContainer'}>
-        <input
-          className={'inputButton'}
-          type="button"
-          onClick={onButtonClick}
-          value={'Back To Client List'}
-        />
+        <div className={'buttonContainer'}>
+          <input
+            className={'inputButton'}
+            type="button"
+            onClick={onButtonClick}
+            value={'Back To Client List'}
+          />
+        </div>
       </div>
     </div>
   );
