@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Bar } from 'react-chartjs-2';
 import 'chart.js/auto';
 import '../App.css';
 import { FaSpotify, FaMusic, FaMicrophone, FaBook, FaPodcast } from 'react-icons/fa';
@@ -10,8 +8,6 @@ const PatientLandingPage = () => {
   const [topArtists, setTopArtists] = useState([]);
   const [audiobooks, setAudiobooks] = useState([]);
   const [podcasts, setPodcasts] = useState([]);
-  const navigate = useNavigate();
-
   useEffect(() => {
     async function fetchData() {
       try {
@@ -38,7 +34,8 @@ const PatientLandingPage = () => {
   }, []);
 
   const handleButtonClick = () => {
-    navigate(''); // Adjust navigation path if needed
+    // Open in a new window
+    window.open('http://localhost:8888', '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -105,11 +102,12 @@ const PatientLandingPage = () => {
         </div>
 
         <div className='button-container'>
-          <button className="disconnect-spotify" onClick={handleButtonClick}>
+          <button className="spotify-button" onClick={handleButtonClick}>
+            <FaSpotify /> Link Spotify Account
+          </button>
+          <button className="spotify-button" onClick={handleButtonClick}>
             <FaSpotify /> Disconnect Spotify
           </button>
-          
-          
         </div>
       </div>
     </div>
