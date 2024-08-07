@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { json, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -12,12 +12,12 @@ import { FaUserCircle } from 'react-icons/fa';
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, RadarController, RadialLinearScale, PointElement, LineElement } from 'chart.js';
 import { intakeToClassificationMadeAccessible } from "../intakeToClassificationMadeAccessible.ts";
 // import playlistCompImage from '../../playlist_comp.png'; // playlist_comp.png Ensure the path to your logo is correct
-
+ 
 const { lyrics_array } = require('../../../spotify_api_kelly/genius_api/user_top_songs_genius_query.js');
 console.log(lyrics_array);
-
+ 
 const auth = getAuth(firebaseApp);
-
+ 
 /**
  * dummy set example
  */
@@ -498,38 +498,38 @@ const auth = getAuth(firebaseApp);
 // Night breezes seem to whisper, I love you
 // Birds singin' in the sycamore trees
 // Dream a little dream of me
-
-
+ 
+ 
 // Say nighty-night and kiss me
 // Just hold me tight and tell me you'll miss me
 // While I'm alone and blue as can be
 // Dream a little dream of me
-
+ 
 // Stars fading but I linger on dear
 // Still craving your kiss
 // Now I'm longin' to linger till dawn dear
 // Just saying this
-
+ 
 // Sweet dreams till sunbeams find you
 // Sweet dreams that leave all worries behind you
 // But in your dreams whatever they be
 // Dream a little dream of me
-
+ 
 // Stars fading but I linger on dear
 // Still craving your kiss
 // I'm longin' to linger till dawn dear
 // Just saying this
 // See R&B shows near Seattle
 // Get tickets as low as $39
-
+ 
 // Sweet dreams till sunbeams find you
 // Leave the worries behind you
 // But in your dreams, whatever may be
 // You've gotta make me a promise, promise to me
 // You'll dream, dream a little dream of me`, `
 // Metro Boomin want some more, nigga! (Hey)
-
-
+ 
+ 
 // Going to the jeweler, bust the AP, yeah (Bust it)
 // Slide on the water like a jet-ski, yeah (Woo, slide)
 // I'm tryna fuck you and your bestie, yeah (Hey)
@@ -538,8 +538,8 @@ const auth = getAuth(firebaseApp);
 // 57 90, split the coupe on my wrist (Ice)
 // Multi-million dollar, I'm a fool with the hits (Ayy)
 // Hop up in the Lamb' and drop the roof, show the tits (Skrrt)
-
-
+ 
+ 
 // Poppin' but you really not gon' shoot (Pop)
 // 90 pointers down my diamonds look like hula hoops (90)
 // Hopping in my Bentayga and her seat is a masseuse (Hey)
@@ -552,8 +552,8 @@ const auth = getAuth(firebaseApp);
 // Put the iron on him if a nigga my opponent (Iron)
 // My car 500 and I don't put no miles on it (Ho)
 // I was runnin' 'round homie, with 500 thou' on me (Ho)
-
-
+ 
+ 
 // Going to the jeweler, bust the AP, yeah (Bust it)
 // Slide on the water like a jet-ski, yeah (Woo, slide)
 // I'm tryna fuck you and your bestie, yeah (Hey)
@@ -562,8 +562,8 @@ const auth = getAuth(firebaseApp);
 // 57 90, split the coupe on my wrist (Ice)
 // Multi-million dollar, I'm a fool with the hits (Ayy)
 // Hop up in the Lamb' and drop the roof, show the tits (Offset)
-
-
+ 
+ 
 // Told my fam, got the gang with me (Gang with me)
 // Bought my first Patek, it got some rain on it (Patek)
 // Nigga, we used to kick it, how you hatin' on me? (How? How?)
@@ -577,8 +577,8 @@ const auth = getAuth(firebaseApp);
 // I gave a nigga a diamond, I had to cap a nigga (Woo)
 // I'm giving your ho away like she a raffle, nigga (Here, here)
 // We get at it, then we 'gone pray with the pastor's scriptures (Hey)
-
-
+ 
+ 
 // Going to the jeweler, bust the AP, yeah (Bust it)
 // Slide on the water like a jet-ski, yeah (Woo, slide)
 // I'm tryna fuck you and your bestie, yeah (Hey)
@@ -596,8 +596,8 @@ const auth = getAuth(firebaseApp);
 // Multi-million dollar, I'm a fool with the hits (Ayy)
 // Hop up in the Lamb' and drop the roof, show the tits (Skrrt)`];
 //const dummy = new clientListeningClassification("bob");
-
-
+ 
+ 
 // Register the necessary components for Bar and Radar charts
 ChartJS.register(
   Title,
@@ -611,9 +611,9 @@ ChartJS.register(
   PointElement,
   LineElement
 );
-
+ 
 // Sample data for the radar chart
-const radarChartData = {
+/*const radarChartData = {
   labels: ['acousticness', 'danceability', 'energy', 'valence', 'instrumentalness', 'tempo', 'speechiness'],
   datasets: [
     {
@@ -664,10 +664,10 @@ const radarChartData = {
       borderWidth: 2,
     },
   ],
-};
-
+};*/
+ 
 const ProfOverview = () => {
-
+ 
   const barChartData = {
     labels: ['Joy', 'Sadness', 'Anger', 'Fear'],
     datasets: [
@@ -680,10 +680,10 @@ const ProfOverview = () => {
       },
     ],
   };
-
+ 
   const [userEmail, setUserEmail] = useState(null);
   const navigate = useNavigate();
-
+ 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -693,15 +693,15 @@ const ProfOverview = () => {
         setUserEmail(null);
       }
     });
-
+ 
     // Clean up subscription on unmount
     return () => unsubscribe();
   }, []);
-
+ 
   const onButtonClick = () => {
     navigate('/listPage');  
   }
-
+ 
   return (
     <div className="mainContainer">
       <Navbar bg="dark" variant="dark" expand="lg" className="navbar py-2 fixed-top">
@@ -720,7 +720,7 @@ const ProfOverview = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>      
-
+ 
       {/* Add a div with padding-top to create space below the navbar */}
       <div style={{ paddingTop: '80px' }}>
         <Row className="justify-content-center">
@@ -749,7 +749,7 @@ const ProfOverview = () => {
             </Card>
           </Col>
         </Row>
-
+ 
         <div className={'buttonContainer'}>
           <input
             className={'inputButton'}
@@ -762,7 +762,5 @@ const ProfOverview = () => {
     </div>
   );
 }
-
+ 
 export default ProfOverview;
-
-
