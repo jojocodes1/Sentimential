@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Bar } from 'react-chartjs-2';
-import 'chart.js/auto'; // Automatically registers required components for Chart.js
-import '../App.css'; // Ensure the correct path to the CSS file
+import 'chart.js/auto';
+import '../App.css';
+import { FaSpotify, FaMusic, FaMicrophone, FaBook, FaPodcast } from 'react-icons/fa';
 
 const PatientLandingPage = () => {
   const [topTracks, setTopTracks] = useState([]);
   const [topArtists, setTopArtists] = useState([]);
-  const [topGenres, setTopGenres] = useState([]);
   const [audiobooks, setAudiobooks] = useState([]);
   const [podcasts, setPodcasts] = useState([]);
   const navigate = useNavigate();
@@ -22,10 +22,6 @@ const PatientLandingPage = () => {
         const artistsResponse = await fetch('/api/top-artists');
         const artistsData = await artistsResponse.json();
         setTopArtists(artistsData.artists);
-
-        const genresResponse = await fetch('/api/top-genres');
-        const genresData = await genresResponse.json();
-        setTopGenres(genresData.genres);
 
         const audiobooksResponse = await fetch('/api/audiobooks');
         const audiobooksData = await audiobooksResponse.json();
@@ -47,56 +43,77 @@ const PatientLandingPage = () => {
 
   return (
     <div className="mainContainer">
-      <div className="patientbox">
-        <h1>Psionic Synchronicity</h1>
-        <br />
-        <br />
-        <button className="dis4rmspot" onClick={handleButtonClick}>Disconnect Spotify Account</button>
-        <h2>Top Tracks</h2>
-        <ul>
-          {topTracks.map((track, index) => (
-            <li key={index}>{track.name} by {track.artist}</li>
-          ))}
-        </ul>
+      <div className="content-wrapper">
+        <header className="page-header">
+        
+        </header>
+        
+        <div className="data-grid">
+          <div className="data-card">
+            <h2><FaMusic /> Recent Tracks </h2>
+            <ul className="data-list">
+              {topTracks.slice(0, 5).map((track, index) => (
+                <li key={index}>
+                  <span className="rank">{index + 1}</span>
+                  <div>
+                    <span className="name">{track.name}</span>
+                    <span className="artist">{track.artist}</span>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        <h2>Top Artists</h2>
-        <ul>
-          {topArtists.map((artist, index) => (
-            <li key={index}>{artist.name} - Genres: {artist.genres.join(', ')}</li>
-          ))}
-        </ul>
+          <div className="data-card">
+            <h2><FaMicrophone /> Top Artists</h2>
+            <ul className="data-list">
+              {topArtists.slice(0, 5).map((artist, index) => (
+                <li key={index}>
+                  <span className="rank">{index + 1}</span>
+                  <div>
+                    <span className="name">{artist.name}</span>
+                    <span className="genres">{artist.genres.slice(0, 2).join(', ')}</span>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        <h2>Top Genres</h2>
-        <Bar
-          data={{
-            labels: topGenres,
-            datasets: [{
-              label: 'Top Genres',
-              data: topGenres.map(() => 1), // Dummy data for display; adjust as needed
-              backgroundColor: 'rgba(75, 192, 192, 0.6)',
-              borderColor: 'rgba(75, 192, 192, 1)',
-              borderWidth: 1,
-            }]
-          }}
-        />
+          <div className="data-card">
+            <h2><FaBook /> Audiobooks</h2>
+            <ul className="data-list">
+              {audiobooks.slice(0, 3).map((audiobook, index) => (
+                <li key={index}>
+                  <span className="name">{audiobook.name}</span>
+                  <span className="description">{audiobook.description}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        <h2>Audiobooks</h2>
-        <ul>
-          {audiobooks.map((audiobook, index) => (
-            <li key={index}>{audiobook.name}: {audiobook.description}</li>
-          ))}
-        </ul>
+          <div className="data-card">
+            <h2><FaPodcast /> Podcasts</h2>
+            <ul className="data-list">
+              {podcasts.slice(0, 3).map((podcast, index) => (
+                <li key={index}>
+                  <span className="name">{podcast.name}</span>
+                  <span className="description">{podcast.description}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
 
-        <h2>Podcasts</h2>
-        <ul>
-          {podcasts.map((podcast, index) => (
-            <li key={index}>{podcast.name}: {podcast.description}</li>
-          ))}
-        </ul>
+        <div className='button-container'>
+          <button className="disconnect-spotify" onClick={handleButtonClick}>
+            <FaSpotify /> Disconnect Spotify
+          </button>
+          
+          
+        </div>
       </div>
     </div>
   );
 };
 
 export default PatientLandingPage;
-
