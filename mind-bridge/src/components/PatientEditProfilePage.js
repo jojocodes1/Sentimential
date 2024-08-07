@@ -65,7 +65,7 @@ function PatientEditProfilePage() {
   };
  
   const handleContinue = () => {
-    navigate('/PatientSpotify');
+    navigate('/patientLandingPage');
   };
  
   return (
