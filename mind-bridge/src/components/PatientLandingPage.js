@@ -3,36 +3,8 @@ import 'chart.js/auto';
 import '../App.css';
 import { FaSpotify, FaMusic, FaMicrophone, FaBook, FaPodcast } from 'react-icons/fa';
 
-
 const PatientLandingPage = () => {
-  const [topTracks, setTopTracks] = useState([]);
-  const [topArtists, setTopArtists] = useState([]);
-  const [audiobooks, setAudiobooks] = useState([]);
-  const [podcasts, setPodcasts] = useState([]);
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const tracksResponse = await fetch('/api/top-tracks');
-        const tracksData = await tracksResponse.json();
-        setTopTracks(tracksData.tracks);
 
-        const artistsResponse = await fetch('/api/top-artists');
-        const artistsData = await artistsResponse.json();
-        setTopArtists(artistsData.artists);
-
-        const audiobooksResponse = await fetch('/api/audiobooks');
-        const audiobooksData = await audiobooksResponse.json();
-        setAudiobooks(audiobooksData.audiobooks);
-
-        const podcastsResponse = await fetch('/api/podcasts');
-        const podcastsData = await podcastsResponse.json();
-        setPodcasts(podcastsData.podcasts);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    }
-    fetchData();
-  }, []);
 
   const handleButtonClick = () => {
     // Open in a new window
@@ -43,66 +15,40 @@ const PatientLandingPage = () => {
     <div className="mainContainer">
       <div className="content-wrapper">
         <header className="page-header">
-        
+          {/* Optional: Page header content */}
         </header>
-        
+
         <div className="data-grid">
           <div className="data-card">
-            <h2><FaMusic /> Recent Tracks </h2>
-            <ul className="data-list">
-              {topTracks.slice(0, 5).map((track, index) => (
-                <li key={index}>
-                  <span className="rank">{index + 1}</span>
-                  <div>
-                    <span className="name">{track.name}</span>
-                    <span className="artist">{track.artist}</span>
-                  </div>
-                </li>
-              ))}
-            </ul>
+            <h2><FaMusic /> Recent Tracks</h2>
+            <div className="image-container">
+              <img src="/top_tracks.png" alt="Top Tracks Visualization" style={{ width: '100%', maxWidth: '800px' }} />
+            </div>
           </div>
 
           <div className="data-card">
             <h2><FaMicrophone /> Top Artists</h2>
-            <ul className="data-list">
-              {topArtists.slice(0, 5).map((artist, index) => (
-                <li key={index}>
-                  <span className="rank">{index + 1}</span>
-                  <div>
-                    <span className="name">{artist.name}</span>
-                    <span className="genres">{artist.genres.slice(0, 2).join(', ')}</span>
-                  </div>
-                </li>
-              ))}
-            </ul>
+            <div className="image-container">
+              <img src="/top_artists.png" alt="Top Artists Visualization" style={{ width: '100%', maxWidth: '800px' }} />
+            </div>
           </div>
 
           <div className="data-card">
             <h2><FaBook /> Audiobooks</h2>
-            <ul className="data-list">
-              {audiobooks.slice(0, 3).map((audiobook, index) => (
-                <li key={index}>
-                  <span className="name">{audiobook.name}</span>
-                  <span className="description">{audiobook.description}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="image-container">
+              <img src="/audiobooks.png" alt="Audiobooks Visualization" style={{ width: '100%', maxWidth: '800px' }} />
+            </div>
           </div>
 
           <div className="data-card">
             <h2><FaPodcast /> Podcasts</h2>
-            <ul className="data-list">
-              {podcasts.slice(0, 3).map((podcast, index) => (
-                <li key={index}>
-                  <span className="name">{podcast.name}</span>
-                  <span className="description">{podcast.description}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="image-container">
+              <img src="/podcasts.png" alt="Podcasts Visualization" style={{ width: '100%', maxWidth: '800px' }} />
+            </div>
           </div>
         </div>
 
-        <div className='button-container'>
+        <div className="button-container">
           <button className="inputButton" onClick={handleButtonClick}>
             <FaSpotify /> Link Spotify Account
           </button>

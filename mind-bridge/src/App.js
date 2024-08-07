@@ -10,7 +10,7 @@ import PatientLandingPage from './components/PatientLandingPage'
 import './App.css'
 import { useEffect, useState } from 'react'
 import ListPage from './components/ListPage'
-import PatientSignIn from './components/PatientSignIn.js'
+import PatientSignIn from './components/PatientSIgnIn.js'
 import PatientSignUp from './components/PatientSignUp'
 import { LyricTextClassifier } from './LyricTextClassifier.ts'
 
