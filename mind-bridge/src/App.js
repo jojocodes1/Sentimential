@@ -12,6 +12,11 @@ import { useEffect, useState } from 'react'
 import ListPage from './components/ListPage'
 import PatientSignIn from './components/PatientSignIn.js'
 import PatientSignUp from './components/PatientSignUp'
+import ResponsibleAI from './components/ResponsibleAI.js'
+import TermsandConditions from './components/TermsandConditions.js'
+
+import Feedback from './components/Feedback.js'
+
 import { LyricTextClassifier } from './LyricTextClassifier.ts'
 
 
@@ -36,6 +41,10 @@ function App() {
           <Route path= "/PatientSignUp" element={ <PatientSignUp setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
           <Route path="/patientLandingPage" element={<PatientLandingPage  />} />
           <Route path="/PatientEditProfilePage" element={<PatientEditProfilePage  />} />
+          <Route path="/ResponsibleAI" element={<ResponsibleAI  />} />
+          <Route path="/Feedback" element={<Feedback  />} />
+          <Route path="/TermsandConditions" element={<TermsandConditions  />} />
+
 
 
 

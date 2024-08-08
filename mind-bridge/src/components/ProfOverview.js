@@ -17,6 +17,8 @@ const lyricsData = require('../lyrics_array.json');
 const lyrics_array = lyricsData.lyrics_array;
 console.log('lyrics_array:', lyrics_array);
 
+console.log(lyrics_array);
+
 const auth = getAuth(firebaseApp);
 
 
@@ -106,7 +108,7 @@ const ProfOverview = () => {
     ],
   };
 
-  /*useEffect(()=> {
+  useEffect(()=> {
     Promise.all(lyrics_array.map(lyrics_array => { return dummy.classifyThis(lyrics_array)})).then((results) => {
       const dummyMap = dummy.getMap();
       const jsonData = JSON.parse(dummyMap);
@@ -125,7 +127,7 @@ const ProfOverview = () => {
         ],
       });
     });
-  },);*/
+  },);
 
   const [userEmail, setUserEmail] = useState(null);
   const navigate = useNavigate();

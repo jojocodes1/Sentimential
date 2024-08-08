@@ -1,60 +1,60 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { auth } from '../FirbaseConfig/firebase'
-import { createUserWithEmailAndPassword } from 'firebase/auth'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { auth } from '../FirbaseConfig/firebase';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 const PatientSignUp = () => {
-  const [email, setEmail] = useState('')
-  const [fullName, setFullName] = useState('')
-  const [password, setPassword] = useState('')
-  const [emailError, setEmailError] = useState('')
-  const [passwordError, setPasswordError] = useState('')
-  const [fullNameError, setFullNameError] = useState('')
- 
-  const navigate = useNavigate()
+  const [email, setEmail] = useState('');
+  const [fullName, setFullName] = useState('');
+  const [password, setPassword] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+  const [fullNameError, setFullNameError] = useState('');
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (ev) => {
-    ev.preventDefault()
+    ev.preventDefault();
 
-    setEmailError('')
-    setPasswordError('')
-    setFullNameError('')
-    
+    setEmailError('');
+    setPasswordError('');
+    setFullNameError('');
+
     if (fullName.trim() === '') {
-      setFullNameError('Please enter your full name')
-      return
+      setFullNameError('Please enter your full name');
+      return;
     }
 
     if (email.trim() === '') {
-      setEmailError('Please enter your email')
-      return
+      setEmailError('Please enter your email');
+      return;
     }
 
     if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
-      setEmailError('Please enter a valid email')
-      return
+      setEmailError('Please enter a valid email');
+      return;
     }
 
     if (password.trim() === '') {
-      setPasswordError('Please enter a password')
-      return
+      setPasswordError('Please enter a password');
+      return;
     }
 
     if (password.length < 7) {
-      setPasswordError('The password must be 8 characters or longer')
-      return
+      setPasswordError('The password must be 8 characters or longer');
+      return;
     }
-
 
     try {
-      await createUserWithEmailAndPassword(auth, email, password)
-      console.log('User created')
-      navigate('/PatientEditProfilePage')
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const uid = userCredential.user.uid;
+      console.log('User created with UID:', uid);
+      navigate('/PatientEditProfilePage', { state: { uid } });
     } catch (err) {
-      console.error('Error creating user:', err)
+      console.error('Error creating user:', err);
       // You can set specific error messages based on error codes here
     }
-  }
+  };
 
   return (
     <div className={'mainContainer'}>
@@ -105,7 +105,7 @@ const PatientSignUp = () => {
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default PatientSignUp
+export default PatientSignUp;

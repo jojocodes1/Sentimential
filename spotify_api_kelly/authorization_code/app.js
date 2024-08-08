@@ -112,7 +112,7 @@ app.get('/login', (req, res) => {
           });
   
           topTracks(access_token);
-          topArtists(access_token); // TODO: get rid of genres, put artist names as strings in an array in a json
+          topArtists(access_token); 
           // userAudiobooks(access_token);
           // getGenre(access_token);
           // getPodcasts(access_token);
@@ -200,7 +200,6 @@ app.get('/login', (req, res) => {
       // Extract artist names and genres
       const artists = data.items.map(artist => ({
         name: artist.name,
-        genres: artist.genres
       }));
 
       console.log(artists); // Display artists for debugging
@@ -232,6 +231,11 @@ app.get('/login', (req, res) => {
       }));
 
       console.log(audiobooks); // Display artists for debugging
+
+      // Save tracks to a JSON file
+      fs.writeFileSync('user_audiobooks.json', JSON.stringify(audiobooks, null, 2));
+
+      console.log('User audiobooks saved to user_audiobooks.json');
     }
     catch (error) {
       console.error('Error fetching user audiobooks:', error);
@@ -249,6 +253,11 @@ app.get('/login', (req, res) => {
       const getGenre = data.genres;
         
       console.log(getGenre); // Display artists for debugging
+
+      // Save tracks to a JSON file
+      fs.writeFileSync('getGenre.json', JSON.stringify(getGenre, null, 2));
+
+      console.log('User getGenre saved to getGenre.json');
     }
     catch (error) {
       console.error('Error fetching user getGenres:', error);
@@ -271,6 +280,11 @@ app.get('/login', (req, res) => {
         }));
 
       console.log(getPodcasts); // Display artists for debugging
+
+      // Save tracks to a JSON file
+      fs.writeFileSync('getPodcasts.json', JSON.stringify(getPodcasts, null, 2));
+
+      console.log('User getPodcasts saved to getPodcasts.json');
     }
     catch (error) {
       console.error('Error fetching user podcasts:', error);
@@ -292,6 +306,11 @@ app.get('/login', (req, res) => {
       
       console.log(tracks); // Display tracks for debugging
 
+      // Save tracks to a JSON file
+      fs.writeFileSync('recent_tracks.json', JSON.stringify(tracks, null, 2));
+
+      console.log('Recent tracks saved to recent_tracks.json');
+
     } catch (error) {
       console.error('Error fetching top tracks:', error);
     }
@@ -311,6 +330,11 @@ app.get('/login', (req, res) => {
       }));
       
       console.log(tracks); // Display tracks for debugging
+
+      // Save tracks to a JSON file
+      fs.writeFileSync('saved_tracks.json', JSON.stringify(tracks, null, 2));
+
+      console.log('Saved tracks saved to saved_tracks.json');
 
     } catch (error) {
       console.error('Error fetching top tracks:', error);
