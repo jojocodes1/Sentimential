@@ -57,7 +57,7 @@ const PatientLandingPage = () => {
             <ul>
               {getPodcasts.map((podcast, index) => (
                 <li key={index}>
-                  <strong>{podcast.name}</strong>: {podcast.description}
+                  <strong>{podcast.name}</strong>
                 </li>
               ))}
             </ul>
