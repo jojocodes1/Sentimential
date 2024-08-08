@@ -1,38 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import 'chart.js/auto';
 import '../App.css';
 import { FaSpotify, FaMusic, FaMicrophone, FaBook, FaPodcast } from 'react-icons/fa';
+import topTracks from '../top_tracks.json';
+import topArtistsData from '../top_artists.json';
+import getPodcasts from '../getPodcasts.json';
+import audiobooks from '../user_audiobooks.json';
 
 const PatientLandingPage = () => {
-  const [topTracks, setTopTracks] = useState([]);
-  const [topArtists, setTopArtists] = useState([]);
-  const [audiobooks, setAudiobooks] = useState([]);
-  const [podcasts, setPodcasts] = useState([]);
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const tracksResponse = await fetch('/api/top-tracks');
-        const tracksData = await tracksResponse.json();
-        setTopTracks(tracksData.tracks);
-
-        const artistsResponse = await fetch('/api/top-artists');
-        const artistsData = await artistsResponse.json();
-        setTopArtists(artistsData.artists);
-
-        const audiobooksResponse = await fetch('/api/audiobooks');
-        const audiobooksData = await audiobooksResponse.json();
-        setAudiobooks(audiobooksData.audiobooks);
-
-        const podcastsResponse = await fetch('/api/podcasts');
-        const podcastsData = await podcastsResponse.json();
-        setPodcasts(podcastsData.podcasts);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    }
-    fetchData();
-  }, []);
-
   const handleButtonClick = () => {
     // Open in a new window
     window.open('http://localhost:8888', '_blank', 'noopener,noreferrer');
@@ -42,65 +17,53 @@ const PatientLandingPage = () => {
     <div className="mainContainer">
       <div className="content-wrapper">
         <header className="page-header">
-        
+          {/* Header content here */}
         </header>
-        
+       
         <div className="data-grid">
           <div className="data-card">
-            <h2><FaMusic /> Recent Tracks </h2>
-            <ul className="data-list">
-              {topTracks.slice(0, 5).map((track, index) => (
+            <h2><FaMusic /> Top Tracks </h2>
+            <ul>
+              {topTracks.map((track, index) => (
                 <li key={index}>
-                  <span className="rank">{index + 1}</span>
-                  <div>
-                    <span className="name">{track.name}</span>
-                    <span className="artist">{track.artist}</span>
-                  </div>
+                  {track.name} - {track.artist}
                 </li>
               ))}
             </ul>
           </div>
-
+ 
           <div className="data-card">
             <h2><FaMicrophone /> Top Artists</h2>
-            <ul className="data-list">
-              {topArtists.slice(0, 5).map((artist, index) => (
-                <li key={index}>
-                  <span className="rank">{index + 1}</span>
-                  <div>
-                    <span className="name">{artist.name}</span>
-                    <span className="genres">{artist.genres.slice(0, 2).join(', ')}</span>
-                  </div>
-                </li>
+            <ul>
+              {topArtistsData.map((artist, index) => (
+                <li key={index}>{artist.name}</li>
               ))}
             </ul>
           </div>
-
+ 
           <div className="data-card">
             <h2><FaBook /> Audiobooks</h2>
-            <ul className="data-list">
-              {audiobooks.slice(0, 3).map((audiobook, index) => (
+            <ul>
+              {audiobooks.map((audiobook, index) => (
                 <li key={index}>
-                  <span className="name">{audiobook.name}</span>
-                  <span className="description">{audiobook.description}</span>
+                  <strong>{audiobook.name}</strong>: {audiobook.description}
                 </li>
               ))}
             </ul>
           </div>
-
+ 
           <div className="data-card">
             <h2><FaPodcast /> Podcasts</h2>
-            <ul className="data-list">
-              {podcasts.slice(0, 3).map((podcast, index) => (
+            <ul>
+              {getPodcasts.map((podcast, index) => (
                 <li key={index}>
-                  <span className="name">{podcast.name}</span>
-                  <span className="description">{podcast.description}</span>
+                  <strong>{podcast.name}</strong>
                 </li>
               ))}
             </ul>
           </div>
         </div>
-        
+       
         <div className='button-container'>
           <button className="inputButton" onClick={handleButtonClick}>
             <FaSpotify /> Link Spotify Account

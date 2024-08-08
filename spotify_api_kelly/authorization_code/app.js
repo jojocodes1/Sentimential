@@ -113,10 +113,10 @@ app.get('/login', (req, res) => {
   
           topTracks(access_token);
           topArtists(access_token); 
-          // userAudiobooks(access_token);
+          userAudiobooks(access_token);
           // getGenre(access_token);
-          // getPodcasts(access_token);
-          recentTracks(access_token);
+          getPodcasts(access_token);
+          // recentTracks(access_token);
           // savedTracks(access_token); //songs in your liked songs playlist
   
           res.redirect('/#' + querystring.stringify({
@@ -175,7 +175,9 @@ app.get('/login', (req, res) => {
       }));
   
       // Save tracks to a JSON file
-      fs.writeFileSync('top_tracks.json', JSON.stringify(tracks, null, 2));
+      const folderPath = '..//..//mind-bridge//src'; 
+      const filePath = `${folderPath}/top_tracks.json`;
+      fs.writeFileSync(filePath, JSON.stringify(tracks, null, 2));
   
       console.log('Top tracks saved to top_tracks.json');
   
@@ -205,7 +207,9 @@ app.get('/login', (req, res) => {
       console.log(artists); // Display artists for debugging
 
       // Save tracks to a JSON file
-      fs.writeFileSync('top_artists.json', JSON.stringify(artists, null, 2));
+      const folderPath = '..//..//mind-bridge//src'; 
+      const filePath = `${folderPath}/top_artists.json`;
+      fs.writeFileSync(filePath, JSON.stringify(artists, null, 2));
 
       console.log('Top artists saved to top_artists.json');
   
@@ -227,13 +231,15 @@ app.get('/login', (req, res) => {
 
       const audiobooks = data.items.map(audiobook => ({
         name: audiobook.name,
-        description: audiobook.description
+        description: audiobook.description // Keywords & Sentiment Analysis
       }));
 
       console.log(audiobooks); // Display artists for debugging
 
       // Save tracks to a JSON file
-      fs.writeFileSync('user_audiobooks.json', JSON.stringify(audiobooks, null, 2));
+      const folderPath = '..//..//mind-bridge//src'; 
+      const filePath = `${folderPath}/user_audiobooks.json`;
+      fs.writeFileSync(filePath, JSON.stringify(audiobooks, null, 2));
 
       console.log('User audiobooks saved to user_audiobooks.json');
     }
@@ -255,7 +261,9 @@ app.get('/login', (req, res) => {
       console.log(getGenre); // Display artists for debugging
 
       // Save tracks to a JSON file
-      fs.writeFileSync('getGenre.json', JSON.stringify(getGenre, null, 2));
+      const folderPath = '..//..//mind-bridge//src'; 
+      const filePath = `${folderPath}/getGenre.json`;
+      fs.writeFileSync(filePath, JSON.stringify(getGenre, null, 2));
 
       console.log('User getGenre saved to getGenre.json');
     }
@@ -282,7 +290,9 @@ app.get('/login', (req, res) => {
       console.log(getPodcasts); // Display artists for debugging
 
       // Save tracks to a JSON file
-      fs.writeFileSync('getPodcasts.json', JSON.stringify(getPodcasts, null, 2));
+      const folderPath = '..//..//mind-bridge//src'; 
+      const filePath = `${folderPath}/getPodcasts.json`;
+      fs.writeFileSync(filePath, JSON.stringify(getPodcasts, null, 2));
 
       console.log('User getPodcasts saved to getPodcasts.json');
     }
@@ -307,7 +317,9 @@ app.get('/login', (req, res) => {
       console.log(tracks); // Display tracks for debugging
 
       // Save tracks to a JSON file
-      fs.writeFileSync('recent_tracks.json', JSON.stringify(tracks, null, 2));
+      const folderPath = '..//..//mind-bridge//src'; 
+      const filePath = `${folderPath}/recent_tracks.json`;
+      fs.writeFileSync(filePath, JSON.stringify(tracks, null, 2));
 
       console.log('Recent tracks saved to recent_tracks.json');
 
@@ -332,7 +344,9 @@ app.get('/login', (req, res) => {
       console.log(tracks); // Display tracks for debugging
 
       // Save tracks to a JSON file
-      fs.writeFileSync('saved_tracks.json', JSON.stringify(tracks, null, 2));
+      const folderPath = '..//..//mind-bridge//src'; 
+      const filePath = `${folderPath}/saved_tracks.json`;
+      fs.writeFileSync(filePath, JSON.stringify(tracks, null, 2));
 
       console.log('Saved tracks saved to saved_tracks.json');
 

@@ -39,9 +39,9 @@ ChartJS.register(
   PointElement,
   LineElement
 );
-
+ 
 // Sample data for the radar chart
-const radarChartData = {
+/*const radarChartData = {
   labels: ['acousticness', 'danceability', 'energy', 'valence', 'instrumentalness', 'tempo', 'speechiness'],
   datasets: [
     {
@@ -92,8 +92,7 @@ const radarChartData = {
       borderWidth: 2,
     },
   ],
-};
-
+};*/
 const ProfOverview = () => {
 
   // const [barChartData, setBarChartData] = useState (barChartData) = {
@@ -146,7 +145,7 @@ const ProfOverview = () => {
 
   const [userEmail, setUserEmail] = useState(null);
   const navigate = useNavigate();
-
+ 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -156,15 +155,15 @@ const ProfOverview = () => {
         setUserEmail(null);
       }
     });
-
+ 
     // Clean up subscription on unmount
     return () => unsubscribe();
   }, []);
-
+ 
   const onButtonClick = () => {
     navigate('/listPage');  
   }
-
+ 
   return (
     <div className="mainContainer">
       <Navbar bg="dark" variant="dark" expand="lg" className="navbar py-2 fixed-top">
@@ -183,7 +182,7 @@ const ProfOverview = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>      
-
+ 
       {/* Add a div with padding-top to create space below the navbar */}
       <div style={{ paddingTop: '80px' }}>
         <Row className="justify-content-center">
@@ -212,7 +211,7 @@ const ProfOverview = () => {
             </Card>
           </Col>
         </Row>
-
+ 
         <div className={'buttonContainer'}>
           <input
             className={'inputButton'}
@@ -225,7 +224,5 @@ const ProfOverview = () => {
     </div>
   );
 }
-
+ 
 export default ProfOverview;
-
-

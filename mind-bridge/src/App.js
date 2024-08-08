@@ -37,7 +37,7 @@ function App() {
           <Route path="/PatientSpotify" element={<PatientSpotify  />} />
           <Route path="/profOverview" element={<ProfOverview  />} />
           <Route path="/listPage" element={<ListPage  />} />
-          <Route path="/patientSignIn" element={<PatientSignIn  setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
+          <Route path="/PatientSIgnIn" element={<PatientSignIn  setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
           <Route path= "/PatientSignUp" element={ <PatientSignUp setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
           <Route path="/patientLandingPage" element={<PatientLandingPage  />} />
           <Route path="/PatientEditProfilePage" element={<PatientEditProfilePage  />} />
