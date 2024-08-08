@@ -94,7 +94,7 @@ function PatientEditProfilePage() {
       </header>
       <main>
         <h1>Hello {userEmail || 'Guest'}</h1>
-        <h2>{uid && <p>User ID: {uid}</p>} {}</h2>
+        <h2>{uid && <p>Patient ID: {uid}</p>} {}</h2>
 
         <textarea
           placeholder="Write your bio here..."
