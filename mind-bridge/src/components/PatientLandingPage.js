@@ -1,34 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import 'chart.js/auto';
 import '../App.css';
 import { FaSpotify, FaMusic, FaMicrophone, FaBook, FaPodcast } from 'react-icons/fa';
 import topTracks from '../top_tracks.json';
 import topArtistsData from '../top_artists.json';
+import getPodcasts from '../getPodcasts.json';
 import audiobooks from '../user_audiobooks.json';
 
 const PatientLandingPage = () => {
-  const [topAudiobook, setTopAudiobook] = useState(null);
-
-  useEffect(() => {
-    // Assuming we want to display the first audiobook as the top one
-    if (audiobooks.length > 0) {
-
-      setTopAudiobook(audiobooks[0]);
-      setTopAudiobook(audiobooks[1]);
-      setTopAudiobook(audiobooks[2]);
-    }
-  }, []);
-
   const handleButtonClick = () => {
     // Open in a new window
     window.open('http://localhost:8888', '_blank', 'noopener,noreferrer');
   };
- 
+
   return (
     <div className="mainContainer">
       <div className="content-wrapper">
         <header className="page-header">
-       
+          {/* Header content here */}
         </header>
        
         <div className="data-grid">
@@ -55,15 +44,23 @@ const PatientLandingPage = () => {
           <div className="data-card">
             <h2><FaBook /> Audiobooks</h2>
             <ul>
-              {audiobooks.map((book, index) => (
-                <li key={index}>{book.name}</li>
+              {audiobooks.map((audiobook, index) => (
+                <li key={index}>
+                  <strong>{audiobook.name}</strong>: {audiobook.description}
+                </li>
               ))}
             </ul>
           </div>
  
           <div className="data-card">
             <h2><FaPodcast /> Podcasts</h2>
-           
+            <ul>
+              {getPodcasts.map((podcast, index) => (
+                <li key={index}>
+                  <strong>{podcast.name}</strong>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
        
@@ -81,5 +78,5 @@ const PatientLandingPage = () => {
     </div>
   );
 };
- 
+
 export default PatientLandingPage;
