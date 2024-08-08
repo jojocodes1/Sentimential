@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from "react";
+import { json, useNavigate } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -16,6 +16,7 @@ import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, Li
 const lyricsData = require('../lyrics_array.json');
 const lyrics_array = lyricsData.lyrics_array;
 console.log('lyrics_array:', lyrics_array);
+console.log('lyrics data:', lyricsData);
 
 console.log(lyrics_array);
 
@@ -93,27 +94,41 @@ ChartJS.register(
   ],
 };*/
 const ProfOverview = () => {
- 
-  const barChartData = {
+
+  // const [barChartData, setBarChartData] = useState (barChartData) = {
+  //   labels: ['Joy', 'Sadness', 'Anger', 'Fear'],
+  //   datasets: [
+  //     {
+  //       label: 'Amount of Songs',
+  //       data: [0, 0, 0, 0], // Static data
+  //       backgroundColor: 'rgba(75, 192, 192, 0.2)',
+  //       borderColor: 'rgba(75, 192, 192, 1)',
+  //       borderWidth: 3,
+  //     },
+  //   ],
+  // };
+  const [barChartData, setBarChartData] = useState({
     labels: ['Joy', 'Sadness', 'Anger', 'Fear'],
     datasets: [
       {
         label: 'Amount of Songs',
-        data: [0, 0, 0, 0], // Static data
+        data: [0, 0, 0, 0], // Initialize with default values
         backgroundColor: 'rgba(75, 192, 192, 0.2)',
         borderColor: 'rgba(75, 192, 192, 1)',
         borderWidth: 3,
       },
     ],
-  };
+  });
 
   useEffect(()=> {
-    Promise.all(lyrics_array.map(lyrics_array => { return dummy.classifyThis(lyrics_array)})).then((results) => {
+    Promise.all(lyricsData.map(lyricsData => { return dummy.classifyThis(lyricsData)})).then((results) => {
+      console.log('results:', results);
       const dummyMap = dummy.getMap();
       const jsonData = JSON.parse(dummyMap);
+      console.log('map: ', jsonData);
       // const valuesString = intakeToClassificationMadeAccessible.accessible.lyricMap;
       // const valueMap = JSON.parse(valuesString);
-      barChartData({
+      setBarChartData({
         labels: ['Joy', 'Sadness', 'Anger', 'Fear' ],
         datasets: [
           {
@@ -126,7 +141,7 @@ const ProfOverview = () => {
         ],
       });
     });
-  },);
+  },[]);
 
   const [userEmail, setUserEmail] = useState(null);
   const navigate = useNavigate();
