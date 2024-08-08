@@ -7,9 +7,13 @@
 /* General App styling */
 /* General App styling */
 
+
+
+
+
 .App {
   text-align: center;
-  background: url('background.png') no-repeat center center fixed; 
+  background: url('https://media.giphy.com/media/7b8jdNUoFBdcoILjjv/giphy.gif') no-repeat center center fixed; 
   background-size: cover; /* Ensures the image covers the entire background */
   color: #87c7fe; /* Adjust text color for better contrast with the background */
   min-height: 100vh; /* Ensure the container takes up at least the full viewport height */
@@ -19,6 +23,9 @@
   align-items: center; /* Center content horizontally */
   overflow-x: hidden; /* Hide horizontal scrollbar */
 }
+
+
+
 
 /* Logo styling */
 .App-logo {
@@ -453,5 +460,16 @@ html, body {
 
 .RAI-font{
   font-size: 20px;
+}
+
+.footbutton {
+  background-color: #87c7fe;
+  color: black;
+  border: none;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  
 }
 
