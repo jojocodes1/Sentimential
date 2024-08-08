@@ -44,6 +44,9 @@ const InitialSignInPage = (props) => {
         </div>
       </div>
 
+      <div class = "gif4initial"></div>
+
+
       <div className={'roleSelector'}>
         <button
           className={`roleButton ${role === 'Patient' ? '' : ''}`}

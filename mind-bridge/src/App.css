@@ -6,9 +6,14 @@
 /* Original CSS styles */
 /* General App styling */
 /* General App styling */
+
+.gif4initial{
+  background: url('background.png'); 
+}
+
 .App {
   text-align: center;
-  background: url('background.png') no-repeat center center fixed; 
+  background: url('https://media.giphy.com/media/7b8jdNUoFBdcoILjjv/giphy.gif') no-repeat center center fixed; 
   background-size: cover; /* Ensures the image covers the entire background */
   color: #87c7fe; /* Adjust text color for better contrast with the background */
   min-height: 100vh; /* Ensure the container takes up at least the full viewport height */
@@ -18,6 +23,9 @@
   align-items: center; /* Center content horizontally */
   overflow-x: hidden; /* Hide horizontal scrollbar */
 }
+
+
+
 
 /* Logo styling */
 .App-logo {
