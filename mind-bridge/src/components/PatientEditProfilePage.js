@@ -2,37 +2,49 @@ import React, { useEffect, useState } from 'react';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import firebaseApp from '../FirbaseConfig/firebase'; // Ensure the path is correct
-import { useNavigate } from 'react-router-dom';
- 
+import { useNavigate, useLocation } from 'react-router-dom';
+
 // Initialize Firebase services
 const auth = getAuth(firebaseApp);
 const storage = getStorage(firebaseApp);
- 
+
 function PatientEditProfilePage() {
   const [userEmail, setUserEmail] = useState(null);
+  //Added state for UID
+  const [uid, setUid] = useState(null); 
   const [bio, setBio] = useState('');
   const [profilePic, setProfilePic] = useState(null);
   const [file, setFile] = useState(null);
   const navigate = useNavigate();
- 
+  const location = useLocation();
+
   useEffect(() => {
     // Function to handle the authentication state change
     const handleAuthStateChange = (user) => {
       if (user) {
         setUserEmail(user.email);
+        // Set UID
+        setUid(user.uid); 
       } else {
         setUserEmail(null);
-        navigate('/login'); // Redirect to login if user is not authenticated
+        setUid(null);
+        navigate('/login'); 
       }
     };
- 
-    // Subscribe to the auth state change
+
+    //subscribe to the auth state change
     const unsubscribe = onAuthStateChanged(auth, handleAuthStateChange);
- 
-    // Clean up subscription on unmount
+
+    //cleaned up subscription on unmount
     return () => unsubscribe();
   }, [navigate]);
- 
+
+  useEffect(() => {
+    if (location.state && location.state.uid) {
+      setUid(location.state.uid);
+    }
+  }, [location.state]);
+
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
     if (selectedFile) {
@@ -44,7 +56,7 @@ function PatientEditProfilePage() {
       reader.readAsDataURL(selectedFile);
     }
   };
- 
+
   const handleUpload = async () => {
     if (file) {
       // Create a unique filename for the file
@@ -63,11 +75,11 @@ function PatientEditProfilePage() {
       }
     }
   };
- 
+
   const handleContinue = () => {
     navigate('/patientLandingPage');
   };
- 
+
   return (
     <div className="edit-profile">
       <header>
@@ -82,6 +94,8 @@ function PatientEditProfilePage() {
       </header>
       <main>
         <h1>Hello {userEmail || 'Guest'}</h1>
+        <h2>{uid && <p>User ID: {uid}</p>} {}</h2>
+
         <textarea
           placeholder="Write your bio here..."
           value={bio}
@@ -97,6 +111,5 @@ function PatientEditProfilePage() {
     </div>
   );
 }
- 
+
 export default PatientEditProfilePage;
- 
