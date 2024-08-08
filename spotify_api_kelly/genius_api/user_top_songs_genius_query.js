@@ -44,7 +44,13 @@ async function queryGeniusAPI(tracks) {
         }
     }
     console.log(lyrics_array);
-    module.exports = { lyrics_array };
+    //create json file with lyrics_array
+    const newDirectory = '../../mind-bridge/src';
+    // Create a JSON file with the lyrics array in the new directory
+    fs.writeFileSync(path.join(newDirectory, 'lyrics_array.json'), JSON.stringify(lyrics_array, null, 2), 'utf8');
+    
+    console.log('Saved lyrics_array to lyrics_array.json');
+    // module.exports = { lyrics_array };
     
 
     // const instance = intakeToClassificationMadeAccessible.getInstance(lyrics_array, length(lyrics_array));

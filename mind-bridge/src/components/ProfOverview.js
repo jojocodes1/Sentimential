@@ -12,10 +12,10 @@ import { FaUserCircle } from 'react-icons/fa';
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, RadarController, RadialLinearScale, PointElement, LineElement } from 'chart.js';
 import { intakeToClassificationMadeAccessible } from "../intakeToClassificationMadeAccessible.ts";
 // import playlistCompImage from '../../playlist_comp.png'; // playlist_comp.png Ensure the path to your logo is correct
- 
-const { lyrics_array } = require('../../../spotify_api_kelly/genius_api/user_top_songs_genius_query.js');
-console.log(lyrics_array);
- 
+
+const lyricsData = require('../lyrics_array.json');
+const lyrics_array = lyricsData.lyrics_array;
+
 const auth = getAuth(firebaseApp);
  
 /**
