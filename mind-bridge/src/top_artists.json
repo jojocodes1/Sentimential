@@ -1,9 +1,9 @@
 [
   {
-    "name": "The Weeknd"
+    "name": "Billie Eilish"
   },
   {
-    "name": "Billie Eilish"
+    "name": "The Weeknd"
   },
   {
     "name": "Tate McRae"
@@ -27,16 +27,19 @@
     "name": "Kendrick Lamar"
   },
   {
-    "name": "Drake"
+    "name": "Coldplay"
   },
   {
-    "name": "Coldplay"
+    "name": "Drake"
   },
   {
     "name": "Juice WRLD"
   },
   {
     "name": "NF"
+  },
+  {
+    "name": "Ariana Grande"
   },
   {
     "name": "keshi"
@@ -55,8 +58,5 @@
   },
   {
     "name": "Alec Benjamin"
-  },
-  {
-    "name": "Khalid"
   }
 ]

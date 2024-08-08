@@ -5,6 +5,7 @@ import { FaSpotify, FaMusic, FaMicrophone, FaBook, FaPodcast } from 'react-icons
 import topTracks from '../top_tracks.json';
 import topArtistsData from '../top_artists.json';
 import getPodcasts from '../getPodcasts.json';
+import audiobooks from '../user_audiobooks.json';
 
 const PatientLandingPage = () => {
   const handleButtonClick = () => {
@@ -42,7 +43,13 @@ const PatientLandingPage = () => {
  
           <div className="data-card">
             <h2><FaBook /> Audiobooks</h2>
-            {/* Audiobooks content here */}
+            <ul>
+              {audiobooks.map((audiobook, index) => (
+                <li key={index}>
+                  <strong>{audiobook.name}</strong>: {audiobook.description}
+                </li>
+              ))}
+            </ul>
           </div>
  
           <div className="data-card">
