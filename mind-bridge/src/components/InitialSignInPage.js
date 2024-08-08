@@ -32,6 +32,10 @@ const InitialSignInPage = (props) => {
     });
   };
 
+  const navigateTo = (path) => {
+    navigate(path);
+  };
+
   return (
     <div className="App">
       <img src={logo} className="App-logo" alt="logo" />
@@ -44,8 +48,7 @@ const InitialSignInPage = (props) => {
         </div>
       </div>
 
-      <div class = "gif4initial"></div>
-
+      <div className="gif4initial"></div>
 
       <div className={'roleSelector'}>
         <button
@@ -77,11 +80,18 @@ const InitialSignInPage = (props) => {
           />
         </div>
       )}
-      <footer style={{ marginTop: '20px', textAlign: 'center' }}>
-        <a href="/TermsandConditions" style={{ margin: '0 10px' }}>Terms and Conditions</a>
-        <a href="/ResponsibleAI" style={{ margin: '0 10px' }}>Responsible AI</a>
-      </footer>
-    </div>
+
+        <footer style={{ marginTop: '20px', textAlign: 'center' }}>
+          <br></br>
+          <br></br>
+          <button class = "footbutton" onClick={() => navigateTo('/TermsandConditions')} style={{ margin: '0 10px' }}>
+            Terms and Conditions
+          </button>
+          <button class="footbutton" onClick={() => navigateTo('/ResponsibleAI')} style={{ margin: '0 10px' }}>
+            Responsible AI
+          </button>
+        </footer>
+      </div>
   );
 };
 

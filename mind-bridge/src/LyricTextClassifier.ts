@@ -53,13 +53,18 @@ export class LyricTextClassifier{
     return new Promise((resolve) => {
       fetch('https://psionicsynctc.cognitiveservices.azure.com/language/analyze-text/jobs?api-version=2022-05-01', reqOptions).then((response)=> {
 
-        delay(3000).then(()=>{
+        delay(6000).then(()=>{
           const operationLocation = response.headers.get('operation-location')!;
 
         fetch(operationLocation, reqResult).then((response)=> {
           response.json().then((json) => {
             const result = json['tasks'].items[0].results.documents[0].class[0].category;
-            resolve(result);
+            console.log('result: ', result);
+            if (result != null) {
+              resolve(result);
+            } else {
+              resolve("whoops");
+            }
           });
         });
         });
