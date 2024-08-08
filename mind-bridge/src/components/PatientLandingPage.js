@@ -46,7 +46,7 @@ const PatientLandingPage = () => {
             <ul>
               {audiobooks.map((audiobook, index) => (
                 <li key={index}>
-                  <strong>{audiobook.name}</strong>: {audiobook.description}
+                  <strong>{audiobook.name}</strong>
                 </li>
               ))}
             </ul>
