@@ -92,7 +92,6 @@ ChartJS.register(
     },
   ],
 };*/
- 
 const ProfOverview = () => {
  
   const barChartData = {

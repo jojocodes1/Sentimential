@@ -74,6 +74,10 @@ const InitialSignInPage = (props) => {
           />
         </div>
       )}
+      <footer style={{ marginTop: '20px', textAlign: 'center' }}>
+        <a href="/TermsandConditions" style={{ margin: '0 10px' }}>Terms and Conditions</a>
+        <a href="/ResponsibleAI" style={{ margin: '0 10px' }}>Responsible AI</a>
+      </footer>
     </div>
   );
 };

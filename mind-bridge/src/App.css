@@ -350,3 +350,108 @@ html, body {
   display: block;
   margin: 0 auto;
 }
+
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 20px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.disconnect-spotify {
+  background-color: #1DB954;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  
+}
+
+.disconnect-spotify:hover {
+  background-color: #1ed760;
+}
+
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.data-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.data-card h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.data-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.data-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.rank {
+  background-color: #ffffff;
+  color: #333;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.75rem;
+  font-weight: bold;
+}
+
+.name {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.artist, .genres, .description {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.Bar {
+  height: 300px;
+}
+
+
+
+
+.RAI-font{
+  font-size: 20px;
+}
+
