@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { json, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -40,7 +40,7 @@ ChartJS.register(
 );
 
 // Sample data for the radar chart
-const radarChartData = {
+/*const radarChartData = {
   labels: ['acousticness', 'danceability', 'energy', 'valence', 'instrumentalness', 'tempo', 'speechiness'],
   datasets: [
     {
@@ -91,7 +91,7 @@ const radarChartData = {
       borderWidth: 2,
     },
   ],
-};
+};*/
 
 const ProfOverview = () => {
 
