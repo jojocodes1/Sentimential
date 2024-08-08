@@ -1,154 +1,62 @@
 [
   {
-    "name": "The Weeknd",
-    "genres": [
-      "canadian contemporary r&b",
-      "canadian pop",
-      "pop"
-    ]
+    "name": "The Weeknd"
   },
   {
-    "name": "Billie Eilish",
-    "genres": [
-      "art pop",
-      "pop"
-    ]
+    "name": "Billie Eilish"
   },
   {
-    "name": "Tate McRae",
-    "genres": [
-      "pop"
-    ]
+    "name": "Tate McRae"
   },
   {
-    "name": "Future",
-    "genres": [
-      "atl hip hop",
-      "hip hop",
-      "rap",
-      "southern hip hop",
-      "trap"
-    ]
+    "name": "Future"
   },
   {
-    "name": "SZA",
-    "genres": [
-      "pop",
-      "r&b",
-      "rap"
-    ]
+    "name": "SZA"
   },
   {
-    "name": "Taylor Swift",
-    "genres": [
-      "pop"
-    ]
+    "name": "Taylor Swift"
   },
   {
-    "name": "Metro Boomin",
-    "genres": [
-      "rap"
-    ]
+    "name": "Metro Boomin"
   },
   {
-    "name": "Bad Bunny",
-    "genres": [
-      "reggaeton",
-      "trap latino",
-      "urbano latino"
-    ]
+    "name": "Bad Bunny"
   },
   {
-    "name": "Kendrick Lamar",
-    "genres": [
-      "conscious hip hop",
-      "hip hop",
-      "rap",
-      "west coast rap"
-    ]
+    "name": "Kendrick Lamar"
   },
   {
-    "name": "Drake",
-    "genres": [
-      "canadian hip hop",
-      "canadian pop",
-      "hip hop",
-      "pop rap",
-      "rap"
-    ]
+    "name": "Drake"
   },
   {
-    "name": "Coldplay",
-    "genres": [
-      "permanent wave",
-      "pop"
-    ]
+    "name": "Coldplay"
   },
   {
-    "name": "Juice WRLD",
-    "genres": [
-      "chicago rap",
-      "melodic rap",
-      "rap"
-    ]
+    "name": "Juice WRLD"
   },
   {
-    "name": "NF",
-    "genres": [
-      "hip hop",
-      "pop rap"
-    ]
+    "name": "NF"
   },
   {
-    "name": "keshi",
-    "genres": [
-      "chill r&b"
-    ]
+    "name": "keshi"
   },
   {
-    "name": "Hozier",
-    "genres": [
-      "irish singer-songwriter",
-      "modern rock",
-      "pop",
-      "pov: indie"
-    ]
+    "name": "Hozier"
   },
   {
-    "name": "Doja Cat",
-    "genres": [
-      "dance pop",
-      "pop"
-    ]
+    "name": "Doja Cat"
   },
   {
-    "name": "Justin Bieber",
-    "genres": [
-      "canadian pop",
-      "pop"
-    ]
+    "name": "Justin Bieber"
   },
   {
-    "name": "Arizona Zervas",
-    "genres": [
-      "indie pop rap",
-      "pop rap",
-      "rhode island rap"
-    ]
+    "name": "Arizona Zervas"
   },
   {
-    "name": "Alec Benjamin",
-    "genres": [
-      "alt z",
-      "pop",
-      "pov: indie"
-    ]
+    "name": "Alec Benjamin"
   },
   {
-    "name": "Khalid",
-    "genres": [
-      "pop",
-      "pop r&b"
-    ]
+    "name": "Khalid"
   }
 ]

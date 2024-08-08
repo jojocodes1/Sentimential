@@ -17,6 +17,8 @@ const lyricsData = require('../lyrics_array.json');
 const lyrics_array = lyricsData.lyrics_array;
 console.log('lyrics_array:', lyrics_array);
 
+console.log(lyrics_array);
+
 const auth = getAuth(firebaseApp);
 
 
