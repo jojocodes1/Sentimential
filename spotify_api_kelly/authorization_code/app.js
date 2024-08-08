@@ -113,10 +113,10 @@ app.get('/login', (req, res) => {
   
           topTracks(access_token);
           topArtists(access_token); 
-          // userAudiobooks(access_token);
+          userAudiobooks(access_token);
           // getGenre(access_token);
-          // getPodcasts(access_token);
-          recentTracks(access_token);
+          getPodcasts(access_token);
+          // recentTracks(access_token);
           // savedTracks(access_token); //songs in your liked songs playlist
   
           res.redirect('/#' + querystring.stringify({
@@ -227,7 +227,7 @@ app.get('/login', (req, res) => {
 
       const audiobooks = data.items.map(audiobook => ({
         name: audiobook.name,
-        description: audiobook.description
+        description: audiobook.description // Keywords & Sentiment Analysis
       }));
 
       console.log(audiobooks); // Display artists for debugging
