@@ -162,7 +162,7 @@ app.get('/login', (req, res) => {
   //professional side
   async function topTracks(accessToken) {
     try {
-      const response = await fetch('https://api.spotify.com/v1/me/top/tracks', {
+      const response = await fetch('https://api.spotify.com/v1/me/top/tracks?limit=10', {
         headers: { Authorization: 'Bearer ' + accessToken }
       });
   

@@ -13,11 +13,8 @@ import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, Li
 //import { intakeToClassificationMadeAccessible } from "../intakeToClassificationMadeAccessible.ts";
 //import playlistCompImage from '../../playlist_comp.png'; // playlist_comp.png Ensure the path to your logo is correct
 
-const lyricsData = require('../lyrics_array.json');
-const lyrics_array = lyricsData.lyrics_array;
+const lyrics_array = require('../lyrics_array.json');
 console.log('lyrics_array:', lyrics_array);
-
-console.log(lyrics_array);
 
 const auth = getAuth(firebaseApp);
 
