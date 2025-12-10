@@ -1,16 +1,3 @@
-# AppPrototype-Template
-
-You'll end up storing two things in this repo:
-
-1. Your team's work on YourShare
-2. Your team's App Prototype
-
-Please make sure to keep those two things in separate folders, so it's easy to see what's included in each one!
-
-*This is a minimal viable sample spec*
-
-# YourShare
-
 ## Problem statement
 
 Currently, the number of media being consumed is parallel to the rise of the mental health crisis. “According to the World Health Organization, the prevalence of mental health problems is increasing at a rate of 13% each year” (National Center of Biotechnology Information, 2023).  As the current global population is about 7 billion people, this equates to over 900 million people who will develop mental health concerns this year alone. Consequently, more people are consulting with mental health professionals  than ever before. However, medical professionals are struggling to receive accurate and consistent information on their patients during consultations. Patients tend to omit critical details, hindering effective diagnosis and treatment. Mind Bridge aids both medical professionals and patients to have a more efficient consultation. Initially the Medical Professional will recommend the patient downloads our product. We will then provide professionals with a list of trends that showcases sentimental analysis from the media the client is consuming. Furthermore, the medical professional will be able to look that all the data provided and make a more accurate diagnosis for the client. All in all, our mission is to aid medical professionals in producing better diagnosis and treatments.
@@ -106,32 +93,6 @@ Backend
 ## Out of scope
 
 -	Collect data and implement sentimental analysis on different media sources (podcast, audiobooks, videos) 
-
-## UX
-
-*This spec just includes UX for the P0 items as part of the team practice project. Final specs should include UX for all listed user stories*
-
-YourShare is first being built as a large screen application. The success of YourShare depends on community adding items. From user feedback we found this is best done from a larger screen device with a keyboard. There is also a high density of information that's best displayed on a larger screen.
-
-The image assets are in the [YourShare-screens](YourShare-screens) folder - icon, upload, blender.
-
-When a user navigates to your share, they land on the landing page to sign-up or sign-in. If the user is already signed in they will automatically land on the browse item page. The authentication is handled through the phone number and text confirmation.
-![App landing page](YourShare-screens/YS_account.png)
-
-This is the main screen of the app. It shows the items that can be borrowed. If is user is signed up through a friend invite, the screen displays items available within that circle of friends. From here, the user can access adding items, borrowing items, and managing friends and settings.
-![Browse items](YourShare-screens/YS_browse.png)
-
-This is the add item screen. It has the basic fields for a user to submit a new item. Uploading an image is a stretch goal, it starts a just a placeholder.
-![Add item](YourShare-screens/YS_additem.png)
-
-This is the borrow item screen. Selecting an item from the available list lands here. Items are only shown if available. The user requests to borrow and the lender gets a text to approve or deny. Again the image is a placeholder, stretch goal to add.
-![Borrow item](YourShare-screens/YS_BorrowItem.png)
-
-This is the screen to manage community. It allows the user to connect with new friends or invite new friends to the platform. It also has the key settings for using the app.
-![Manage community](YourShare-screens/YS_managecommunity.png)
-
-This screen describes the app navigation, how the screens of the app are connected. The central screen is the app landing page. Other screens lead back here.
-![Navigation](YourShare-screens/YS_navigation.png)
 
 ## Breakdown of work
 [Prioritization]
